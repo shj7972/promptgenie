@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://promptgenie.kr"),
   title: "PromptGenie | AI Prompt Library & Generator",
   description: "Discover, create, and share the best AI prompts for ChatGPT, Claude, and Gemini.",
+  verification: {
+    other: {
+      'naver-site-verification': '257cd146d1ecd07bf159e250c7eecf75a80250f9',
+    },
+  },
 };
 
 export default function RootLayout({
