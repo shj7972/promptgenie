@@ -26,6 +26,11 @@ export default function Footer() {
                             <a href="/trending">인기 프롬프트</a>
                             <a href="/contributors">기여자</a>
                         </div>
+                        <div className={styles.column}>
+                            <h4>정책</h4>
+                            <a href="/privacy">개인정보처리방침</a>
+                            <a href="/terms">이용약관</a>
+                        </div>
                     </div>
                 </div>
                 <div className={styles.bottom}>
