@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+import PartnerBanners from "@/components/PartnerBanners";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://promptgenie.kr"),
   title: "PromptGenie | AI Prompt Library",
@@ -34,6 +36,7 @@ export default function RootLayout({
         <main style={{ minHeight: '100vh', paddingTop: '72px' }}>
           {children}
         </main>
+        <PartnerBanners />
         <Footer />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2947913248390883" crossOrigin="anonymous"></script>
       </body>
