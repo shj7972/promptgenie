@@ -5,8 +5,16 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://promptgenie.kr"),
-  title: "PromptGenie | AI Prompt Library & Generator",
+  title: "PromptGenie | AI Prompt Library",
   description: "Discover, create, and share the best AI prompts for ChatGPT, Claude, and Gemini.",
+  openGraph: {
+    title: 'PromptGenie | AI Prompt Library',
+    description: 'Discover, create, and share the best AI prompts for ChatGPT, Claude, and Gemini.',
+    url: 'https://promptgenie.kr',
+    siteName: 'PromptGenie',
+    locale: 'ko_KR',
+    type: 'website',
+  },
   verification: {
     other: {
       'naver-site-verification': '257cd146d1ecd07bf159e250c7eecf75a80250f9',
