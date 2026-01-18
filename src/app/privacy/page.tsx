@@ -57,7 +57,7 @@ export default function PrivacyPage() {
                 <section>
                     <h2 className="text-xl font-semibold mb-3 text-gray-900">5. Contact Us</h2>
                     <p>
-                        If you have any questions about this Privacy Policy, please contact us at: <a href="mailto:support@promptgenie.kr" className="text-blue-600 hover:underline">support@promptgenie.kr</a> (or your actual contact email).
+                        If you have any questions about this Privacy Policy, please contact us at: <span className="text-gray-500">(이메일 주소 준비 중)</span>
                     </p>
                 </section>
             </div>
