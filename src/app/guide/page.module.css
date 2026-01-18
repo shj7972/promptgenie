@@ -1,0 +1,123 @@
+.container {
+    padding-bottom: 6rem;
+}
+
+.hero {
+    padding: 6rem 0;
+    background: radial-gradient(circle at center, var(--primary-glow) 0%, transparent 70%);
+    text-align: center;
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 4rem 0;
+}
+
+.sectionTitle {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.rulesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.ruleCard {
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.ruleNumber {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.03);
+}
+
+.ruleCard h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.ruleCard p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.comparisonGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.comparisonCard {
+    background: var(--bg-secondary);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.badLabel {
+    display: inline-block;
+    color: #ef4444;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.goodLabel {
+    display: inline-block;
+    color: #10a37f;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.promptText {
+    background: #000;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.analysis {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    border-left: 3px solid var(--bg-accent);
+    padding-left: 1rem;
+}
+
+@media (max-width: 768px) {
+    .comparisonGrid {
+        grid-template-columns: 1fr;
+    }
+}

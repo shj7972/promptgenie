@@ -1,0 +1,153 @@
+.card {
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: all 0.2s ease;
+    border: 1px solid var(--glass-border);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.favoriteBtn {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    padding: 0;
+    line-height: 1;
+}
+
+.favoriteBtn:hover {
+    transform: scale(1.2);
+}
+
+.favoriteBtn.active {
+    animation: pulse 0.3s ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.4);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+.badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+}
+
+.chatgpt {
+    background: #10a37f22;
+    color: #10a37f;
+    border: 1px solid #10a37f44;
+}
+
+.claude {
+    background: #d9775722;
+    color: #d97757;
+    border: 1px solid #d9775744;
+}
+
+.gemini {
+    background: #4285f422;
+    color: #4285f4;
+    border: 1px solid #4285f444;
+}
+
+.all {
+    background: var(--bg-accent);
+    color: var(--text-secondary);
+}
+
+.difficulty {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.stats {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.category {
+    background: var(--bg-accent);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+}
+
+.copyBtn {
+    background: var(--bg-accent);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.copyBtn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.copied {
+    background: #10a37f !important;
+    color: white !important;
+}

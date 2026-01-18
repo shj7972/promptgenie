@@ -1,0 +1,143 @@
+.container {
+    padding-bottom: 6rem;
+}
+
+.header {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-secondary);
+}
+
+.profileInfo {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+    box-shadow: 0 0 30px var(--primary-glow);
+}
+
+.nameWrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.username {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0;
+}
+
+.editBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+    padding: 0.4rem;
+    border-radius: 50%;
+    background: var(--bg-tertiary);
+}
+
+.editBtn:hover {
+    color: var(--primary);
+    background: var(--bg-hover);
+    transform: scale(1.1);
+}
+
+.nameInput {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid var(--primary);
+    color: var(--text-primary);
+    width: 300px;
+    outline: none;
+    font-family: inherit;
+    padding: 0;
+}
+
+.stats {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.sections {
+    padding: 3rem 0;
+}
+
+.tabs {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.tab {
+    padding-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.tab:hover {
+    color: var(--text-primary);
+}
+
+.tab.active {
+    color: var(--primary);
+}
+
+.tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--primary);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem;
+    color: var(--text-muted);
+}
+
+.browseLink {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .profileInfo {
+        flex-direction: column;
+        text-align: center;
+    }
+}
