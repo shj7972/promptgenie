@@ -103,22 +103,70 @@
     color: var(--text-muted);
 }
 
+.mobileToggleBtn {
+    display: none;
+}
+
 @media (max-width: 1024px) {
     .libraryContainer {
         flex-direction: column;
     }
 
+    .mobileToggleBtn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        padding: 1rem;
+        background: var(--glass);
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius-md);
+        color: var(--text-primary);
+        font-weight: 600;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .mobileToggleBtn:hover {
+        background: var(--glass-hover);
+    }
+
+    .mobileToggleBtn svg {
+        width: 20px;
+        height: 20px;
+    }
+
     .sidebar {
         width: 100%;
         position: static;
-        display: flex;
+        display: none;
+        /* Hidden by default on mobile */
         flex-wrap: wrap;
         gap: 2rem;
+        animation: slideDown 0.3s ease-out;
+    }
+
+    .sidebar.active {
+        display: flex;
+        /* Shown when active */
     }
 
     .filterSection {
         flex: 1;
         min-width: 200px;
         margin-bottom: 0;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

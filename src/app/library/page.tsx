@@ -10,6 +10,7 @@ export default function LibraryPage() {
     const [selectedCategory, setSelectedCategory] = useState('전체');
     const [selectedModel, setSelectedModel] = useState('전체');
     const [selectedDifficulty, setSelectedDifficulty] = useState('전체');
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const filteredPrompts = PROMPTS.filter(prompt => {
         const matchesSearch = prompt.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -23,7 +24,21 @@ export default function LibraryPage() {
 
     return (
         <div className={styles.libraryContainer}>
-            <aside className={`${styles.sidebar} glass`}>
+            <button
+                className={styles.mobileToggleBtn}
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    {isMobileMenuOpen ? (
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    ) : (
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                    )}
+                </svg>
+                {isMobileMenuOpen ? '필터 닫기' : '카테고리 및 필터'}
+            </button>
+
+            <aside className={`${styles.sidebar} glass ${isMobileMenuOpen ? styles.active : ''}`}>
                 <div className={styles.filterSection}>
                     <h3>카테고리</h3>
                     <div className={styles.filterList}>
