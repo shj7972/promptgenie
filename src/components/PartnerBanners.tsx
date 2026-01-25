@@ -28,6 +28,13 @@ const ALL_BANNERS = [
         alt: "이룸랩 배너",
         title: "이룸랩 - 무료 셀프 작명, 영어 닉네임, 브랜드 네이밍",
         style: { border: '0', borderRadius: '4px' }
+    },
+    {
+        href: "https://nutrimatch.kr",
+        img: "https://nutrimatch.kr/banner_link_234x60.png",
+        alt: "내 몸이 진짜 원하는 영양제는? Nutri-Match 분석 결과 보기",
+        title: "Nutri-Match - 나만의 영양제 궁합 & 저속노화 분석기",
+        style: { border: '0', borderRadius: '4px' }
     }
 ];
 
