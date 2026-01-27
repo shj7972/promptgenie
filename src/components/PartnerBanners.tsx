@@ -35,6 +35,13 @@ const ALL_BANNERS = [
         alt: "내 몸이 진짜 원하는 영양제는? Nutri-Match 분석 결과 보기",
         title: "Nutri-Match - 나만의 영양제 궁합 & 저속노화 분석기",
         style: { border: '0', borderRadius: '4px' }
+    },
+    {
+        href: "https://moneymatch.kr",
+        img: "https://moneymatch.kr/banner_link_234x60.png",
+        alt: "놓치면 손해 보는 정부지원금, 3초 만에 찾기 - Money Match",
+        title: "Money Match - AI 실시간 금융 뉴스 & 지원금 매칭",
+        style: { border: '0', borderRadius: '4px' }
     }
 ];
 
