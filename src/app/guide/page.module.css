@@ -19,6 +19,7 @@
     color: var(--text-secondary);
     max-width: 700px;
     margin: 0 auto;
+    line-height: 1.6;
 }
 
 .section {
@@ -32,6 +33,29 @@
     text-align: center;
 }
 
+/* Intro */
+.introContent {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.introCard {
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+}
+
+.introCard p {
+    margin-bottom: 1rem;
+}
+
+.introCard p:last-child {
+    margin-bottom: 0;
+}
+
+/* Rules Grid */
 .rulesGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -66,6 +90,72 @@
     line-height: 1.6;
 }
 
+/* Techniques Grid */
+.techniquesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.techniqueCard {
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+}
+
+.techniqueHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.techniqueIcon {
+    font-size: 1.5rem;
+}
+
+.techniqueHeader h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.techniqueDesc {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.techniqueExample {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.exampleLabel {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.techniqueExample code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    white-space: pre-wrap;
+    line-height: 1.5;
+}
+
+.techniqueNote {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Comparison */
 .comparisonGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -106,6 +196,8 @@
     border-radius: var(--radius-md);
     color: var(--text-primary);
     font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
 
 .analysis {
@@ -116,8 +208,235 @@
     padding-left: 1rem;
 }
 
+/* Model Comparison */
+.modelGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.modelCard {
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+}
+
+.modelHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.modelIcon {
+    font-size: 1.5rem;
+}
+
+.modelHeader h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.modelFeatures {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.modelFeatures li {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    padding-left: 0.5rem;
+    border-left: 2px solid rgba(139, 92, 246, 0.2);
+}
+
+/* Category Tips */
+.tipsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.tipCard {
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+}
+
+.tipCard h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.tipCard p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Mistakes */
+.mistakesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.mistakeCard {
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+}
+
+.mistakeHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.mistakeX {
+    color: #ef4444;
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+.mistakeHeader h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.mistakeCard>p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.solution {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    background: rgba(16, 163, 127, 0.08);
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: #10a37f;
+    line-height: 1.4;
+}
+
+.solutionCheck {
+    font-weight: 900;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+/* Glossary */
+.glossaryGrid {
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.glossaryItem {
+    padding: 1rem;
+}
+
+.glossaryItem dt {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--primary);
+    margin-bottom: 0.3rem;
+}
+
+.glossaryItem dd {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* CTA */
+.ctaSection {
+    text-align: center;
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+}
+
+.ctaSection h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+}
+
+.ctaSection p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ctaButtons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.ctaPrimary {
+    padding: 0.75rem 2rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    transition: all 0.2s;
+}
+
+.ctaPrimary:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+.ctaSecondary {
+    padding: 0.75rem 2rem;
+    background: transparent;
+    color: var(--primary);
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    border: 1px solid var(--primary);
+    transition: all 0.2s;
+}
+
+.ctaSecondary:hover {
+    background: rgba(139, 92, 246, 0.1);
+    transform: translateY(-2px);
+}
+
 @media (max-width: 768px) {
+    .title {
+        font-size: 2.2rem;
+    }
+
     .comparisonGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .techniquesGrid,
+    .modelGrid,
+    .tipsGrid,
+    .mistakesGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .glossaryGrid {
         grid-template-columns: 1fr;
     }
 }

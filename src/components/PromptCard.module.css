@@ -1,3 +1,9 @@
+.cardLink {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+}
+
 .card {
     padding: 1.5rem;
     border-radius: var(--radius-lg);

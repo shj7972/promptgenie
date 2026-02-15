@@ -42,6 +42,20 @@ const ALL_BANNERS = [
         alt: "놓치면 손해 보는 정부지원금, 3초 만에 찾기 - Money Match",
         title: "Money Match - AI 실시간 금융 뉴스 & 지원금 매칭",
         style: { border: '0', borderRadius: '4px' }
+    },
+    {
+        href: "https://dream645.kr",
+        img: "https://dream645.kr/banner_234x60.png",
+        alt: "꿈풀이 로또 배너",
+        title: "꿈풀이 로또 - 꿈이 현실이 되는 행운의 번호",
+        style: { border: '0', borderRadius: '4px' }
+    },
+    {
+        href: "https://sonpyeong.kr",
+        img: "https://sonpyeong.kr/banner-234x60.png",
+        alt: "손평마스터 - 손해평가사 합격의 파트너",
+        title: "손평마스터 - 손해평가사 합격의 파트너",
+        style: { border: '0', borderRadius: '4px' }
     }
 ];
 

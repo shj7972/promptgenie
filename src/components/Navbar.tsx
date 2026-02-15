@@ -13,6 +13,7 @@ export default function Navbar() {
           <Link href="/generator" className={styles.link}>프롬프트 생성기</Link>
           <Link href="/blog-writer" className={styles.link}>블로그 글쓰기</Link>
           <Link href="/guide" className={styles.link}>가이드</Link>
+          <Link href="/blog" className={styles.link}>블로그</Link>
           <Link href="/profile" className={styles.link}>내 프롬프트</Link>
         </div>
         <div className={styles.actions}>
