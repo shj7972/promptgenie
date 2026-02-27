@@ -3,8 +3,16 @@ import Link from 'next/link';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-    title: '프롬프트 엔지니어링 완벽 가이드 | PromptGenie',
-    description: 'ChatGPT, Claude, Gemini 등 AI 모델을 위한 프롬프트 엔지니어링 핵심 원칙과 기법을 마스터하세요. Zero-shot, Few-shot, Chain of Thought 등 5가지 핵심 기법과 실전 활용법을 배워보세요.',
+    title: '프롬프트 엔지니어링 완벽 가이드 2026 - 핵심 원칙과 5가지 기법',
+    description: 'ChatGPT, Claude, Gemini AI 모델을 위한 프롬프트 엔지니어링 핵심 원칙과 기법을 마스터하세요. Zero-shot, Few-shot, Chain of Thought 등 5가지 핵심 기법과 실전 활용법, 좋은 예 vs 나쁜 예 비교까지.',
+    openGraph: {
+        title: '프롬프트 엔지니어링 완벽 가이드 2026 | 프롬프트지니',
+        description: 'AI 프롬프트 엔지니어링의 핵심 원칙과 5가지 기법을 실전 예시와 함께 배워보세요.',
+        type: 'article',
+    },
+    alternates: {
+        canonical: 'https://promptgenie.kr/guide',
+    },
 };
 
 export default function GuidePage() {

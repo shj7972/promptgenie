@@ -1,11 +1,20 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { BLOG_POSTS } from '@/data/blog-posts';
+import NewsletterForm from '@/components/NewsletterForm';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-    title: 'AI 프롬프트 블로그 | PromptGenie',
-    description: '프롬프트 엔지니어링, AI 활용법, ChatGPT·Claude 비교 분석 등 AI 시대의 필수 지식을 다루는 블로그입니다.',
+    title: 'AI 프롬프트 블로그 - 프롬프트 엔지니어링 팁 & AI 활용법',
+    description: '프롬프트 엔지니어링, AI 활용법, ChatGPT·Claude·Gemini 비교 분석, 실전 프롬프트 작성법 등 AI 시대의 필수 지식을 다루는 블로그입니다.',
+    openGraph: {
+        title: 'AI 프롬프트 블로그 | 프롬프트지니',
+        description: '프롬프트 엔지니어링 팁, AI 활용법, 실전 가이드를 제공하는 블로그입니다.',
+        type: 'website',
+    },
+    alternates: {
+        canonical: 'https://promptgenie.kr/blog',
+    },
 };
 
 export default function BlogPage() {
@@ -47,6 +56,8 @@ export default function BlogPage() {
                     ))}
                 </div>
             </div>
+
+            <NewsletterForm />
         </div>
     );
 }

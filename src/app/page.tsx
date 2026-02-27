@@ -1,10 +1,86 @@
 import Link from 'next/link';
 import FAQ from '@/components/FAQ';
+import NewsletterForm from '@/components/NewsletterForm';
 import styles from './page.module.css';
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: '프롬프트지니 (PromptGenie)',
+  url: 'https://promptgenie.kr',
+  description: 'ChatGPT, Claude, Gemini용 검증된 AI 프롬프트 모음 & 생성기',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://promptgenie.kr/library?q={search_term_string}',
+    'query-input': 'required name=search_term_string',
+  },
+};
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: '프롬프트지니',
+  alternateName: 'PromptGenie',
+  url: 'https://promptgenie.kr',
+  logo: 'https://promptgenie.kr/favicon.ico',
+  sameAs: [],
+};
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'PromptGenie는 어떤 서비스인가요?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'PromptGenie는 ChatGPT, Claude, Gemini 등 다양한 AI 모델에서 최적의 성능을 낼 수 있도록 돕는 프롬프트 엔지니어링 플랫폼입니다. 검증된 프롬프트 라이브러리를 제공하고, 사용자가 직접 프롬프트를 생성하고 최적화할 수 있는 도구를 지원합니다.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '프롬프트 엔지니어링은 왜 중요한가요?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '같은 AI 모델이라도 질문(프롬프트)의 퀄리티에 따라 답변의 질이 완전히 달라집니다. 프롬프트 엔지니어링을 통해 AI의 환각 현상을 줄이고, 더 정확하고 창의적인, 그리고 사용자의 의도에 딱 맞는 결과를 얻을 수 있습니다.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '이 서비스는 무료인가요?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '네, PromptGenie의 기본적인 프롬프트 라이브러리 열람과 생성 기능은 현재 무료로 제공하고 있습니다. 향후 고급 분석 기능 등이 포함된 프리미엄 플랜이 도입될 수 있습니다.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '나만의 팁을 공유할 수 있나요?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "물론입니다! PromptGenie는 커뮤니티 기반의 성장을 지향합니다. '기여자' 페이지를 통해 여러분만의 독창적인 프롬프트를 공유할 수 있으며, 다른 사용자들의 피드백을 통해 프롬프트를 더욱 발전시킬 수 있습니다.",
+      },
+    },
+  ],
+};
 
 export default function Home() {
   return (
     <div className={styles.main}>
+      {/* JSON-LD 구조화 데이터 */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
@@ -107,6 +183,9 @@ export default function Home() {
 
       {/* FAQ Section for AdSense */}
       <FAQ />
+
+      {/* Newsletter Subscription */}
+      <NewsletterForm />
     </div>
   );
 }

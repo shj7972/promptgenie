@@ -2,6 +2,8 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { PROMPTS } from '@/data/prompts';
+import { BLOG_POSTS } from '@/data/blog-posts';
+import ShareButtons from '@/components/ShareButtons';
 import styles from './page.module.css';
 
 interface PageProps {
@@ -23,12 +25,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
 
     return {
-        title: `${prompt.title} - AI 프롬프트 | PromptGenie`,
-        description: `${prompt.description} ${prompt.model} 모델에 최적화된 ${prompt.difficulty} 수준의 ${prompt.category} 프롬프트입니다.`,
+        title: `${prompt.title} - ${prompt.model} ${prompt.category} 프롬프트`,
+        description: `${prompt.description} ${prompt.model} 모델에 최적화된 ${prompt.difficulty} 수준의 ${prompt.category} 프롬프트입니다. 입력 예시와 활용 팁을 확인하세요.`,
         openGraph: {
-            title: `${prompt.title} | PromptGenie`,
-            description: prompt.description,
+            title: `${prompt.title} | 프롬프트지니`,
+            description: `${prompt.description} ${prompt.model}용 ${prompt.category} 프롬프트.`,
             type: 'article',
+        },
+        alternates: {
+            canonical: `https://promptgenie.kr/prompts/${id}`,
         },
     };
 }
@@ -130,8 +135,73 @@ export default async function PromptDetailPage({ params }: PageProps) {
     const tips = getUsageTips(prompt.category);
     const article = getCategoryArticle(prompt.category);
 
+    // 프롬프트 태그/카테고리와 관련된 블로그 글 추천
+    const relatedBlogPosts = BLOG_POSTS
+        .filter(bp => prompt.tags.some(tag =>
+            bp.tags.some(bt => bt.toLowerCase().includes(tag.toLowerCase())) ||
+            bp.title.toLowerCase().includes(tag.toLowerCase()) ||
+            bp.title.toLowerCase().includes(prompt.category.toLowerCase())
+        ))
+        .slice(0, 3);
+
+    const promptJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: prompt.title,
+        description: prompt.description,
+        step: [
+            {
+                '@type': 'HowToStep',
+                name: '프롬프트 복사',
+                text: prompt.content,
+            },
+            {
+                '@type': 'HowToStep',
+                name: 'AI 모델에 입력',
+                text: `${prompt.model} 모델에 프롬프트를 입력하세요.`,
+            },
+        ],
+        tool: {
+            '@type': 'HowToTool',
+            name: prompt.model,
+        },
+    };
+
+    const breadcrumbJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            {
+                '@type': 'ListItem',
+                position: 1,
+                name: '홈',
+                item: 'https://promptgenie.kr',
+            },
+            {
+                '@type': 'ListItem',
+                position: 2,
+                name: '라이브러리',
+                item: 'https://promptgenie.kr/library',
+            },
+            {
+                '@type': 'ListItem',
+                position: 3,
+                name: prompt.title,
+                item: `https://promptgenie.kr/prompts/${id}`,
+            },
+        ],
+    };
+
     return (
         <div className={styles.container}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(promptJsonLd) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+            />
             <Link href="/library" className={styles.backLink}>
                 ← 라이브러리로 돌아가기
             </Link>
@@ -150,6 +220,11 @@ export default async function PromptDetailPage({ params }: PageProps) {
                 <div className={styles.stats}>
                     <span>❤️ {prompt.likes.toLocaleString()}명이 좋아합니다</span>
                 </div>
+                <ShareButtons
+                    url={`https://promptgenie.kr/prompts/${id}`}
+                    title={prompt.title}
+                    description={prompt.description}
+                />
             </header>
 
             {/* Prompt Content */}
@@ -206,6 +281,25 @@ export default async function PromptDetailPage({ params }: PageProps) {
                             <Link key={rp.id} href={`/prompts/${rp.id}`} className={`${styles.relatedCard} glass`}>
                                 <h4>{rp.title}</h4>
                                 <p>{rp.description}</p>
+                            </Link>
+                        ))}
+                    </div>
+                </section>
+            )}
+
+            {/* Related Blog Posts */}
+            {relatedBlogPosts.length > 0 && (
+                <section className={styles.section}>
+                    <h2 className={styles.sectionTitle}>📚 관련 블로그 글</h2>
+                    <div className={styles.relatedGrid}>
+                        {relatedBlogPosts.map(bp => (
+                            <Link key={bp.slug} href={`/blog/${bp.slug}`} className={`${styles.relatedCard} glass`}>
+                                <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                                    <span style={{ fontSize: '0.7rem', padding: '2px 8px', borderRadius: '4px', background: 'rgba(59, 130, 246, 0.2)', color: '#60a5fa' }}>{bp.category}</span>
+                                    <span style={{ fontSize: '0.7rem', color: '#666' }}>{bp.readTime}</span>
+                                </div>
+                                <h4>{bp.title}</h4>
+                                <p>{bp.description}</p>
                             </Link>
                         ))}
                     </div>

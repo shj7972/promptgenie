@@ -2,6 +2,8 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { BLOG_POSTS } from '@/data/blog-posts';
+import { PROMPTS } from '@/data/prompts';
+import ShareButtons from '@/components/ShareButtons';
 import styles from './page.module.css';
 
 interface PageProps {
@@ -23,13 +25,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
 
     return {
-        title: `${post.title} | PromptGenie 블로그`,
+        title: `${post.title}`,
         description: post.description,
         openGraph: {
-            title: post.title,
+            title: `${post.title} | 프롬프트지니 블로그`,
             description: post.description,
             type: 'article',
             publishedTime: post.date,
+        },
+        alternates: {
+            canonical: `https://promptgenie.kr/blog/${slug}`,
         },
     };
 }
@@ -139,8 +144,72 @@ export default async function BlogDetailPage({ params }: PageProps) {
         .filter(p => p.slug !== post.slug)
         .slice(0, 3);
 
+    // 블로그 태그와 관련된 프롬프트 추천
+    const relatedPrompts = PROMPTS
+        .filter(p => post.tags.some(tag =>
+            p.tags.some(pt => pt.toLowerCase().includes(tag.toLowerCase())) ||
+            p.category.toLowerCase().includes(tag.toLowerCase()) ||
+            p.title.toLowerCase().includes(tag.toLowerCase())
+        ))
+        .slice(0, 4);
+
+    const articleJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: post.title,
+        description: post.description,
+        author: {
+            '@type': 'Organization',
+            name: post.author,
+        },
+        publisher: {
+            '@type': 'Organization',
+            name: '프롬프트지니 (PromptGenie)',
+            url: 'https://promptgenie.kr',
+        },
+        datePublished: post.date,
+        dateModified: post.date,
+        mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `https://promptgenie.kr/blog/${post.slug}`,
+        },
+    };
+
+    const breadcrumbJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            {
+                '@type': 'ListItem',
+                position: 1,
+                name: '홈',
+                item: 'https://promptgenie.kr',
+            },
+            {
+                '@type': 'ListItem',
+                position: 2,
+                name: '블로그',
+                item: 'https://promptgenie.kr/blog',
+            },
+            {
+                '@type': 'ListItem',
+                position: 3,
+                name: post.title,
+                item: `https://promptgenie.kr/blog/${post.slug}`,
+            },
+        ],
+    };
+
     return (
         <div className={styles.container}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+            />
             <Link href="/blog" className={styles.backLink}>
                 ← 블로그로 돌아가기
             </Link>
@@ -161,6 +230,11 @@ export default async function BlogDetailPage({ params }: PageProps) {
                         <span key={tag} className={styles.tag}>#{tag}</span>
                     ))}
                 </div>
+                <ShareButtons
+                    url={`https://promptgenie.kr/blog/${post.slug}`}
+                    title={post.title}
+                    description={post.description}
+                />
             </header>
 
             <article className={styles.content}>
@@ -176,6 +250,24 @@ export default async function BlogDetailPage({ params }: PageProps) {
                         <Link href="/guide" className={styles.ctaSecondary}>가이드 보기</Link>
                     </div>
                 </div>
+
+                {relatedPrompts.length > 0 && (
+                    <>
+                        <h3 className={styles.relatedTitle}>🎯 이 글과 관련된 프롬프트</h3>
+                        <div className={styles.relatedGrid}>
+                            {relatedPrompts.map(rp => (
+                                <Link key={rp.id} href={`/prompts/${rp.id}`} className={`${styles.relatedCard} glass`}>
+                                    <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                                        <span style={{ fontSize: '0.7rem', padding: '2px 8px', borderRadius: '4px', background: 'rgba(139, 92, 246, 0.2)', color: '#a78bfa' }}>{rp.model}</span>
+                                        <span style={{ fontSize: '0.7rem', padding: '2px 8px', borderRadius: '4px', background: 'rgba(255, 255, 255, 0.05)', color: '#888' }}>{rp.difficulty}</span>
+                                    </div>
+                                    <h4>{rp.title}</h4>
+                                    <p>{rp.description}</p>
+                                </Link>
+                            ))}
+                        </div>
+                    </>
+                )}
 
                 {relatedPosts.length > 0 && (
                     <>
