@@ -48,12 +48,29 @@
 }
 
 .searchBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     color: var(--text-secondary);
     transition: color 0.2s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.4rem;
 }
 
 .searchBtn:hover {
     color: var(--text-primary);
+}
+
+.searchShortcut {
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+    color: #666;
+    font-family: inherit;
 }
 
 .loginBtn {
@@ -73,8 +90,56 @@
     box-shadow: 0 6px 16px rgba(99, 102, 241, 0.3);
 }
 
+/* 모바일 햄버거 메뉴 */
+.mobileMenuBtn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.4rem;
+}
+
 @media (max-width: 768px) {
     .links {
         display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: rgba(12, 12, 25, 0.98);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(12px);
+        padding: 0.5rem 0;
+        animation: slideDown 0.2s ease;
     }
+
+    .links.mobileOpen {
+        display: flex;
+    }
+
+    .links .link {
+        padding: 0.85rem 2rem;
+        font-size: 1rem;
+    }
+
+    .links .link:hover {
+        background: rgba(255, 255, 255, 0.03);
+    }
+
+    .mobileMenuBtn {
+        display: flex;
+        align-items: center;
+    }
+
+    .searchShortcut {
+        display: none;
+    }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
 }

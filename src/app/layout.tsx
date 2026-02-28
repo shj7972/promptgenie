@@ -56,7 +56,10 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <head>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2947913248390883" crossOrigin="anonymous"></script>
+        {/* DNS Prefetch for performance */}
+        <link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
+        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
       </head>
       <body>
         <Navbar />
@@ -65,6 +68,13 @@ export default function RootLayout({
         </main>
         <PartnerBanners />
         <Footer />
+
+        {/* AdSense - lazyOnload for better LCP */}
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2947913248390883"
+          strategy="lazyOnload"
+          crossOrigin="anonymous"
+        />
 
         {/* Google Analytics */}
         <Script

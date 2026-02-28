@@ -85,9 +85,79 @@
     box-shadow: 0 0 0 2px var(--primary-glow);
 }
 
+.headerMeta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
 .resultCount {
     font-size: 0.9rem;
     color: var(--text-muted);
+}
+
+.sortGroup {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.sortBtn {
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    background: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.sortBtn:hover {
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.sortBtn.active {
+    color: var(--text-primary);
+    background: rgba(139, 92, 246, 0.1);
+    border-color: rgba(139, 92, 246, 0.2);
+}
+
+.resetBtn {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #f87171;
+    background: rgba(248, 113, 113, 0.08);
+    border: 1px solid rgba(248, 113, 113, 0.15);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    margin-bottom: 1.5rem;
+}
+
+.resetBtn:hover {
+    background: rgba(248, 113, 113, 0.15);
+}
+
+.resetBtnInline {
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    color: var(--primary);
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.resetBtnInline:hover {
+    background: rgba(99, 102, 241, 0.2);
 }
 
 .grid {

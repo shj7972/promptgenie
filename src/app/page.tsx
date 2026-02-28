@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import FAQ from '@/components/FAQ';
 import NewsletterForm from '@/components/NewsletterForm';
+import { PROMPTS } from '@/data/prompts';
+import { BLOG_POSTS } from '@/data/blog-posts';
 import styles from './page.module.css';
 
 const websiteJsonLd = {
@@ -142,6 +144,60 @@ export default function Home() {
               <h3>학습 허브</h3>
               <p>프롬프트 엔지니어링의 핵심 원칙을 가이드를 통해 마스터하세요.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Popular Prompts Preview */}
+      <section className={styles.popularSection}>
+        <div className="section-container">
+          <h2 className={styles.sectionTitle}>인기 프롬프트 TOP 6</h2>
+          <p className={styles.sectionSubtitle}>가장 많은 사랑을 받은 검증된 프롬프트를 만나보세요</p>
+          <div className={styles.popularGrid}>
+            {[...PROMPTS].sort((a, b) => b.likes - a.likes).slice(0, 6).map(prompt => (
+              <Link key={prompt.id} href={`/prompts/${prompt.id}`} className={`${styles.popularCard} glass`}>
+                <div className={styles.popularCardHeader}>
+                  <span className={`${styles.modelTag} ${styles[prompt.model.toLowerCase()]}`}>{prompt.model}</span>
+                  <span className={styles.likesTag}>❤️ {prompt.likes.toLocaleString()}</span>
+                </div>
+                <h3 className={styles.popularCardTitle}>{prompt.title}</h3>
+                <p className={styles.popularCardDesc}>{prompt.description}</p>
+                <div className={styles.popularCardFooter}>
+                  <span className={styles.categoryTag}>{prompt.category}</span>
+                  <span className={styles.difficultyTag}>{prompt.difficulty}</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className={styles.ctaCenter}>
+            <Link href="/library" className={styles.primaryBtn}>
+              전체 라이브러리 보기 →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Blog Posts */}
+      <section className={styles.latestBlogSection}>
+        <div className="section-container">
+          <h2 className={styles.sectionTitle}>최신 블로그</h2>
+          <p className={styles.sectionSubtitle}>프롬프트 엔지니어링 팁과 AI 활용법</p>
+          <div className={styles.blogGrid}>
+            {[...BLOG_POSTS].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 3).map(post => (
+              <Link key={post.slug} href={`/blog/${post.slug}`} className={`${styles.blogCard} glass`}>
+                <div className={styles.blogCardMeta}>
+                  <span className={styles.blogCategoryTag}>{post.category}</span>
+                  <span>{post.readTime}</span>
+                </div>
+                <h3 className={styles.blogCardTitle}>{post.title}</h3>
+                <p className={styles.blogCardDesc}>{post.description}</p>
+              </Link>
+            ))}
+          </div>
+          <div className={styles.ctaCenter}>
+            <Link href="/blog" className={styles.secondaryBtn}>
+              블로그 더 보기 →
+            </Link>
           </div>
         </div>
       </section>

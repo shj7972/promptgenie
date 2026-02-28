@@ -224,6 +224,166 @@
     }
 }
 
+/* Popular Prompts Section */
+.popularSection {
+    padding: 4rem 0 6rem;
+}
+
+.sectionSubtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-top: -3rem;
+    margin-bottom: 3rem;
+}
+
+.popularGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.popularCard {
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.popularCard:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+}
+
+.popularCardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.modelTag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.modelTag.chatgpt { background: rgba(16, 163, 127, 0.15); color: #10a37f; }
+.modelTag.claude { background: rgba(217, 119, 87, 0.15); color: #d97757; }
+.modelTag.gemini { background: rgba(66, 133, 244, 0.15); color: #4285f4; }
+.modelTag.all { background: rgba(139, 92, 246, 0.15); color: #a78bfa; }
+
+.likesTag {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.popularCardTitle {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.popularCardDesc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.popularCardFooter {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.categoryTag, .difficultyTag {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+}
+
+.ctaCenter {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* Latest Blog Section */
+.latestBlogSection {
+    padding: 4rem 0 6rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.blogGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.blogCard {
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.blogCard:hover {
+    transform: translateY(-4px);
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.blogCardMeta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.blogCategoryTag {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    font-weight: 600;
+}
+
+.blogCardTitle {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.blogCardDesc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+    .popularGrid, .blogGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .seoSection {
     padding: 6rem 0;
     border-top: 1px solid var(--glass-border);
