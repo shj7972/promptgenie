@@ -1,0 +1,82 @@
+{
+  "Metadata": {
+    "title": "PromptGenie | AI Prompt Collection & Generator for ChatGPT, Claude, Gemini",
+    "description": "Explore 90+ verified AI prompts for ChatGPT, Claude, and Gemini for free, and generate custom prompts. Prompt engineering guides and real-world usage all in one place.",
+    "keywords": "prompt,prompt engineering,ChatGPT prompt,Claude prompt,Gemini prompt,AI prompt,prompt collection,prompt generator,AI usage,PromptGenie",
+    "siteName": "PromptGenie"
+  },
+  "Navbar": {
+    "library": "Library",
+    "generator": "Prompt Generator",
+    "blogWriter": "Blog Writer",
+    "guide": "Guide",
+    "blog": "Blog",
+    "myPrompts": "My Prompts",
+    "start": "Get Started",
+    "search": "Search"
+  },
+  "Home": {
+    "badge": "Next-Gen Prompt Engineering",
+    "title": "Master the Art of\nAI Conversation",
+    "subtitle": "Discover and generate high-performance prompts for ChatGPT, Claude, and Gemini. Join an elite community of prompt engineers.",
+    "exploreLibrary": "Explore Library",
+    "createPrompt": "Custom Prompt Generation",
+    "features": {
+      "title": "Unlock Your Potential",
+      "library": {
+        "title": "Curated Library",
+        "desc": "Meet the highest level of prompts proven across all major AI models."
+      },
+      "wizard": {
+        "title": "Prompt Wizard",
+        "desc": "Easily create complex, structured prompts via step-by-step guides."
+      },
+      "learning": {
+        "title": "Learning Hub",
+        "desc": "Master the core principles of prompt engineering through our guides."
+      }
+    },
+    "popular": {
+      "title": "Top 6 Popular Prompts",
+      "subtitle": "Discover the most loved and verified prompts",
+      "viewAll": "View Full Library →"
+    },
+    "latestBlog": {
+      "title": "Latest Blog",
+      "subtitle": "Prompt engineering tips and AI usage guides",
+      "viewMore": "Read More →"
+    },
+    "seo": {
+      "title": "Prompt Engineering Guide",
+      "article1": {
+        "header": "💡 The Power of Prompts",
+        "content": "The most powerful tool for communicating with LLMs (Large Language Models), the core of modern AI technology, is the 'prompt'. Beyond simple questions, prompts serve as a compass that guides the thinking process of AI, stimulates creativity, and leads to optimal results. A well-designed prompt can replace hundreds of lines of code or provide powerful efficiency that solves complex business processes in just seconds."
+      },
+      "article2": {
+        "header": "🚀 Essential Skill in the AI Era",
+        "content": "As high-performance AI models like ChatGPT, Claude, and Gemini evolve, how you 'ask' and 'instruct' has become a core competitive advantage, going beyond simply using tools. The essence of prompt engineering lies in clearly setting the context, assigning specific personas, and elaborately handling constraints on output formats."
+      },
+      "article3": {
+        "header": "✨ Grow with PromptGenie",
+        "content": "PromptGenie provides a high-quality prompt library verified by elite prompt engineers worldwide. Explore optimized prompts in various categories such as business analysis, creative writing, and professional coding. Our library will be your strongest partner in helping you utilize AI's potential 100%."
+      }
+    }
+  },
+  "Blog": {
+    "metadata": {
+      "title": "AI Prompt Blog - Prompt Engineering Tips & AI Usage",
+      "description": "Insights on prompt engineering, AI usage guides, ChatGPT·Claude·Gemini comparisons, and practical tips for the AI era.",
+      "ogTitle": "AI Prompt Blog | PromptGenie",
+      "ogDescription": "Expert tips and guides on prompt engineering and AI utilization."
+    },
+    "hero": {
+      "titleAccent": "AI Prompt",
+      "titleRemaining": "Blog",
+      "subtitle": "From core techniques to real-world applications, sharing insights to lead the AI era."
+    },
+    "card": {
+      "readSuffix": "min read",
+      "readMore": "Read More"
+    }
+  }
+}

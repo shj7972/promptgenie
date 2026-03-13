@@ -1,80 +1,80 @@
 import { MetadataRoute } from 'next'
 import { PROMPTS } from '@/data/prompts'
-import { BLOG_POSTS } from '@/data/blog-posts'
+import { BLOG_POSTS } from '@/data/blog-posts/ko'
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://promptgenie.kr'
+    const locales = ['ko', 'en']
 
-    const promptPages: MetadataRoute.Sitemap = PROMPTS.map((prompt) => ({
-        url: `${baseUrl}/prompts/${prompt.id}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: 0.7,
-    }))
+    const entries: MetadataRoute.Sitemap = []
 
-    const blogPages: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
-        url: `${baseUrl}/blog/${post.slug}`,
-        lastModified: new Date(post.date),
-        changeFrequency: 'monthly' as const,
-        priority: 0.8,
-    }))
-
-    return [
-        {
-            url: baseUrl,
-            lastModified: new Date(),
-            changeFrequency: 'daily',
-            priority: 1,
-        },
-        {
-            url: `${baseUrl}/library`,
-            lastModified: new Date(),
-            changeFrequency: 'daily',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/blog`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/guide`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/generator`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/blog-writer`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/contributors`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.5,
-        },
-        {
-            url: `${baseUrl}/privacy`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.3,
-        },
-        {
-            url: `${baseUrl}/terms`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.3,
-        },
-        ...promptPages,
-        ...blogPages,
+    const paths = [
+        { path: '', priority: 1, changeFrequency: 'daily' as const },
+        { path: '/library', priority: 0.9, changeFrequency: 'daily' as const },
+        { path: '/blog', priority: 0.9, changeFrequency: 'weekly' as const },
+        { path: '/guide', priority: 0.8, changeFrequency: 'weekly' as const },
+        { path: '/generator', priority: 0.7, changeFrequency: 'weekly' as const },
+        { path: '/blog-writer', priority: 0.7, changeFrequency: 'weekly' as const },
+        { path: '/contributors', priority: 0.5, changeFrequency: 'monthly' as const },
+        { path: '/privacy', priority: 0.3, changeFrequency: 'monthly' as const },
+        { path: '/terms', priority: 0.3, changeFrequency: 'monthly' as const },
     ]
+
+    // static pages for each locale
+    paths.forEach(({ path, priority, changeFrequency }) => {
+        locales.forEach((locale) => {
+            entries.push({
+                url: `${baseUrl}/${locale}${path}`,
+                lastModified: new Date(),
+                changeFrequency,
+                priority,
+                alternates: {
+                    languages: {
+                        ko: `${baseUrl}/ko${path}`,
+                        en: `${baseUrl}/en${path}`,
+                    },
+                },
+            })
+        })
+    })
+
+    // dynamic prompts
+    PROMPTS.forEach((prompt) => {
+        locales.forEach((locale) => {
+            const path = `/prompts/${prompt.id}`
+            entries.push({
+                url: `${baseUrl}/${locale}${path}`,
+                lastModified: new Date(),
+                changeFrequency: 'monthly',
+                priority: 0.7,
+                alternates: {
+                    languages: {
+                        ko: `${baseUrl}/ko${path}`,
+                        en: `${baseUrl}/en${path}`,
+                    },
+                },
+            })
+        })
+    })
+
+    // dynamic blog posts
+    BLOG_POSTS.forEach((post) => {
+        locales.forEach((locale) => {
+            const path = `/blog/${post.slug}`
+            entries.push({
+                url: `${baseUrl}/${locale}${path}`,
+                lastModified: new Date(post.date),
+                changeFrequency: 'monthly',
+                priority: 0.8,
+                alternates: {
+                    languages: {
+                        ko: `${baseUrl}/ko${path}`,
+                        en: `${baseUrl}/en${path}`,
+                    },
+                },
+            })
+        })
+    })
+
+    return entries
 }

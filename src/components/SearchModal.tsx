@@ -2,8 +2,8 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
+import { useLocale } from 'next-intl';
 import { PROMPTS } from '@/data/prompts';
-import { BLOG_POSTS } from '@/data/blog-posts';
 import styles from './SearchModal.module.css';
 
 interface SearchModalProps {
@@ -16,25 +16,45 @@ const TRENDING_KEYWORDS = ['ChatGPT', 'Claude', 'SEO', '코딩', '마케팅', '�
 export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
     const [query, setQuery] = useState('');
     const [activeIndex, setActiveIndex] = useState(-1);
+    const [blogPosts, setBlogPosts] = useState<any[]>([]);
     const inputRef = useRef<HTMLInputElement>(null);
     const router = useRouter();
+    const locale = useLocale();
+
+    // Load localized blog posts
+    useEffect(() => {
+        const loadBlogPosts = async () => {
+            try {
+                const data = await import(`@/data/blog-posts/${locale}`);
+                setBlogPosts(data.BLOG_POSTS);
+            } catch (e) {
+                console.error('Failed to load localized blog posts for search', e);
+                // Fallback to Korean if it fails (optional)
+                try {
+                   const fallback = await import('@/data/blog-posts/ko');
+                   setBlogPosts(fallback.BLOG_POSTS);
+                } catch (err) {}
+            }
+        };
+        loadBlogPosts();
+    }, [locale]);
 
     // 프롬프트 검색
     const promptResults = query.length >= 1
         ? PROMPTS.filter(p =>
             p.title.toLowerCase().includes(query.toLowerCase()) ||
             p.description.toLowerCase().includes(query.toLowerCase()) ||
-            p.tags.some(t => t.toLowerCase().includes(query.toLowerCase())) ||
+            p.tags.some((t: string) => t.toLowerCase().includes(query.toLowerCase())) ||
             p.category.toLowerCase().includes(query.toLowerCase())
         ).slice(0, 5)
         : [];
 
     // 블로그 검색
     const blogResults = query.length >= 1
-        ? BLOG_POSTS.filter(p =>
+        ? blogPosts.filter(p =>
             p.title.toLowerCase().includes(query.toLowerCase()) ||
             p.description.toLowerCase().includes(query.toLowerCase()) ||
-            p.tags.some(t => t.toLowerCase().includes(query.toLowerCase()))
+            p.tags.some((t: string) => t.toLowerCase().includes(query.toLowerCase()))
         ).slice(0, 3)
         : [];
 
@@ -46,7 +66,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
         if (item.type === 'prompt') {
             router.push(`/prompts/${item.data.id}`);
         } else {
-            router.push(`/blog/${(item.data as typeof BLOG_POSTS[0]).slug}`);
+            router.push(`/blog/${(item.data as any).slug}`);
         }
         onClose();
     }, [totalResults, router, onClose]);

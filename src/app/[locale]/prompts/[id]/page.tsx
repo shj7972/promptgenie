@@ -2,15 +2,15 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { PROMPTS } from '@/data/prompts';
-import { BLOG_POSTS } from '@/data/blog-posts';
+import { BLOG_POSTS } from '@/data/blog-posts/ko';
 import ShareButtons from '@/components/ShareButtons';
 import styles from './page.module.css';
 
 interface PageProps {
-    params: Promise<{ id: string }>;
+    params: Promise<{ id: string; locale: string }>;
 }
 
-export async function generateStaticParams() {
+export async function generateStaticParams({ params: { locale } }: { params: { locale: string } }) {
     return PROMPTS.map((prompt) => ({
         id: prompt.id,
     }));

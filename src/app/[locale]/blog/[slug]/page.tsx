@@ -1,24 +1,30 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { BLOG_POSTS } from '@/data/blog-posts';
-import { PROMPTS } from '@/data/prompts';
 import ShareButtons from '@/components/ShareButtons';
+import { BLOG_POSTS as KO_POSTS } from '@/data/blog-posts/ko';
+import { BLOG_POSTS as EN_POSTS } from '@/data/blog-posts/en';
 import styles from './page.module.css';
 
 interface PageProps {
-    params: Promise<{ slug: string }>;
+    params: Promise<{ slug: string; locale: string }>;
 }
 
-export async function generateStaticParams() {
-    return BLOG_POSTS.map((post) => ({
+export async function generateStaticParams({ params: { locale } }: { params: { locale: string } }) {
+    const posts = locale === 'en' ? EN_POSTS : KO_POSTS;
+    return posts.map((post) => ({
         slug: post.slug,
     }));
 }
 
+async function getBlogPost(slug: string, locale: string) {
+    const posts = locale === 'en' ? EN_POSTS : KO_POSTS;
+    return posts.find((p) => p.slug === slug);
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-    const { slug } = await params;
-    const post = BLOG_POSTS.find(p => p.slug === slug);
+    const { slug, locale } = await params;
+    const post = await getBlogPost(slug, locale);
 
     if (!post) {
         return { title: '글을 찾을 수 없습니다 | PromptGenie' };
@@ -133,20 +139,22 @@ function formatInline(text: string): string {
 }
 
 export default async function BlogDetailPage({ params }: PageProps) {
-    const { slug } = await params;
-    const post = BLOG_POSTS.find(p => p.slug === slug);
+    const { slug, locale } = await params;
+    const post = await getBlogPost(slug, locale);
 
     if (!post) {
         notFound();
     }
 
-    const relatedPosts = BLOG_POSTS
-        .filter(p => p.slug !== post.slug)
+    const allPosts = locale === 'en' ? EN_POSTS : KO_POSTS;
+    const relatedPosts = allPosts
+        .filter((p) => p.slug !== post.slug)
         .slice(0, 3);
 
     // 블로그 태그와 관련된 프롬프트 추천
+    const { PROMPTS } = await import('@/data/prompts');
     const relatedPrompts = PROMPTS
-        .filter(p => post.tags.some(tag =>
+        .filter(p => post.tags.some((tag: string) =>
             p.tags.some(pt => pt.toLowerCase().includes(tag.toLowerCase())) ||
             p.category.toLowerCase().includes(tag.toLowerCase()) ||
             p.title.toLowerCase().includes(tag.toLowerCase())
@@ -226,7 +234,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
                 <h1 className={styles.title}>{post.title}</h1>
                 <p className={styles.description}>{post.description}</p>
                 <div className={styles.tags}>
-                    {post.tags.map(tag => (
+                    {post.tags.map((tag: string) => (
                         <span key={tag} className={styles.tag}>#{tag}</span>
                     ))}
                 </div>
@@ -273,7 +281,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
                     <>
                         <h3 className={styles.relatedTitle}>📚 다른 글도 읽어보세요</h3>
                         <div className={styles.relatedGrid}>
-                            {relatedPosts.map(rp => (
+                            {relatedPosts.map((rp: any) => (
                                 <Link key={rp.slug} href={`/blog/${rp.slug}`} className={`${styles.relatedCard} glass`}>
                                     <h4>{rp.title}</h4>
                                     <p>{rp.description}</p>

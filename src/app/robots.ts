@@ -10,7 +10,7 @@ export default function robots(): MetadataRoute.Robots {
             {
                 userAgent: '*',
                 allow: '/',
-                disallow: ['/api/', '/profile/'],
+                disallow: ['/api/', '/ko/profile/', '/en/profile/', '/profile/'],
             }
         ],
         sitemap: 'https://promptgenie.kr/sitemap.xml',
