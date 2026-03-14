@@ -1,16 +1,23 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { PROMPTS, Prompt } from '@/data/prompts';
+import { useParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
+import { PROMPTS } from '@/data/prompts';
+import { PROMPTS_EN } from '@/data/prompts-en';
 import { useFavorites } from '@/hooks/useFavorites';
 import PromptCard from '@/components/PromptCard';
 import styles from './page.module.css';
 
 export default function ProfilePage() {
-    const [username, setUsername] = useState('홍길동');
+    const params = useParams();
+    const locale = params?.locale as string;
+    const t = useTranslations('Profile');
+    
+    const [username, setUsername] = useState(t('defaultName'));
     const [isEditing, setIsEditing] = useState(false);
     const [editValue, setEditValue] = useState('');
-    const [favoritePrompts, setFavoritePrompts] = useState<Prompt[]>([]);
+    const [favoritePrompts, setFavoritePrompts] = useState<any[]>([]);
 
     const { favorites } = useFavorites();
 
@@ -24,9 +31,10 @@ export default function ProfilePage() {
     }, []);
 
     useEffect(() => {
-        const filtered = PROMPTS.filter(p => favorites.includes(p.id));
+        const prompts = locale === 'en' ? PROMPTS_EN : PROMPTS;
+        const filtered = prompts.filter(p => favorites.includes(p.id));
         setFavoritePrompts(filtered);
-    }, [favorites]);
+    }, [favorites, locale]);
 
     const handleEditStart = () => {
         setEditValue(username);
@@ -84,7 +92,7 @@ export default function ProfilePage() {
                                     </>
                                 )}
                             </div>
-                            <p className={styles.stats}>{favoritePrompts.length}개의 저장된 프롬프트 • 0개의 기여</p>
+                            <p className={styles.stats}>{t('savedCount', { count: favoritePrompts.length })}</p>
                         </div>
                     </div>
                 </div>
@@ -97,19 +105,19 @@ export default function ProfilePage() {
                             className={`${styles.tab} ${activeTab === 'favorites' ? styles.active : ''}`}
                             onClick={() => setActiveTab('favorites')}
                         >
-                            즐겨찾기
+                            {t('tabs.favorites')}
                         </button>
                         <button
                             className={`${styles.tab} ${activeTab === 'contributions' ? styles.active : ''}`}
                             onClick={() => setActiveTab('contributions')}
                         >
-                            내 기여
+                            {t('tabs.contributions')}
                         </button>
                         <button
                             className={`${styles.tab} ${activeTab === 'collections' ? styles.active : ''}`}
                             onClick={() => setActiveTab('collections')}
                         >
-                            컬렉션
+                            {t('tabs.collections')}
                         </button>
                     </div>
 
@@ -120,8 +128,8 @@ export default function ProfilePage() {
                             ))}
                             {favoritePrompts.length === 0 && (
                                 <div className={styles.empty}>
-                                    <p>아직 저장된 프롬프트가 없습니다.</p>
-                                    <a href="/library" className={styles.browseLink}>라이브러리 둘러보기</a>
+                                    <p>{t('empty.noFavorites')}</p>
+                                    <a href={`/${locale}/library`} className={styles.browseLink}>{t('empty.browseLibrary')}</a>
                                 </div>
                             )}
                         </div>
@@ -129,16 +137,16 @@ export default function ProfilePage() {
 
                     {activeTab === 'contributions' && (
                         <div className={styles.empty}>
-                            <p>아직 기여한 프롬프트가 없습니다.</p>
-                            <p style={{ fontSize: '0.9rem', marginTop: '0.5rem', opacity: 0.7 }}>나만의 멋진 프롬프트를 만들어 공유해보세요!</p>
-                            <a href="/generator" className={styles.browseLink}>프롬프트 만들기</a>
+                            <p>{t('empty.noContributions')}</p>
+                            <p style={{ fontSize: '0.9rem', marginTop: '0.5rem', opacity: 0.7 }}>{t('empty.sharePrompt')}</p>
+                            <a href={`/${locale}/generator`} className={styles.browseLink}>{t('empty.createPrompt')}</a>
                         </div>
                     )}
 
                     {activeTab === 'collections' && (
                         <div className={styles.empty}>
-                            <p>아직 생성된 컬렉션이 없습니다.</p>
-                            <p style={{ fontSize: '0.9rem', marginTop: '0.5rem', opacity: 0.7 }}>프롬프트를 모아 나만의 컬렉션을 만들어보세요.</p>
+                            <p>{t('empty.noCollections')}</p>
+                            <p style={{ fontSize: '0.9rem', marginTop: '0.5rem', opacity: 0.7 }}>{t('empty.gatherCollections')}</p>
                         </div>
                     )}
                 </div>

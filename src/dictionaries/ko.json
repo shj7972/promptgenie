@@ -277,5 +277,209 @@
     "home": "홈",
     "library": "라이브러리",
     "backToLibrary": "← 라이브러리로 돌아가기"
+  },
+  "Profile": {
+    "defaultName": "홍길동",
+    "savedCount": "{count}개의 저장된 프롬프트 • 0개의 기여",
+    "tabs": {
+      "favorites": "즐겨찾기",
+      "contributions": "내 기여",
+      "collections": "컬렉션"
+    },
+    "empty": {
+      "noFavorites": "아직 저장된 프롬프트가 없습니다.",
+      "browseLibrary": "라이브러리 둘러보기",
+      "noContributions": "아직 기여한 프롬프트가 없습니다.",
+      "sharePrompt": "나만의 멋진 프롬프트를 만들어 공유해보세요!",
+      "createPrompt": "프롬프트 만들기",
+      "noCollections": "아직 생성된 컬렉션이 없습니다.",
+      "gatherCollections": "프롬프트를 모아 나만의 컬렉션을 만들어보세요."
+    }
+  },
+  "BlogWriter": {
+    "title": "AI 블로그 글쓰기",
+    "subtitle": "주제만 입력하세요. AI가 매력적인 블로그 포스팅을 완성해 드립니다.",
+    "selectModel": "AI 모델 선택",
+    "apiKey": "API Key",
+    "getKey": "키 발급받기 →",
+    "enterKey": "{provider} Key 입력",
+    "hide": "숨기기",
+    "show": "보기",
+    "keyStoreNote": "* 입력하신 키는 서버에 저장되지 않고 브라우저에만 암호화되어 저장됩니다.",
+    "topicLabel": "블로그 주제",
+    "topicPlaceholder": "예: 2024년 여름 휴가 추천지, 원격 근무 생산성 높이는 법",
+    "audienceLabel": "타겟 독자 (선택사항)",
+    "audiencePlaceholder": "예: 20대 대학생, 워킹맘, 캠핑 입문자",
+    "keywordsLabel": "핵심 키워드 (쉼표로 구분)",
+    "keywordsPlaceholder": "예: 힐링, 가성비, 감성숙소",
+    "toneLabel": "글의 분위기 (Tone)",
+    "tones": {
+      "professional": "전문적인",
+      "friendly": "친근한",
+      "witty": "재치있는",
+      "emotional": "감성적인"
+    },
+    "writing": "글을 작성 중입니다...",
+    "generateBtn": "블로그 포스팅 생성하기",
+    "resultTitle": "생성된 결과",
+    "resultPlaceholder": "이곳에 AI가 작성한 글이 표시됩니다. 필요에 따라 직접 수정도 가능합니다.",
+    "copyBtn": "복사하기",
+    "errorNoKey": "API Key를 입력해주세요.",
+    "errorNoTopic": "블로그 주제를 입력해주세요.",
+    "successCopy": "내용이 클립보드에 복사되었습니다!",
+    "errorGen": "오류가 발생했습니다: {error}"
+  },
+  "Guide": {
+    "title": "프롬프트 엔지니어링 가이드",
+    "subtitle": "AI 모델의 성능을 100% 끌어올리는 효과적인 대화 기법을 배워보세요.",
+    "intro": {
+      "title": "프롬프트 엔지니어링이란?",
+      "content": "프롬프트 엔지니어링은 AI 모델(ChatGPT, Claude, Gemini 등)로부터 최적의 결과물을 얻기 위해 입력값(프롬프트)을 설계하고 최적화하는 기술입니다. 단순히 질문하는 것을 넘어, AI가 문맥을 정확히 파악하고 원하는 형식과 톤으로 답변하게 만드는 것이 핵심입니다."
+    },
+    "basic": {
+      "title": "핵심 4요소 (Framework)",
+      "subtitle": "좋은 프롬프트는 다음 네 가지 요소를 포함할 때 가장 강력합니다.",
+      "role": {
+        "title": "역할 부여 (Role)",
+        "desc": "AI에게 특정 전문가의 정체성을 부여하세요.",
+        "example": "\"당신은 10년 경력의 시니어 마케터입니다.\""
+      },
+      "context": {
+        "title": "맥락 제공 (Context)",
+        "desc": "배경 지식과 구체적인 상황을 설명하세요.",
+        "example": "\"중소기업을 위한 SNS 광고 캠페인을 기획 중입니다.\""
+      },
+      "task": {
+        "title": "명확한 작업 (Task)",
+        "desc": "수행해야 할 일을 구체적으로 명령하세요.",
+        "example": "\"인스타그램용 카피 3개를 작성해 주세요.\""
+      },
+      "style": {
+        "title": "출력 형식 (Style/Constraint)",
+        "desc": "어조, 분량, 형식을 지정하세요.",
+        "example": "\"친근한 말투로, 각 100자 이내, 표 형식으로 작성하세요.\""
+      }
+    },
+    "advanced": {
+      "title": "고급 기법 (Advanced Techniques)",
+      "fewShot": {
+        "title": "Few-Shot 프로그래밍",
+        "desc": "AI에게 원하는 결과물의 예시를 몇 개 제공하여 품질을 높이는 기법입니다.",
+        "example": "입력: 사과 -> 출력: 빨강, 입력: 바나나 -> 출력: 노랑, 입력: 포도 -> 출력: ?"
+      },
+      "cot": {
+        "title": "생각의 사슬 (Chain of Thought)",
+        "desc": "AI에게 '단계별로 생각하라'고 지시하여 복잡한 논리 문제를 해결하는 방법입니다.",
+        "example": "\"이 문제를 해결하기 위해 단계별로 추론하고 그 과정을 설명해 주세요.\""
+      }
+    },
+    "closing": "지금 바로 라이브러리에서 검증된 프롬프트들을 확인하고 직접 실습해 보세요!",
+    "viewLibrary": "라이브러리로 이동하기",
+    "rules": {
+      "title": "3가지 골든 룰",
+      "rule1": { "name": "페르소나 정의", "desc": "AI에게 구체적인 역할을 부여하세요." },
+      "rule2": { "name": "제약 조건 제공", "desc": "하지 말아야 할 것을 명확히 하세요." },
+      "rule3": { "name": "예시 활용", "desc": "기대하는 입출력 쌍의 예시를 제공하세요." }
+    },
+    "techniques": {
+      "title": "5가지 핵심 프롬프팅 기법"
+    },
+    "comparison": {
+      "title": "비교: 좋은 예 vs 나쁜 예"
+    },
+    "models": {
+      "title": "AI 모델별 특징 비교"
+    },
+    "modelsItems": [
+      {
+        "name": "ChatGPT (OpenAI)",
+        "icon": "🤖",
+        "desc": "강력한 범용성과 추론 능력을 갖추고 있으며, 특히 Chain of Thought 기법에 매우 뛰어난 성능을 보입니다."
+      },
+      {
+        "name": "Claude (Anthropic)",
+        "icon": "🎨",
+        "desc": "자연스러운 문체와 창의적 글쓰기, 그리고 코딩 능력에서 강점을 보입니다. 긴 컨텍스트 처리에 유리합니다."
+      },
+      {
+        "name": "Gemini (Google)",
+        "icon": "🌐",
+        "desc": "구글 서비스와의 연동성이 뛰어나고, 대규모 데이터 처리 및 멀티모달 프롬프팅에 최적화되어 있습니다."
+      }
+    ],
+    "techniquesItems": {
+      "zeroShot": {
+        "title": "Zero-Shot Prompting",
+        "desc": "예시 없이 직접 지시만으로 결과를 얻는 가장 기본적인 기법입니다.",
+        "example": "다음 문장의 감정을 분석해줘: '오늘 날씨가 정말 좋다'",
+        "note": "간단한 분류, 요약, 번역 등 명확한 작업에 효과적입니다."
+      },
+      "fewShot": {
+        "title": "Few-Shot Prompting",
+        "desc": "2~5개의 입출력 예시를 제공하여 AI에게 원하는 패턴을 학습시키는 기법입니다.",
+        "example": "긍정: 날씨가 좋다 → 😊, 부정: 비가 온다 → 😢, 분석: 오늘은 기분이 안좋다 → ?",
+        "note": "특정 형식, 논리, 또는 스타일의 결과물이 필요할 때 매우 효과적입니다."
+      },
+      "cot": {
+        "title": "Chain of Thought (CoT)",
+        "desc": "AI에게 '단계별로 생각하라'고 지시하여 추론 과정을 거치게 하는 기법입니다.",
+        "example": "이 문제를 단계별로(step-by-step) 풀어줘. 각 단계의 논리적 근거를 설명해줘.",
+        "note": "수학 문제, 논리적 추론, 코드 디버깅 등 복잡한 분석에 정확도를 높여줍니다."
+      },
+      "rolePlaying": {
+        "title": "Role Playing",
+        "desc": "AI에게 특정 전문가, 캐릭터, 또는 관점의 역할을 부여하는 기법입니다.",
+        "example": "당신은 10년 경력의 UX 디자인 리드입니다. 이 앱의 온보딩 플로우를 비판적으로 검토해주세요.",
+        "note": "전문적인 조언, 다각도 분석, 면접 연습 등 관점이 필요한 작업에 활용 가능합니다."
+      },
+      "structuredOutput": {
+        "title": "Structured Output",
+        "desc": "JSON, 표, 마크다운 등 특정 출력 형식을 지정하여 구조화된 결과를 얻는 기법입니다.",
+        "example": "분석 결과를 다음 JSON 형식으로 출력해줘: {\"sentiment\": string, \"score\": number}",
+        "note": "데이터 처리 파이프라인이나 API 응답 생성 등 자동화 처리가 필요할 때 필수적입니다."
+      }
+    },
+    "comparisonItems": [
+      {
+        "bad": "고양이에 대한 짧은 이야기를 써줘.",
+        "badAnalysis": "너무 모호합니다. AI는 말투, 길이, 줄거리에 대한 맥락을 알 수 없습니다.",
+        "good": "전문적인 창의적 작가처럼 행동해줘. 사실은 비밀 요원인 고양이에 대한 300자 내외의 위트 있는 짧은 이야기를 써줘. 비 내리는 골목에서의 긴장감 넘치는 만남에 집중해줘.",
+        "goodAnalysis": "명확한 페르소나, 구체적인 제약 조건, 확실한 줄거리 맥락이 포함되어 있습니다."
+      }
+    ],
+    "categoryTips": { "title": "카테고리별 프롬프트 활용 팁" },
+    "categoryTipsItems": {
+      "writing": { "title": "✍️ 글쓰기", "desc": "정확한 역할(Role)을 부여하고, 원하는 톤(Tone), 길이(Length), 타겟 독자를 지정하세요." },
+      "coding": { "title": "💻 코딩", "desc": "프로그래밍 언어, 프레임워크 버전, 기술 스택을 명시하고 원하는 출력 형식(예: 코드 블록, 설명 포함)을 지정하세요." },
+      "business": { "title": "📊 비즈니스", "desc": "메일 작성, 보고서 요약 등 구체적인 상황과 목적을 설명하세요." },
+      "learning": { "title": "🎓 학습", "desc": "AI에게 튜터 역할을 부여하고, 내 수준에 맞는 설명을 요청하세요." },
+      "ideas": { "title": "💡 아이디어", "desc": "브레인스토밍 시 '자유로운 생각' 또는 '비판적 검토' 등 모드를 설정하세요." },
+      "design": { "title": "🎨 디자인/기획", "desc": "타겟 유저, 서비스 특성, 디자인 가이드라인 등을 상세히 제공하세요." }
+    },
+    "mistakes": { "title": "자주 하는 실수 & 해결 방법" },
+    "mistakesItems": [
+      {
+        "title": "너무 모호한 지시",
+        "desc": "'좋은 글을 써줘'처럼 구체적이지 않은 프롬프트는 피하세요.",
+        "solution": "주제, 분량, 톤, 타겟 독자 등을 명시하세요."
+      },
+      {
+        "title": "맥락(Context) 부족",
+        "desc": "AI가 배경 지식 없이 답변하게 하지 마세요.",
+        "solution": "관련된 배경 배경 정보와 제약 조건을 충분히 제공하세요."
+      }
+    ],
+    "glossary": { "title": "프롬프트 용어 사전" },
+    "glossaryItems": [
+      { "term": "LLM", "desc": "Large Language Model. 대규모 데이터를 학습한 인공지능 언어 모델." },
+      { "term": "Hallucination", "desc": "AI가 정보를 조작하거나 틀린 답변을 자신 있게 말하는 현상." },
+      { "term": "Context Window", "desc": "AI가 한 번에 기억하고 처리할 수 있는 정보의 양." }
+    ],
+    "cta": {
+      "title": "지금 바로 실전에 활용해 보세요",
+      "desc": "PromptGenie 라이브러리에서 90개 이상의 검증된 프롬프트를 탐색하고, 나만의 맞춤 프롬프트를 만들어 보세요.",
+      "library": "라이브러리 탐색",
+      "generator": "프롬프트 생성기"
+    }
   }
 }

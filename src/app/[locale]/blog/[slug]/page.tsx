@@ -148,8 +148,11 @@ export default async function BlogDetailPage({ params }: PageProps) {
         .filter((p) => p.slug !== post.slug)
         .slice(0, 3);
 
-    const { PROMPTS } = await import('@/data/prompts');
-    const relatedPrompts = PROMPTS
+    const prompts = locale === 'en' 
+        ? (await import('@/data/prompts-en')).PROMPTS_EN 
+        : (await import('@/data/prompts')).PROMPTS;
+        
+    const relatedPrompts = prompts
         .filter(p => post.tags.some((tag: string) =>
             p.tags.some(pt => pt.toLowerCase().includes(tag.toLowerCase())) ||
             p.category.toLowerCase().includes(tag.toLowerCase()) ||

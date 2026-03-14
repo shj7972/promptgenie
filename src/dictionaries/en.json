@@ -277,5 +277,209 @@
     "home": "Home",
     "library": "Library",
     "backToLibrary": "← Back to Library"
+  },
+  "Profile": {
+    "defaultName": "John Doe",
+    "savedCount": "{count} saved prompts • 0 contributions",
+    "tabs": {
+      "favorites": "Favorites",
+      "contributions": "My Contributions",
+      "collections": "Collections"
+    },
+    "empty": {
+      "noFavorites": "No saved prompts yet.",
+      "browseLibrary": "Browse Library",
+      "noContributions": "No contributions yet.",
+      "sharePrompt": "Create and share your own awesome prompts!",
+      "createPrompt": "Create Prompt",
+      "noCollections": "No collections created yet.",
+      "gatherCollections": "Gather prompts to create your own collections."
+    }
+  },
+  "BlogWriter": {
+    "title": "AI Blog Writer",
+    "subtitle": "Just enter the topic. AI will complete an attractive blog post for you.",
+    "selectModel": "Select AI Model",
+    "apiKey": "API Key",
+    "getKey": "Get Key →",
+    "enterKey": "Enter {provider} Key",
+    "hide": "Hide",
+    "show": "Show",
+    "keyStoreNote": "* Your entered keys are not stored on the server and are only stored encrypted in your browser.",
+    "topicLabel": "Blog Topic",
+    "topicPlaceholder": "e.g. 2024 Summer Vacation Recommendations, How to increase remote work productivity",
+    "audienceLabel": "Target Audience (Optional)",
+    "audiencePlaceholder": "e.g. College students in their 20s, working moms, camping beginners",
+    "keywordsLabel": "Key Keywords (Comma separated)",
+    "keywordsPlaceholder": "e.g. Healing, Cost-effective, Emotional stay",
+    "toneLabel": "Tone",
+    "tones": {
+      "professional": "Professional",
+      "friendly": "Friendly",
+      "witty": "Witty",
+      "emotional": "Emotional"
+    },
+    "writing": "Writing post...",
+    "generateBtn": "Generate Blog Post",
+    "resultTitle": "Generated Result",
+    "resultPlaceholder": "AI-written text will appear here. You can edit the content directly as needed.",
+    "copyBtn": "Copy",
+    "errorNoKey": "Please enter the API Key.",
+    "errorNoTopic": "Please enter the blog topic.",
+    "successCopy": "Copied to clipboard!",
+    "errorGen": "An error occurred: {error}"
+  },
+  "Guide": {
+    "title": "Prompt Engineering Guide",
+    "subtitle": "Learn effective communication techniques to unlock 100% of AI performance.",
+    "intro": {
+      "title": "What is Prompt Engineering?",
+      "content": "Prompt engineering is the art of designing and optimizing inputs (prompts) to get the best possible results from AI models like ChatGPT, Claude, and Gemini. Beyond just asking questions, it's about making AI understand context accurately and respond in the desired format and tone."
+    },
+    "basic": {
+      "title": "Key 4 Elements (Framework)",
+      "subtitle": "Good prompts are most powerful when they include these four elements.",
+      "role": {
+        "title": "Role Assignment",
+        "desc": "Assign a specific expert identity to the AI.",
+        "example": "\"You are a senior marketer with 10 years of experience.\""
+      },
+      "context": {
+        "title": "Context Provision",
+        "desc": "Provide background knowledge and describe specific situations.",
+        "example": "\"I am planning an SNS ad campaign for a small business.\""
+      },
+      "task": {
+        "title": "Clear Task",
+        "desc": "Give specific instructions for the work to be performed.",
+        "example": "\"Write 3 ad copies for Instagram.\""
+      },
+      "style": {
+        "title": "Output Style/Constraint",
+        "desc": "Specify tone, length, and format.",
+        "example": "\"Write in a friendly tone, under 100 characters each, in a table format.\""
+      }
+    },
+    "advanced": {
+      "title": "Advanced Techniques",
+      "fewShot": {
+        "title": "Few-Shot Prompting",
+        "desc": "Provide a few examples of the desired output to improve quality.",
+        "example": "Input: Apple -> Output: Red, Input: Banana -> Output: Yellow, Input: Grape -> Output: ?"
+      },
+      "cot": {
+        "title": "Chain of Thought (CoT)",
+        "desc": "Instruct AI to 'think step by step' to solve complex logic problems.",
+        "example": "\"Reason through this step-by-step to solve the problem and explain your process.\""
+      }
+    },
+    "closing": "Check out verified prompts in the library and start practicing now!",
+    "viewLibrary": "Go to Library",
+    "rules": {
+      "title": "3 Golden Rules",
+      "rule1": { "name": "Role Assignment", "desc": "Assign a specific expert identity to the AI." },
+      "rule2": { "name": "Constraints", "desc": "Be clear about what NOT to do." },
+      "rule3": { "name": "Few-Shot Learning", "desc": "Provide examples of expected input/output pairs." }
+    },
+    "techniques": {
+      "title": "5 Key Prompting Techniques"
+    },
+    "comparison": {
+      "title": "Comparison: Good vs Bad Examples"
+    },
+    "models": {
+      "title": "AI Model Comparison"
+    },
+    "modelsItems": [
+      {
+        "name": "ChatGPT (OpenAI)",
+        "icon": "🤖",
+        "desc": "Strong reasoning and general knowledge. Excellent at CoT."
+      },
+      {
+        "name": "Claude (Anthropic)",
+        "icon": "🎨",
+        "desc": "Natural coding and creative writing. High safety standards."
+      },
+      {
+        "name": "Gemini (Google)",
+        "icon": "🌐",
+        "desc": "Deep integration with Google services. Multimodal expert."
+      }
+    ],
+    "techniquesItems": {
+      "zeroShot": {
+        "title": "Zero-Shot Prompting",
+        "desc": "The most basic technique for getting results by direct instruction without examples.",
+        "example": "Analyze the sentiment of the following sentence: 'The weather is really nice today'",
+        "note": "Effective for clear tasks such as simple classification, summarization, and translation."
+      },
+      "fewShot": {
+        "title": "Few-Shot Prompting",
+        "desc": "A technique for training AI on desired patterns by providing 2-5 input/output examples.",
+        "example": "Positive: Good weather → 😊, Negative: Raining → 😢, Analysis: I feel bad today → ?",
+        "note": "Very effective when results of a specific format, logic, or style are required."
+      },
+      "cot": {
+        "title": "Chain of Thought (CoT)",
+        "desc": "A technique that instructs the AI to 'think step-by-step' to go through a reasoning process.",
+        "example": "Solve this problem step-by-step. Explain the logical basis for each step.",
+        "note": "Greatly improves accuracy in complex analyses such as math problems, logical reasoning, and code debugging."
+      },
+      "rolePlaying": {
+        "title": "Role Playing",
+        "desc": "A technique that assigns AI a role as a specific expert, character, or perspective.",
+        "example": "You are a UX design lead with 10 years of experience. Please critically review this app's onboarding flow.",
+        "note": "Applicable for professional advice, multifaceted analysis, interview practice, etc."
+      },
+      "structuredOutput": {
+        "title": "Structured Output",
+        "desc": "A technique for obtaining structured results by specifying formatting such as JSON, tables, or Markdown.",
+        "example": "Output the analysis results in the following JSON format: {\"sentiment\": string, \"score\": number}",
+        "note": "Essential when automated processing is required, such as data processing pipelines or API response generation."
+      }
+    },
+    "comparisonItems": [
+      {
+        "bad": "Write a short story about a cat.",
+        "badAnalysis": "Too vague. AI cannot know the context for tone, length, or plot.",
+        "good": "Act like a professional creative writer. Write a witty short story of about 300 characters about a cat who is actually a secret agent. Focus on a tense meeting in a rainy alley.",
+        "goodAnalysis": "Includes a clear persona, specific constraints, and clear plot context."
+      }
+    ],
+    "categoryTips": { "title": "Tips by Category" },
+    "categoryTipsItems": {
+      "writing": { "title": "✍️ Writing", "desc": "Assign a precise role, and specify the desired tone, length, and target audience." },
+      "coding": { "title": "💻 Coding", "desc": "Specify programming languages, framework versions, technology stacks, and desired output format (e.g., code blocks, with comments)." },
+      "business": { "title": "📊 Business", "desc": "Describe the specific situation and purpose, such as email writing or report summarization." },
+      "learning": { "title": "🎓 Learning", "desc": "Assign a tutor role to the AI and ask for explanations that fit your level." },
+      "ideas": { "title": "💡 Ideas", "desc": "Set modes such as 'free thinking' or 'critical review' during brainstorming." },
+      "design": { "title": "🎨 Design/Planning", "desc": "Provide details such as target users, service characteristics, and design guidelines." }
+    },
+    "mistakes": { "title": "Common Mistakes" },
+    "mistakesItems": [
+      {
+        "title": "Too Vague Instructions",
+        "desc": "Avoid unspecific prompts like 'write a good post'.",
+        "solution": "Specify the topic, length, tone, target audience, and output format."
+      },
+      {
+        "title": "Lack of Context",
+        "desc": "Don't let the AI answer without any background knowledge.",
+        "solution": "Provide sufficient relevant background information and constraints."
+      }
+    ],
+    "glossary": { "title": "Glossary" },
+    "glossaryItems": [
+      { "term": "LLM", "desc": "Large Language Model. An AI language model trained on massive amounts of data." },
+      { "term": "Hallucination", "desc": "A phenomenon where AI manipulates information or speaks incorrect answers with confidence." },
+      { "term": "Context Window", "desc": "The amount of information that AI can remember and process at once." }
+    ],
+    "cta": {
+      "title": "Start using it in practice now",
+      "desc": "Explore over 90 verified prompts in the PromptGenie library and create your own custom prompts.",
+      "library": "Explore Library",
+      "generator": "Prompt Generator"
+    }
   }
 }

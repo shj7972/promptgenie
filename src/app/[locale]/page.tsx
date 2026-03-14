@@ -4,6 +4,7 @@ import { Link } from '@/i18n/routing';
 import FAQ from '@/components/FAQ';
 import NewsletterForm from '@/components/NewsletterForm';
 import { PROMPTS } from '@/data/prompts';
+import { PROMPTS_EN } from '@/data/prompts-en';
 import styles from './page.module.css';
 
 export default async function Home({
@@ -132,7 +133,10 @@ export default async function Home({
           <h2 className={styles.sectionTitle}>{t('popular.title')}</h2>
           <p className={styles.sectionSubtitle}>{t('popular.subtitle')}</p>
           <div className={styles.popularGrid}>
-            {[...PROMPTS].sort((a, b) => b.likes - a.likes).slice(0, 6).map(prompt => (
+            {[...(locale === 'en' ? PROMPTS_EN : PROMPTS)]
+              .sort((a, b) => b.likes - a.likes)
+              .slice(0, 6)
+              .map(prompt => (
               <Link key={prompt.id} href={`/prompts/${prompt.id}`} className={`${styles.popularCard} glass`}>
                 <div className={styles.popularCardHeader}>
                   <span className={`${styles.modelTag} ${styles[prompt.model.toLowerCase()]}`}>{prompt.model}</span>

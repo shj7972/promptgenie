@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import { PROMPTS } from '@/data/prompts';
+import { PROMPTS_EN } from '@/data/prompts-en';
 import { BLOG_POSTS as KO_BLOG_POSTS } from '@/data/blog-posts/ko';
 import { BLOG_POSTS as EN_BLOG_POSTS } from '@/data/blog-posts/en';
 import ShareButtons from '@/components/ShareButtons';
@@ -13,14 +14,26 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-    return PROMPTS.map((prompt) => ({
-        id: prompt.id,
-    }));
+    const locales = ['ko', 'en'];
+    const params = [];
+    
+    for (const locale of locales) {
+        const prompts = locale === 'en' ? PROMPTS_EN : PROMPTS;
+        for (const prompt of prompts) {
+            params.push({
+                locale,
+                id: prompt.id,
+            });
+        }
+    }
+    
+    return params;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { id, locale } = await params;
-    const prompt = PROMPTS.find(p => p.id === id);
+    const prompts = locale === 'en' ? PROMPTS_EN : PROMPTS;
+    const prompt = prompts.find(p => p.id === id);
     const t = await getTranslations({ locale, namespace: 'PromptDetail' });
 
     if (!prompt) {
@@ -205,7 +218,8 @@ function getCategoryArticle(category: string, locale: string): { title: string; 
 
 export default async function PromptDetailPage({ params }: PageProps) {
     const { id, locale } = await params;
-    const prompt = PROMPTS.find(p => p.id === id);
+    const prompts = locale === 'en' ? PROMPTS_EN : PROMPTS;
+    const prompt = prompts.find(p => p.id === id);
     const t = await getTranslations({ locale, namespace: 'PromptDetail' });
 
     if (!prompt) {
@@ -214,7 +228,7 @@ export default async function PromptDetailPage({ params }: PageProps) {
 
     const BLOG_POSTS = locale === 'en' ? EN_BLOG_POSTS : KO_BLOG_POSTS;
 
-    const relatedPrompts = PROMPTS
+    const relatedPrompts = prompts
         .filter(p => p.category === prompt.category && p.id !== prompt.id)
         .slice(0, 4);
 
