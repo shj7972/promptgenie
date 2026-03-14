@@ -1,8 +1,9 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
+import { useRouter } from '@/i18n/routing';
 import { PROMPTS } from '@/data/prompts';
 import styles from './SearchModal.module.css';
 
@@ -11,17 +12,18 @@ interface SearchModalProps {
     onClose: () => void;
 }
 
-const TRENDING_KEYWORDS = ['ChatGPT', 'Claude', 'SEO', '코딩', '마케팅', '이메일', '블로그', '프롬프트 작성법'];
-
 export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
+    const t = useTranslations('SearchModal');
+    const locale = useLocale();
+    const router = useRouter();
+
+    const trendingKeywords = t.raw('trendingKeywords') as string[];
+
     const [query, setQuery] = useState('');
     const [activeIndex, setActiveIndex] = useState(-1);
     const [blogPosts, setBlogPosts] = useState<any[]>([]);
     const inputRef = useRef<HTMLInputElement>(null);
-    const router = useRouter();
-    const locale = useLocale();
 
-    // Load localized blog posts
     useEffect(() => {
         const loadBlogPosts = async () => {
             try {
@@ -29,7 +31,6 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                 setBlogPosts(data.BLOG_POSTS);
             } catch (e) {
                 console.error('Failed to load localized blog posts for search', e);
-                // Fallback to Korean if it fails (optional)
                 try {
                    const fallback = await import('@/data/blog-posts/ko');
                    setBlogPosts(fallback.BLOG_POSTS);
@@ -39,22 +40,20 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
         loadBlogPosts();
     }, [locale]);
 
-    // 프롬프트 검색
     const promptResults = query.length >= 1
         ? PROMPTS.filter(p =>
             p.title.toLowerCase().includes(query.toLowerCase()) ||
             p.description.toLowerCase().includes(query.toLowerCase()) ||
-            p.tags.some((t: string) => t.toLowerCase().includes(query.toLowerCase())) ||
+            p.tags.some((tag: string) => tag.toLowerCase().includes(query.toLowerCase())) ||
             p.category.toLowerCase().includes(query.toLowerCase())
         ).slice(0, 5)
         : [];
 
-    // 블로그 검색
     const blogResults = query.length >= 1
         ? blogPosts.filter(p =>
             p.title.toLowerCase().includes(query.toLowerCase()) ||
             p.description.toLowerCase().includes(query.toLowerCase()) ||
-            p.tags.some((t: string) => t.toLowerCase().includes(query.toLowerCase()))
+            p.tags.some((tag: string) => tag.toLowerCase().includes(query.toLowerCase()))
         ).slice(0, 3)
         : [];
 
@@ -71,7 +70,6 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
         onClose();
     }, [totalResults, router, onClose]);
 
-    // 키보드 네비게이션
     useEffect(() => {
         if (!isOpen) return;
 
@@ -94,7 +92,6 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [isOpen, activeIndex, totalResults.length, navigateToResult, onClose]);
 
-    // 모달 열릴 때 포커스
     useEffect(() => {
         if (isOpen) {
             setQuery('');
@@ -107,16 +104,10 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
         return () => { document.body.style.overflow = ''; };
     }, [isOpen]);
 
-    // Ctrl+K / Cmd+K 글로벌 단축키
     useEffect(() => {
         const handleGlobalKeyDown = (e: KeyboardEvent) => {
             if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
                 e.preventDefault();
-                if (isOpen) {
-                    onClose();
-                } else {
-                    // 부모에서 열기 처리
-                }
             }
         };
         window.addEventListener('keydown', handleGlobalKeyDown);
@@ -133,28 +124,25 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
     return (
         <div className={styles.overlay} onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
             <div className={styles.modal}>
-                {/* 검색 헤더 */}
                 <div className={styles.searchHeader}>
                     <svg className={styles.searchIcon} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
                     <input
                         ref={inputRef}
                         type="text"
                         className={styles.searchInput}
-                        placeholder="프롬프트, 블로그 글 검색..."
+                        placeholder={t('placeholder')}
                         value={query}
                         onChange={(e) => { setQuery(e.target.value); setActiveIndex(-1); }}
                     />
                     <span className={styles.closeHint} onClick={onClose}>ESC</span>
                 </div>
 
-                {/* 본문 */}
                 <div className={styles.body}>
                     {query.length === 0 ? (
-                        /* 인기 검색어 */
                         <div className={styles.section}>
-                            <div className={styles.sectionTitle}>인기 검색어</div>
+                            <div className={styles.sectionTitle}>{t('trending')}</div>
                             <div className={styles.trendingList}>
-                                {TRENDING_KEYWORDS.map(keyword => (
+                                {trendingKeywords.map(keyword => (
                                     <button key={keyword} className={styles.trendingTag} onClick={() => handleTrendingClick(keyword)}>
                                         {keyword}
                                     </button>
@@ -163,18 +151,17 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                         </div>
                     ) : totalResults.length === 0 ? (
                         <div className={styles.noResults}>
-                            &quot;{query}&quot;에 대한 검색 결과가 없습니다.
+                            {t('noResults', { query })}
                         </div>
                     ) : (
                         <>
-                            {/* 프롬프트 결과 */}
                             {promptResults.length > 0 && (
                                 <div className={styles.section}>
-                                    <div className={styles.sectionTitle}>프롬프트</div>
+                                    <div className={styles.sectionTitle}>{t('prompts')}</div>
                                     {promptResults.map((prompt, idx) => (
                                         <a
                                             key={prompt.id}
-                                            href={`/prompts/${prompt.id}`}
+                                            href={`/${locale}/prompts/${prompt.id}`}
                                             className={`${styles.resultItem} ${activeIndex === idx ? styles.active : ''}`}
                                             onClick={(e) => { e.preventDefault(); navigateToResult(idx); }}
                                             onMouseEnter={() => setActiveIndex(idx)}
@@ -194,16 +181,15 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                                 </div>
                             )}
 
-                            {/* 블로그 결과 */}
                             {blogResults.length > 0 && (
                                 <div className={styles.section}>
-                                    <div className={styles.sectionTitle}>블로그</div>
+                                    <div className={styles.sectionTitle}>{t('blog')}</div>
                                     {blogResults.map((post, idx) => {
                                         const globalIdx = promptResults.length + idx;
                                         return (
                                             <a
                                                 key={post.slug}
-                                                href={`/blog/${post.slug}`}
+                                                href={`/${locale}/blog/${post.slug}`}
                                                 className={`${styles.resultItem} ${activeIndex === globalIdx ? styles.active : ''}`}
                                                 onClick={(e) => { e.preventDefault(); navigateToResult(globalIdx); }}
                                                 onMouseEnter={() => setActiveIndex(globalIdx)}
@@ -225,12 +211,11 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                     )}
                 </div>
 
-                {/* 푸터 */}
                 <div className={styles.footer}>
                     <div className={styles.footerKeys}>
-                        <span className={styles.footerKey}><kbd>↑</kbd><kbd>↓</kbd> 이동</span>
-                        <span className={styles.footerKey}><kbd>Enter</kbd> 선택</span>
-                        <span className={styles.footerKey}><kbd>ESC</kbd> 닫기</span>
+                        <span className={styles.footerKey}><kbd>↑</kbd><kbd>↓</kbd> {t('navMove')}</span>
+                        <span className={styles.footerKey}><kbd>Enter</kbd> {t('navSelect')}</span>
+                        <span className={styles.footerKey}><kbd>ESC</kbd> {t('navClose')}</span>
                     </div>
                 </div>
             </div>

@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 import { Prompt } from '@/data/prompts';
 import { useFavorites } from '@/hooks/useFavorites';
 import styles from './PromptCard.module.css';
@@ -11,6 +13,8 @@ interface PromptCardProps {
 }
 
 export default function PromptCard({ prompt }: PromptCardProps) {
+    const t = useTranslations('Common');
+    const locale = useLocale();
     const [copied, setCopied] = useState(false);
     const { isFavorite, toggleFavorite } = useFavorites();
 
@@ -29,7 +33,7 @@ export default function PromptCard({ prompt }: PromptCardProps) {
     };
 
     return (
-        <Link href={`/prompts/${prompt.id}`} className={styles.cardLink}>
+        <Link href={`/${locale}/prompts/${prompt.id}`} className={styles.cardLink}>
             <div className={`${styles.card} glass`}>
                 <div className={styles.header}>
                     <span className={`${styles.badge} ${styles[prompt.model.toLowerCase()]}`}>
@@ -39,7 +43,7 @@ export default function PromptCard({ prompt }: PromptCardProps) {
                         <button
                             className={`${styles.favoriteBtn} ${isFavorite(prompt.id) ? styles.active : ''}`}
                             onClick={handleFavoriteClick}
-                            aria-label="즐겨찾기 토글"
+                            aria-label={t('toggleFavorite')}
                         >
                             {isFavorite(prompt.id) ? '❤️' : '🤍'}
                         </button>
@@ -58,11 +62,10 @@ export default function PromptCard({ prompt }: PromptCardProps) {
                         className={`${styles.copyBtn} ${copied ? styles.copied : ''}`}
                         onClick={copyToClipboard}
                     >
-                        {copied ? '복사 완료!' : '프롬프트 복사'}
+                        {copied ? t('copied') : t('copyPrompt')}
                     </button>
                 </div>
             </div>
         </Link>
     );
 }
-

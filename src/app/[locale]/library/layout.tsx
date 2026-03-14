@@ -1,17 +1,27 @@
 import { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 
-export const metadata: Metadata = {
-    title: 'AI 프롬프트 라이브러리 - ChatGPT, Claude, Gemini 프롬프트 모음',
-    description: '글쓰기, 코딩, 비즈니스, 학습, 아이디어 등 카테고리별로 분류된 90개 이상의 검증된 AI 프롬프트를 무료로 탐색하세요. ChatGPT, Claude, Gemini 모델별 최적화.',
-    openGraph: {
-        title: 'AI 프롬프트 라이브러리 | 프롬프트지니',
-        description: '카테고리별로 분류된 90개 이상의 검증된 AI 프롬프트를 무료로 탐색하세요.',
-        type: 'website',
-    },
-    alternates: {
-        canonical: 'https://promptgenie.kr/library',
-    },
-};
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'LibraryMeta' });
+
+    return {
+        title: t('title'),
+        description: t('description'),
+        openGraph: {
+            title: t('ogTitle'),
+            description: t('ogDescription'),
+            type: 'website',
+        },
+        alternates: {
+            canonical: `https://promptgenie.kr/${locale}/library`,
+        },
+    };
+}
 
 export default function LibraryLayout({
     children,

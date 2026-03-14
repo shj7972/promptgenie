@@ -1,6 +1,10 @@
+import { getTranslations } from 'next-intl/server';
+import { Link } from '@/i18n/routing';
 import styles from './Footer.module.css';
 
-export default function Footer() {
+export default async function Footer() {
+    const t = await getTranslations('Footer');
+
     return (
         <footer className={styles.footer}>
             <div className="section-container">
@@ -10,26 +14,26 @@ export default function Footer() {
                             <span className="gradient-text">Prompt</span>Genie
                         </div>
                         <p className={styles.description}>
-                            엄선된 프롬프트와 강력한 생성 도구를 통해 AI의 잠재력을 최대한 활용하세요.
+                            {t('description')}
                         </p>
                     </div>
                     <div className={styles.links}>
                         <div className={styles.column}>
-                            <h4>플랫폼</h4>
-                            <a href="/library">라이브러리</a>
-                            <a href="/generator">생성기</a>
-                            <a href="/guide">가이드</a>
+                            <h4>{t('platform')}</h4>
+                            <Link href="/library">{t('library')}</Link>
+                            <Link href="/generator">{t('generator')}</Link>
+                            <Link href="/guide">{t('guide')}</Link>
                         </div>
                         <div className={styles.column}>
-                            <h4>커뮤니티</h4>
-                            <a href="/explore">탐색</a>
-                            <a href="/trending">인기 프롬프트</a>
-                            <a href="/contributors">기여자</a>
+                            <h4>{t('community')}</h4>
+                            <Link href="/explore">{t('explore')}</Link>
+                            <Link href="/trending">{t('trending')}</Link>
+                            <Link href="/contributors">{t('contributors')}</Link>
                         </div>
                         <div className={styles.column}>
-                            <h4>정책</h4>
-                            <a href="/privacy">개인정보처리방침</a>
-                            <a href="/terms">이용약관</a>
+                            <h4>{t('legal')}</h4>
+                            <Link href="/privacy">{t('privacy')}</Link>
+                            <Link href="/terms">{t('terms')}</Link>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { getTranslations } from 'next-intl/server';
 import ShareButtons from '@/components/ShareButtons';
 import { BLOG_POSTS as KO_POSTS } from '@/data/blog-posts/ko';
 import { BLOG_POSTS as EN_POSTS } from '@/data/blog-posts/en';
@@ -25,22 +26,23 @@ async function getBlogPost(slug: string, locale: string) {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { slug, locale } = await params;
     const post = await getBlogPost(slug, locale);
+    const t = await getTranslations({ locale, namespace: 'BlogDetail' });
 
     if (!post) {
-        return { title: '글을 찾을 수 없습니다 | PromptGenie' };
+        return { title: t('notFound') };
     }
 
     return {
         title: `${post.title}`,
         description: post.description,
         openGraph: {
-            title: `${post.title} | 프롬프트지니 블로그`,
+            title: `${post.title} | ${t('ogSiteName')}`,
             description: post.description,
             type: 'article',
             publishedTime: post.date,
         },
         alternates: {
-            canonical: `https://promptgenie.kr/blog/${slug}`,
+            canonical: `https://promptgenie.kr/${locale}/blog/${slug}`,
         },
     };
 }
@@ -53,7 +55,6 @@ function renderContent(content: string) {
     while (i < lines.length) {
         const line = lines[i];
 
-        // Code blocks
         if (line.trim().startsWith('```')) {
             const codeLines: string[] = [];
             i++;
@@ -61,7 +62,7 @@ function renderContent(content: string) {
                 codeLines.push(lines[i]);
                 i++;
             }
-            i++; // skip closing ```
+            i++;
             elements.push(
                 <pre key={`code-${i}`}>
                     <code>{codeLines.join('\n')}</code>
@@ -70,7 +71,6 @@ function renderContent(content: string) {
             continue;
         }
 
-        // Headings
         if (line.startsWith('### ')) {
             elements.push(<h3 key={`h3-${i}`}>{line.slice(4)}</h3>);
             i++;
@@ -82,7 +82,6 @@ function renderContent(content: string) {
             continue;
         }
 
-        // Bullet lists
         if (line.trim().startsWith('- ')) {
             const items: string[] = [];
             while (i < lines.length && lines[i].trim().startsWith('- ')) {
@@ -99,7 +98,6 @@ function renderContent(content: string) {
             continue;
         }
 
-        // Numbered lists
         if (/^\d+\.\s/.test(line.trim())) {
             const items: string[] = [];
             while (i < lines.length && /^\d+\.\s/.test(lines[i].trim())) {
@@ -116,13 +114,11 @@ function renderContent(content: string) {
             continue;
         }
 
-        // Empty line
         if (line.trim() === '') {
             i++;
             continue;
         }
 
-        // Paragraph
         elements.push(
             <p key={`p-${i}`} dangerouslySetInnerHTML={{ __html: formatInline(line) }} />
         );
@@ -141,6 +137,7 @@ function formatInline(text: string): string {
 export default async function BlogDetailPage({ params }: PageProps) {
     const { slug, locale } = await params;
     const post = await getBlogPost(slug, locale);
+    const t = await getTranslations({ locale, namespace: 'BlogDetail' });
 
     if (!post) {
         notFound();
@@ -151,7 +148,6 @@ export default async function BlogDetailPage({ params }: PageProps) {
         .filter((p) => p.slug !== post.slug)
         .slice(0, 3);
 
-    // 블로그 태그와 관련된 프롬프트 추천
     const { PROMPTS } = await import('@/data/prompts');
     const relatedPrompts = PROMPTS
         .filter(p => post.tags.some((tag: string) =>
@@ -172,14 +168,14 @@ export default async function BlogDetailPage({ params }: PageProps) {
         },
         publisher: {
             '@type': 'Organization',
-            name: '프롬프트지니 (PromptGenie)',
+            name: 'PromptGenie',
             url: 'https://promptgenie.kr',
         },
         datePublished: post.date,
         dateModified: post.date,
         mainEntityOfPage: {
             '@type': 'WebPage',
-            '@id': `https://promptgenie.kr/blog/${post.slug}`,
+            '@id': `https://promptgenie.kr/${locale}/blog/${post.slug}`,
         },
     };
 
@@ -190,20 +186,20 @@ export default async function BlogDetailPage({ params }: PageProps) {
             {
                 '@type': 'ListItem',
                 position: 1,
-                name: '홈',
+                name: locale === 'en' ? 'Home' : '홈',
                 item: 'https://promptgenie.kr',
             },
             {
                 '@type': 'ListItem',
                 position: 2,
-                name: '블로그',
-                item: 'https://promptgenie.kr/blog',
+                name: locale === 'en' ? 'Blog' : '블로그',
+                item: `https://promptgenie.kr/${locale}/blog`,
             },
             {
                 '@type': 'ListItem',
                 position: 3,
                 name: post.title,
-                item: `https://promptgenie.kr/blog/${post.slug}`,
+                item: `https://promptgenie.kr/${locale}/blog/${post.slug}`,
             },
         ],
     };
@@ -218,8 +214,8 @@ export default async function BlogDetailPage({ params }: PageProps) {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
             />
-            <Link href="/blog" className={styles.backLink}>
-                ← 블로그로 돌아가기
+            <Link href={`/${locale}/blog`} className={styles.backLink}>
+                {t('backLink')}
             </Link>
 
             <header className={styles.header}>
@@ -239,9 +235,8 @@ export default async function BlogDetailPage({ params }: PageProps) {
                     ))}
                 </div>
                 <ShareButtons
-                    url={`https://promptgenie.kr/blog/${post.slug}`}
+                    url={`https://promptgenie.kr/${locale}/blog/${post.slug}`}
                     title={post.title}
-                    description={post.description}
                 />
             </header>
 
@@ -251,20 +246,20 @@ export default async function BlogDetailPage({ params }: PageProps) {
 
             <footer className={styles.footer}>
                 <div className={`${styles.ctaSection} glass`}>
-                    <h3>더 많은 AI 인사이트를 받아보세요</h3>
-                    <p>PromptGenie 라이브러리에서 90개 이상의 검증된 프롬프트를 탐색해 보세요.</p>
+                    <h3>{t('ctaTitle')}</h3>
+                    <p>{t('ctaDesc')}</p>
                     <div className={styles.ctaButtons}>
-                        <Link href="/library" className={styles.ctaPrimary}>라이브러리 탐색</Link>
-                        <Link href="/guide" className={styles.ctaSecondary}>가이드 보기</Link>
+                        <Link href={`/${locale}/library`} className={styles.ctaPrimary}>{t('ctaLibrary')}</Link>
+                        <Link href={`/${locale}/guide`} className={styles.ctaSecondary}>{t('ctaGuide')}</Link>
                     </div>
                 </div>
 
                 {relatedPrompts.length > 0 && (
                     <>
-                        <h3 className={styles.relatedTitle}>🎯 이 글과 관련된 프롬프트</h3>
+                        <h3 className={styles.relatedTitle}>{t('relatedPrompts')}</h3>
                         <div className={styles.relatedGrid}>
                             {relatedPrompts.map(rp => (
-                                <Link key={rp.id} href={`/prompts/${rp.id}`} className={`${styles.relatedCard} glass`}>
+                                <Link key={rp.id} href={`/${locale}/prompts/${rp.id}`} className={`${styles.relatedCard} glass`}>
                                     <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem' }}>
                                         <span style={{ fontSize: '0.7rem', padding: '2px 8px', borderRadius: '4px', background: 'rgba(139, 92, 246, 0.2)', color: '#a78bfa' }}>{rp.model}</span>
                                         <span style={{ fontSize: '0.7rem', padding: '2px 8px', borderRadius: '4px', background: 'rgba(255, 255, 255, 0.05)', color: '#888' }}>{rp.difficulty}</span>
@@ -279,10 +274,10 @@ export default async function BlogDetailPage({ params }: PageProps) {
 
                 {relatedPosts.length > 0 && (
                     <>
-                        <h3 className={styles.relatedTitle}>📚 다른 글도 읽어보세요</h3>
+                        <h3 className={styles.relatedTitle}>{t('relatedPosts')}</h3>
                         <div className={styles.relatedGrid}>
                             {relatedPosts.map((rp: any) => (
-                                <Link key={rp.slug} href={`/blog/${rp.slug}`} className={`${styles.relatedCard} glass`}>
+                                <Link key={rp.slug} href={`/${locale}/blog/${rp.slug}`} className={`${styles.relatedCard} glass`}>
                                     <h4>{rp.title}</h4>
                                     <p>{rp.description}</p>
                                 </Link>

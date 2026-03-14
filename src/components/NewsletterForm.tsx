@@ -1,9 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import styles from './NewsletterForm.module.css';
 
 export default function NewsletterForm() {
+    const t = useTranslations('Newsletter');
     const [email, setEmail] = useState('');
     const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
@@ -13,8 +15,6 @@ export default function NewsletterForm() {
             setStatus('error');
             return;
         }
-        // TODO: 실제 이메일 수집 API 연동
-        // 현재는 로컬 스토리지에 저장
         const subscribers = JSON.parse(localStorage.getItem('newsletter_subscribers') || '[]');
         if (!subscribers.includes(email)) {
             subscribers.push(email);
@@ -30,33 +30,33 @@ export default function NewsletterForm() {
             <div className={styles.container}>
                 <div className={styles.content}>
                     <h2 className={styles.title}>
-                        매주 새로운 AI 프롬프트를 받아보세요
+                        {t('title')}
                     </h2>
                     <p className={styles.description}>
-                        최신 프롬프트 엔지니어링 팁, 실전 프롬프트, AI 업계 인사이트를 매주 이메일로 보내드립니다.
+                        {t('description')}
                     </p>
                     <form onSubmit={handleSubmit} className={styles.form}>
                         <div className={styles.inputGroup}>
                             <input
                                 type="email"
-                                placeholder="이메일 주소를 입력하세요"
+                                placeholder={t('placeholder')}
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 className={styles.input}
-                                aria-label="뉴스레터 이메일 주소"
+                                aria-label={t('ariaLabel')}
                             />
                             <button type="submit" className={styles.button}>
-                                구독하기
+                                {t('subscribe')}
                             </button>
                         </div>
                         {status === 'success' && (
-                            <p className={styles.successMsg}>구독 완료! 매주 유용한 프롬프트를 보내드릴게요.</p>
+                            <p className={styles.successMsg}>{t('successMsg')}</p>
                         )}
                         {status === 'error' && (
-                            <p className={styles.errorMsg}>올바른 이메일 주소를 입력해주세요.</p>
+                            <p className={styles.errorMsg}>{t('errorMsg')}</p>
                         )}
                     </form>
-                    <p className={styles.privacy}>스팸 없이, 언제든 구독 취소 가능합니다.</p>
+                    <p className={styles.privacy}>{t('privacy')}</p>
                 </div>
             </div>
         </section>

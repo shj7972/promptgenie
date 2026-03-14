@@ -1,15 +1,17 @@
-'use client';
-
+import { getTranslations } from 'next-intl/server';
+import { Link } from '@/i18n/routing';
 import { CONTRIBUTORS } from '@/data/contributors';
 import styles from './page.module.css';
 
-export default function ContributorsPage() {
+export default async function ContributorsPage() {
+    const t = await getTranslations('Contributors');
+
     return (
         <div className={styles.container}>
             <header className={styles.header}>
-                <h1 className="gradient-text">명예의 전당</h1>
+                <h1 className="gradient-text">{t('title')}</h1>
                 <p className={styles.subtitle}>
-                    PromptGenie 커뮤니티를 빛낸 멋진 기여자들을 소개합니다.
+                    {t('subtitle')}
                 </p>
             </header>
 
@@ -45,11 +47,11 @@ export default function ContributorsPage() {
             </div>
 
             <section className={styles.cta}>
-                <h2>당신도 기여자가 될 수 있습니다</h2>
-                <p>나만의 프롬프트를 공유하고 커뮤니티와 함께 성장하세요.</p>
-                <a href="/submit" className={styles.ctaBtn}>
-                    프롬프트 제출하기
-                </a>
+                <h2>{t('ctaTitle')}</h2>
+                <p>{t('ctaDesc')}</p>
+                <Link href="/submit" className={styles.ctaBtn}>
+                    {t('ctaBtn')}
+                </Link>
             </section>
         </div>
     );

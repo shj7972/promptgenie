@@ -78,5 +78,204 @@
       "readSuffix": "min read",
       "readMore": "Read More"
     }
+  },
+  "Library": {
+    "filterToggleOpen": "Filters & Categories",
+    "filterToggleClose": "Close Filters",
+    "resetFilters": "Reset Filters",
+    "byRole": "🎯 By Role",
+    "category": "Category",
+    "aiModel": "AI Model",
+    "difficulty": "Difficulty",
+    "searchPlaceholder": "Search prompts (e.g. 'coding', 'marketing', 'SEO')...",
+    "promptCount": "{count} prompts",
+    "sortPopular": "Popular",
+    "sortName": "A-Z",
+    "sortNewest": "Newest",
+    "noResults": "No prompts found matching your criteria.",
+    "resetFiltersBtn": "Reset Filters",
+    "all": "All",
+    "audiences": {
+      "all": "All",
+      "marketer": "Marketer",
+      "developer": "Developer",
+      "student": "Student",
+      "planner": "Planner",
+      "creator": "Creator",
+      "worker": "Office Worker"
+    }
+  },
+  "LibraryMeta": {
+    "title": "AI Prompt Library - ChatGPT, Claude, Gemini Prompt Collection",
+    "description": "Explore 90+ verified AI prompts organized by category for free. Writing, coding, business, learning, and more. Optimized for ChatGPT, Claude, and Gemini.",
+    "ogTitle": "AI Prompt Library | PromptGenie",
+    "ogDescription": "Explore 90+ verified AI prompts organized by category for free."
+  },
+  "Generator": {
+    "stepOf": "Step {current} of {total}",
+    "suggestionTitle": "Suggested Answers:",
+    "back": "Back",
+    "next": "Next",
+    "generate": "Generate Prompt",
+    "resultTitle": "Your Generated Prompt",
+    "saveChanges": "Save Changes",
+    "editPrompt": "Edit Prompt",
+    "saveFile": "Save as File (.txt)",
+    "restart": "Start Over",
+    "copyClipboard": "Copy to Clipboard",
+    "copied": "Copied!",
+    "steps": [
+      {
+        "question": "What is the AI's main role?",
+        "placeholder": "e.g. Senior Software Engineer, Creative Writer, Business Consultant",
+        "suggestions": ["Senior Software Engineer", "Marketing Expert", "Professional Counselor", "Data Analyst", "Novelist", "Blog Writer", "YouTube Creator", "Translator"]
+      },
+      {
+        "question": "What specific task should it perform?",
+        "placeholder": "e.g. Code review, Write a travel blog post, Create marketing plan",
+        "suggestions": ["Code review for current project", "Write a blog post", "Summarize weekly work report", "Draft a business proposal", "Translate product manual", "Write a YouTube script", "Translate English email", "Generate interview questions"]
+      },
+      {
+        "question": "What details or context should be included?",
+        "placeholder": "e.g. Specific tech stack, Target audience, Technical constraints",
+        "suggestions": ["Beginner-friendly level", "Consider technical constraints", "Target audience: working professionals", "Include key data summary", "Concise list format", "Kind and empathetic tone", "Include SEO-optimized keywords", "Output in Markdown format"]
+      },
+      {
+        "question": "What tone or style do you prefer?",
+        "placeholder": "e.g. Professional, Humorous, Concise, Academic",
+        "suggestions": ["Professional and trustworthy", "Humorous and friendly", "Academic and objective", "Clear and concise", "Persuasive", "Emotional and warm", "Logical and analytical", "Using witty analogies"]
+      }
+    ],
+    "promptTemplate": "Role: {role}.\nTask: {task}.\n\nDetails & Context:\n{context}\n\nOutput Style:\nYour answer should be in a {style} tone. Please maintain high quality and accuracy.",
+    "rolePlaceholder": "[role]",
+    "taskPlaceholder": "[task]",
+    "contextPlaceholder": "[context]",
+    "stylePlaceholder": "[style]"
+  },
+  "GeneratorMeta": {
+    "title": "Custom AI Prompt Generator - Build Your Prompt in 4 Steps",
+    "description": "Enter role, task, context, and style step by step to automatically generate optimized AI prompts. Compatible with ChatGPT, Claude, and Gemini.",
+    "ogTitle": "Custom AI Prompt Generator | PromptGenie",
+    "ogDescription": "4-step custom AI prompt generator. Enter role, task, context, and style to instantly generate prompts."
+  },
+  "Footer": {
+    "description": "Maximize AI potential with curated prompts and powerful generation tools.",
+    "platform": "Platform",
+    "library": "Library",
+    "generator": "Generator",
+    "guide": "Guide",
+    "community": "Community",
+    "explore": "Explore",
+    "trending": "Trending Prompts",
+    "contributors": "Contributors",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "FAQ": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "What is PromptGenie?",
+        "answer": "PromptGenie is a prompt engineering platform that helps you get the best performance from AI models like ChatGPT, Claude, and Gemini. It provides a verified prompt library and tools to create and optimize your own prompts."
+      },
+      {
+        "question": "Why is prompt engineering important?",
+        "answer": "Even with the same AI model, the quality of the answer depends entirely on the quality of the prompt. Through prompt engineering, you can reduce AI hallucinations and get more accurate, creative results that better match your intentions."
+      },
+      {
+        "question": "Is this service free?",
+        "answer": "Yes, the basic prompt library browsing and generation features of PromptGenie are currently free. We aim to help everyone easily utilize AI technology. Premium plans with advanced analytics may be introduced in the future."
+      },
+      {
+        "question": "Can I share my own prompts?",
+        "answer": "Absolutely! PromptGenie is oriented toward community-driven growth. You can share your unique prompts through the 'Contributors' page and refine them further through feedback from other users."
+      }
+    ]
+  },
+  "Newsletter": {
+    "title": "Get New AI Prompts Every Week",
+    "description": "We deliver the latest prompt engineering tips, practical prompts, and AI industry insights to your inbox every week.",
+    "placeholder": "Enter your email address",
+    "ariaLabel": "Newsletter email address",
+    "subscribe": "Subscribe",
+    "successMsg": "Subscribed! We'll send you useful prompts every week.",
+    "errorMsg": "Please enter a valid email address.",
+    "privacy": "No spam. Unsubscribe anytime."
+  },
+  "Common": {
+    "copyPrompt": "Copy Prompt",
+    "copied": "Copied!",
+    "toggleFavorite": "Toggle Favorite",
+    "shareLabel": "Share",
+    "kakaoShare": "Share on KakaoStory",
+    "naverShare": "Share on Naver",
+    "twitterShare": "Share on X (Twitter)",
+    "facebookShare": "Share on Facebook",
+    "copyLink": "Copy Link"
+  },
+  "Submit": {
+    "title": "Submit a Prompt",
+    "subtitle": "Share your unique prompt and become a contributor to PromptGenie.",
+    "guidelinesTitle": "Submission Guidelines",
+    "purpose": "Clear Purpose:",
+    "purposeDesc": "The problem the prompt solves must be clearly defined.",
+    "instructions": "Specific Instructions:",
+    "instructionsDesc": "Use structures and language that AI can easily understand.",
+    "verified": "Verified Results:",
+    "verifiedDesc": "Only submit prompts you have actually tested and gotten good results from.",
+    "processTitle": "Process",
+    "step1Title": "Submit",
+    "step1Desc": "Submit your prompt via Google Form.",
+    "step2Title": "Review",
+    "step2Desc": "Our team reviews and tests the content. (1-2 days)",
+    "step3Title": "Publish",
+    "step3Desc": "Added to the library and credited as a contributor.",
+    "readyText": "Ready? Click the button below to fill out the form.",
+    "submitBtn": "Submit via Google Form",
+    "note": "* Submitted prompts will be added to the library after review, and you will be credited as a contributor."
+  },
+  "Contributors": {
+    "title": "Hall of Fame",
+    "subtitle": "Meet the amazing contributors who have made the PromptGenie community shine.",
+    "ctaTitle": "You Can Be a Contributor Too",
+    "ctaDesc": "Share your unique prompts and grow together with the community.",
+    "ctaBtn": "Submit a Prompt"
+  },
+  "SearchModal": {
+    "placeholder": "Search prompts, blog posts...",
+    "trending": "Trending",
+    "noResults": "No results found for \"{query}\".",
+    "prompts": "Prompts",
+    "blog": "Blog",
+    "navMove": "navigate",
+    "navSelect": "select",
+    "navClose": "close",
+    "trendingKeywords": ["ChatGPT", "Claude", "SEO", "coding", "marketing", "email", "blog", "prompt writing"]
+  },
+  "BlogDetail": {
+    "backLink": "← Back to Blog",
+    "ctaTitle": "Get More AI Insights",
+    "ctaDesc": "Explore 90+ verified prompts in the PromptGenie library.",
+    "ctaLibrary": "Explore Library",
+    "ctaGuide": "View Guide",
+    "relatedPrompts": "🎯 Related Prompts",
+    "relatedPosts": "📚 More Articles",
+    "notFound": "Post not found | PromptGenie",
+    "ogSiteName": "PromptGenie Blog"
+  },
+  "PromptDetail": {
+    "notFound": "Prompt not found | PromptGenie",
+    "siteName": "PromptGenie",
+    "fullPrompt": "📋 Full Prompt",
+    "inputExample": "💬 Input Example",
+    "outputExample": "✨ Output Example",
+    "tags": "🏷️ Tags",
+    "usageTips": "💡 Usage Tips",
+    "relatedPrompts": "🔗 Related Prompts",
+    "relatedBlog": "📚 Related Blog Posts",
+    "home": "Home",
+    "library": "Library",
+    "backToLibrary": "← Back to Library"
   }
 }
