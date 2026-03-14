@@ -4,12 +4,25 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
-import { Prompt } from '@/data/prompts';
 import { useFavorites } from '@/hooks/useFavorites';
 import styles from './PromptCard.module.css';
 
+interface AnyPrompt {
+    id: string;
+    title: string;
+    description: string;
+    content: string;
+    category: string;
+    model: string;
+    difficulty: string;
+    tags: string[];
+    likes: number;
+    inputExample?: string;
+    outputExample?: string;
+}
+
 interface PromptCardProps {
-    prompt: Prompt;
+    prompt: AnyPrompt;
 }
 
 export default function PromptCard({ prompt }: PromptCardProps) {

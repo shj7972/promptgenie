@@ -4,7 +4,6 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
 import { useRouter } from '@/i18n/routing';
-import { PROMPTS } from '@/data/prompts';
 import styles from './SearchModal.module.css';
 
 interface SearchModalProps {
@@ -22,26 +21,37 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
     const [query, setQuery] = useState('');
     const [activeIndex, setActiveIndex] = useState(-1);
     const [blogPosts, setBlogPosts] = useState<any[]>([]);
+    const [prompts, setPrompts] = useState<any[]>([]);
     const inputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
-        const loadBlogPosts = async () => {
+        const loadData = async () => {
             try {
-                const data = await import(`@/data/blog-posts/${locale}`);
-                setBlogPosts(data.BLOG_POSTS);
+                const blogData = await import(`@/data/blog-posts/${locale}`);
+                setBlogPosts(blogData.BLOG_POSTS);
             } catch (e) {
-                console.error('Failed to load localized blog posts for search', e);
                 try {
-                   const fallback = await import('@/data/blog-posts/ko');
-                   setBlogPosts(fallback.BLOG_POSTS);
+                    const fallback = await import('@/data/blog-posts/ko');
+                    setBlogPosts(fallback.BLOG_POSTS);
                 } catch (err) {}
             }
+            try {
+                if (locale === 'en') {
+                    const promptData = await import('@/data/prompts-en');
+                    setPrompts(promptData.PROMPTS_EN);
+                } else {
+                    const promptData = await import('@/data/prompts');
+                    setPrompts(promptData.PROMPTS);
+                }
+            } catch (e) {
+                console.error('Failed to load localized prompts for search', e);
+            }
         };
-        loadBlogPosts();
+        loadData();
     }, [locale]);
 
     const promptResults = query.length >= 1
-        ? PROMPTS.filter(p =>
+        ? prompts.filter(p =>
             p.title.toLowerCase().includes(query.toLowerCase()) ||
             p.description.toLowerCase().includes(query.toLowerCase()) ||
             p.tags.some((tag: string) => tag.toLowerCase().includes(query.toLowerCase())) ||
