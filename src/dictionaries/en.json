@@ -332,6 +332,13 @@
   "Guide": {
     "title": "Prompt Engineering Guide",
     "subtitle": "Learn effective communication techniques to unlock 100% of AI performance.",
+    "labels": {
+      "example": "Example",
+      "proTip": "Pro Tip:",
+      "badExample": "Bad Example",
+      "goodExample": "Good Example",
+      "solution": "Solution"
+    },
     "intro": {
       "title": "What is Prompt Engineering?",
       "content": "Prompt engineering is the art of designing and optimizing inputs (prompts) to get the best possible results from AI models like ChatGPT, Claude, and Gemini. Beyond just asking questions, it's about making AI understand context accurately and respond in the desired format and tone."

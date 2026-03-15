@@ -133,7 +133,7 @@ export default async function Home({
           <h2 className={styles.sectionTitle}>{t('popular.title')}</h2>
           <p className={styles.sectionSubtitle}>{t('popular.subtitle')}</p>
           <div className={styles.popularGrid}>
-            {[...(locale === 'en' ? PROMPTS_EN : PROMPTS)]
+            {[...(locale === 'ko' ? PROMPTS : PROMPTS_EN)]
               .sort((a, b) => b.likes - a.likes)
               .slice(0, 6)
               .map(prompt => (

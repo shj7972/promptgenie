@@ -31,7 +31,7 @@ export default function ProfilePage() {
     }, []);
 
     useEffect(() => {
-        const prompts = locale === 'en' ? PROMPTS_EN : PROMPTS;
+        const prompts = locale === 'ko' ? PROMPTS : PROMPTS_EN;
         const filtered = prompts.filter(p => favorites.includes(p.id));
         setFavoritePrompts(filtered);
     }, [favorites, locale]);

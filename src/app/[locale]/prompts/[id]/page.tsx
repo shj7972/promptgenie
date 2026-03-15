@@ -18,7 +18,7 @@ export async function generateStaticParams() {
     const params = [];
     
     for (const locale of locales) {
-        const prompts = locale === 'en' ? PROMPTS_EN : PROMPTS;
+        const prompts = locale === 'ko' ? PROMPTS : PROMPTS_EN;
         for (const prompt of prompts) {
             params.push({
                 locale,
@@ -32,7 +32,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { id, locale } = await params;
-    const prompts = locale === 'en' ? PROMPTS_EN : PROMPTS;
+    const prompts = locale === 'ko' ? PROMPTS : PROMPTS_EN;
     const prompt = prompts.find(p => p.id === id);
     const t = await getTranslations({ locale, namespace: 'PromptDetail' });
 
@@ -145,7 +145,7 @@ const KO_USAGE_TIPS: Record<string, string[]> = {
 };
 
 function getUsageTips(category: string, locale: string): string[] {
-    const tips = locale === 'en' ? EN_USAGE_TIPS : KO_USAGE_TIPS;
+    const tips = locale === 'ko' ? KO_USAGE_TIPS : EN_USAGE_TIPS;
     return tips[category] || tips['글쓰기'];
 }
 
@@ -212,13 +212,13 @@ const KO_ARTICLES: Record<string, { title: string; content: string }> = {
 };
 
 function getCategoryArticle(category: string, locale: string): { title: string; content: string } {
-    const articles = locale === 'en' ? EN_ARTICLES : KO_ARTICLES;
+    const articles = locale === 'ko' ? KO_ARTICLES : EN_ARTICLES;
     return articles[category] || articles['글쓰기'];
 }
 
 export default async function PromptDetailPage({ params }: PageProps) {
     const { id, locale } = await params;
-    const prompts = locale === 'en' ? PROMPTS_EN : PROMPTS;
+    const prompts = locale === 'ko' ? PROMPTS : PROMPTS_EN;
     const prompt = prompts.find(p => p.id === id);
     const t = await getTranslations({ locale, namespace: 'PromptDetail' });
 
@@ -226,7 +226,7 @@ export default async function PromptDetailPage({ params }: PageProps) {
         notFound();
     }
 
-    const BLOG_POSTS = locale === 'en' ? EN_BLOG_POSTS : KO_BLOG_POSTS;
+    const BLOG_POSTS = locale === 'ko' ? KO_BLOG_POSTS : EN_BLOG_POSTS;
 
     const relatedPrompts = prompts
         .filter(p => p.category === prompt.category && p.id !== prompt.id)
@@ -251,15 +251,15 @@ export default async function PromptDetailPage({ params }: PageProps) {
         step: [
             {
                 '@type': 'HowToStep',
-                name: locale === 'en' ? 'Copy the prompt' : '프롬프트 복사',
+                name: locale === 'ko' ? '프롬프트 복사' : 'Copy the prompt',
                 text: prompt.content,
             },
             {
                 '@type': 'HowToStep',
-                name: locale === 'en' ? 'Enter into AI model' : 'AI 모델에 입력',
-                text: locale === 'en'
-                    ? `Enter the prompt into ${prompt.model}.`
-                    : `${prompt.model} 모델에 프롬프트를 입력하세요.`,
+                name: locale === 'ko' ? 'AI 모델에 입력' : 'Enter into AI model',
+                text: locale === 'ko'
+                    ? `${prompt.model} 모델에 프롬프트를 입력하세요.`
+                    : `Enter the prompt into ${prompt.model}.`,
             },
         ],
         tool: {
@@ -293,23 +293,23 @@ export default async function PromptDetailPage({ params }: PageProps) {
         ],
     };
 
-    const likesLabel = locale === 'en'
-        ? `❤️ ${prompt.likes.toLocaleString()} likes`
-        : `❤️ ${prompt.likes.toLocaleString()}명이 좋아합니다`;
+    const likesLabel = locale === 'ko'
+        ? `❤️ ${prompt.likes.toLocaleString()}명이 좋아합니다`
+        : `❤️ ${prompt.likes.toLocaleString()} likes`;
 
-    const seoArticleClosing = locale === 'en'
-        ? `This prompt belongs to the <strong>${prompt.category}</strong> category, optimized for <strong>${prompt.model}</strong> at a <strong>${prompt.difficulty}</strong> level. It is systematically designed applying core prompt engineering principles: role assignment, context setting, and constraints.`
-        : `이 프롬프트는 <strong>${prompt.category}</strong> 카테고리에 속하며, <strong>${prompt.model}</strong> 모델에서 최적화된 <strong>${prompt.difficulty}</strong> 수준의 프롬프트입니다. 프롬프트 엔지니어링의 핵심 원칙인 역할 부여(Role), 맥락 설정(Context), 제약 조건(Constraints)을 체계적으로 적용하여 설계되었습니다.`;
+    const seoArticleClosing = locale === 'ko'
+        ? `이 프롬프트는 <strong>${prompt.category}</strong> 카테고리에 속하며, <strong>${prompt.model}</strong> 모델에서 최적화된 <strong>${prompt.difficulty}</strong> 수준의 프롬프트입니다. 프롬프트 엔지니어링의 핵심 원칙인 역할 부여(Role), 맥락 설정(Context), 제약 조건(Constraints)을 체계적으로 적용하여 설계되었습니다.`
+        : `This prompt belongs to the <strong>${prompt.category}</strong> category, optimized for <strong>${prompt.model}</strong> at a <strong>${prompt.difficulty}</strong> level. It is systematically designed applying core prompt engineering principles: role assignment, context setting, and constraints.`;
 
-    const ctaTitle = locale === 'en'
-        ? 'Explore More Prompts'
-        : '더 많은 프롬프트를 탐색해 보세요';
+    const ctaTitle = locale === 'ko'
+        ? '더 많은 프롬프트를 탐색해 보세요'
+        : 'Explore More Prompts';
 
-    const ctaDesc = locale === 'en'
-        ? 'Discover 90+ verified prompts in the PromptGenie library.'
-        : 'PromptGenie 라이브러리에서 90개 이상의 검증된 프롬프트를 확인할 수 있습니다.';
+    const ctaDesc = locale === 'ko'
+        ? 'PromptGenie 라이브러리에서 90개 이상의 검증된 프롬프트를 확인할 수 있습니다.'
+        : 'Discover 90+ verified prompts in the PromptGenie library.';
 
-    const ctaBtnText = locale === 'en' ? 'Browse Library' : '라이브러리 둘러보기';
+    const ctaBtnText = locale === 'ko' ? '라이브러리 둘러보기' : 'Browse Library';
 
     return (
         <div className={styles.container}>

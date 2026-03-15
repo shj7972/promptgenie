@@ -1,0 +1,534 @@
+{
+  "Metadata": {
+    "title": "PromptGenie | 针对 ChatGPT、Claude、Gemini 的 AI 提示词库与生成器",
+    "description": "免费探索 90+ 个专为 ChatGPT、Claude 和 Gemini 验证的 AI 提示词，并生成自定义提示词。提示词工程指南和真实使用案例尽在一处。",
+    "keywords": "提示词,提示词工程,ChatGPT 提示词,Claude 提示词,Gemini 提示词,AI 提示词,提示词集,提示词生成器,AI 使用,PromptGenie",
+    "siteName": "PromptGenie"
+  },
+  "Navbar": {
+    "library": "提示词库",
+    "generator": "提示词生成器",
+    "blogWriter": "博客撰写器",
+    "guide": "指南",
+    "blog": "博客",
+    "myPrompts": "我的提示词",
+    "start": "开始使用",
+    "search": "搜索"
+  },
+  "Home": {
+    "badge": "下一代提示词工程",
+    "title": "精通 AI 对话的艺术",
+    "subtitle": "发现并生成适用于 ChatGPT、Claude 和 Gemini 的高性能提示词。加入精英提示词工程师社区。",
+    "exploreLibrary": "探索提示词库",
+    "createPrompt": "自定义提示词生成",
+    "features": {
+      "title": "释放你的潜力",
+      "library": {
+        "title": "精选词库",
+        "desc": "体验在所有主流 AI 模型中经过验证的高水平提示词。"
+      },
+      "wizard": {
+        "title": "提示词向导",
+        "desc": "通过分步指南，轻松创建复杂的、结构化的提示词。"
+      },
+      "learning": {
+        "title": "学习中心",
+        "desc": "通过我们的指南掌握提示词工程的核心原则。"
+      }
+    },
+    "popular": {
+      "title": "最受欢迎的 6 个提示词",
+      "subtitle": "发现最受喜爱且经过验证的提示词",
+      "viewAll": "查看完整词库 →"
+    },
+    "latestBlog": {
+      "title": "最新博客",
+      "subtitle": "提示词工程技巧和 AI 使用指南",
+      "viewMore": "阅读更多 →"
+    },
+    "seo": {
+      "title": "提示词工程指南",
+      "article1": {
+        "header": "💡 提示词的力量",
+        "content": "与 LLM（深度学习大语言模型）——现代 AI 技术的内核——进行沟通的最强大工具就是“提示词”。提示词不仅是简单的提问，它更像是一个指南针，引导 AI 的思维过程，激发创造力，并产生最佳结果。一个设计良好的提示词可以替代数百行代码，并在短短几秒钟内提供解决复杂业务流程的强大效率。"
+      },
+      "article2": {
+        "header": "🚀 AI 时代的必备技能",
+        "content": "随着 ChatGPT、Claude 和 Gemini 等高性能 AI 模型的进化，如何“提问”和“指示”已成为核心竞争力，而不仅仅是使用工具。提示词工程的本质在于清晰地设置上下文、分配合适的角色，并精心处理输出格式的限制。"
+      },
+      "article3": {
+        "header": "✨ 与 PromptGenie 共同成长",
+        "content": "PromptGenie 提供由全球精英提示词工程师验证的高质量提示词库。探索在业务分析、创意写作和专业编程等各个类别中优化的提示词。我们的词库将是你挖掘 AI 潜力 100% 的最强伙伴。"
+      }
+    }
+  },
+  "Blog": {
+    "metadata": {
+      "title": "AI 提示词博客 - 提示词工程技巧与 AI 使用",
+      "description": "关于提示词工程的见解、AI 使用指南、ChatGPT·Claude·Gemini 对比以及 AI 时代的实用技巧。",
+      "ogTitle": "AI 提示词博客 | PromptGenie",
+      "ogDescription": "关于提示词工程和 AI 利用的专家级技巧与指南。"
+    },
+    "hero": {
+      "titleAccent": "AI 提示词",
+      "titleRemaining": "博客",
+      "subtitle": "从核心技巧到真实应用，分享见解以引领 AI 时代。"
+    },
+    "card": {
+      "readSuffix": "分钟阅读",
+      "readMore": "阅读更多"
+    }
+  },
+  "Library": {
+    "filterToggleOpen": "过滤器与类别",
+    "filterToggleClose": "关闭过滤器",
+    "resetFilters": "重置过滤器",
+    "byRole": "🎯 按角色",
+    "category": "类别",
+    "aiModel": "AI 模型",
+    "difficulty": "难度",
+    "searchPlaceholder": "搜索提示词（例如 '编程'、'营、'SEO'）...",
+    "promptCount": "{count} 个提示词",
+    "sortPopular": "热门",
+    "sortName": "A-Z",
+    "sortNewest": "最新",
+    "noResults": "未找到匹配您标准的提示词。",
+    "resetFiltersBtn": "重置过滤器",
+    "all": "全部",
+    "audiences": {
+      "all": "全部",
+      "marketer": "营销人员",
+      "developer": "开发人员",
+      "student": "学生",
+      "planner": "策划人员",
+      "creator": "创作者",
+      "worker": "上班族"
+    }
+  },
+  "LibraryMeta": {
+    "title": "AI 提示词库 - ChatGPT, Claude, Gemini 提示词集",
+    "description": "免费探索按类别组织的 90+ 个经过验证的 AI 提示词。写作、编程、商业、学习等。针对 ChatGPT、Claude 和 Gemini 进行了优化。",
+    "ogTitle": "AI 提示词库 | PromptGenie",
+    "ogDescription": "免费探索按类别组织的 90+ 个经过验证的 AI 提示词。"
+  },
+  "Generator": {
+    "stepOf": "第 {current} 步（共 {total} 步）",
+    "suggestionTitle": "建议回答：",
+    "back": "返回",
+    "next": "下一步",
+    "generate": "生成提示词",
+    "resultTitle": "您生成的提示词",
+    "saveChanges": "保存更改",
+    "editPrompt": "编辑提示词",
+    "saveFile": "保存为文件 (.txt)",
+    "restart": "从头开始",
+    "copyClipboard": "复制到剪贴板",
+    "copied": "已复制！",
+    "steps": [
+      {
+        "question": "AI 的主要角色是什么？",
+        "placeholder": "例如：高级软件工程师、创意作家、商业顾问",
+        "suggestions": ["高级软件工程师", "营销专家", "专业咨询师", "数据分析师", "小说家", "博客撰稿人", "YouTube 创作者", "翻译员"]
+      },
+      {
+        "question": "它应该执行什么具体任务？",
+        "placeholder": "例如：代码审查、撰写旅游博客文章、创建营销计划",
+        "suggestions": ["针对当前项目的代码审查", "撰写一篇博客文章", "总结每周工作报告", "起草一份商业计划书", "翻译产品手册", "撰写 YouTube 脚本", "翻译英文电子邮", "生成面试问题"]
+      },
+      {
+        "question": "应该包含哪些细节或上下文？",
+        "placeholder": "例如：具体的代码栈、目标受众、技术限制",
+        "suggestions": ["初学者友好级别", "考虑技术限制", "目标受众：职场人士", "包含关键数据摘要", "简洁的列表格式", "友好且有同理心的语气", "包含 SEO 优化的关键词", "以 Markdown 格式输出"]
+      },
+      {
+        "question": "您更喜欢哪种语气或风格？",
+        "placeholder": "例如：专业、幽默、简洁、学术",
+        "suggestions": ["专业且值得信赖", "幽默且友好", "学术且客观", "清晰且简洁", "具有说服力", "感性且温暖", "逻辑严密且具有分析性", "使用风趣的比喻"]
+      }
+    ],
+    "promptTemplate": "角色：{role}。\n任务：{task}。\n\n细节与上下文：\n{context}\n\n输出风格：\n您的回答应采用 {style} 的语气。请保持高水平的质量和准确性。",
+    "rolePlaceholder": "[角色]",
+    "taskPlaceholder": "[任务]",
+    "contextPlaceholder": "[上下文]",
+    "stylePlaceholder": "[风格]"
+  },
+  "GeneratorMeta": {
+    "title": "自定义 AI 提示词生成器 - 4 步构建您的提示词",
+    "description": "通过分步输入角色、任务、上下文和风格，自动生成优化的 AI 提示词。兼容 ChatGPT、Claude 和 Gemini。",
+    "ogTitle": "自定义 AI 提示词生成器 | PromptGenie",
+    "ogDescription": "4 步自定义 AI 提示词生成器。输入角色、任务、上下文和风格以立即生成提示词。"
+  },
+  "Footer": {
+    "description": "通过精选提示词和强大的生成工具最大限度地发挥 AI 潜力。",
+    "platform": "平台",
+    "library": "提示词库",
+    "generator": "生成器",
+    "guide": "指南",
+    "community": "社区",
+    "explore": "探索",
+    "trending": "热门提示词",
+    "contributors": "贡献者",
+    "legal": "法律信息",
+    "privacy": "隐私政策",
+    "terms": "服务条款"
+  },
+  "FAQ": {
+    "title": "常见问题",
+    "items": [
+      {
+        "question": "什么是 PromptGenie？",
+        "answer": "PromptGenie 是一个提示词工程平台，旨在帮助您从 ChatGPT、Claude 和 Gemini 等 AI 模型中获得最佳性能。它提供了一个经过验证的提示词库，以及创建和优化您自己提示词的工具。"
+      },
+      {
+        "question": "为什么提示词工程很重要？",
+        "answer": "即使使用相同的 AI 模型，回答的质量也完全取决于提示词的质量。通过提示词工程，您可以减少 AI 幻觉，并获得更准确、更有创意且更符合您意图的结果。"
+      },
+      {
+        "question": "这项服务是免费的吗？",
+        "answer": "是的，PromptGenie 的基础提示词库浏览和生成功能目前是免费的。我们的目标是帮助每个人轻松利用 AI 技术。未来可能会引入带有高级分析功能的付费计划。"
+      },
+      {
+        "question": "我可以分享我自己的提示词吗？",
+        "answer": "当然可以！PromptGenie 以社区驱动增长为导向。您可以通过“贡献者”页面分享您独特的提示词，并通过其他用户的反馈进一步完善它们。"
+      }
+    ]
+  },
+  "Newsletter": {
+    "title": "每周获取新的 AI 提示词",
+    "description": "我们每周将最新的提示词工程技巧、实用提示词和 AI 行业见解发送到您的收件箱。",
+    "placeholder": "输入您的电子邮件地址",
+    "ariaLabel": "订阅邮件地址",
+    "subscribe": "订阅",
+    "successMsg": "订阅成功！我们将每周为您发送实用的提示词。",
+    "errorMsg": "请输入有效的电子邮件地址。",
+    "privacy": "无广告。随时取消订阅。"
+  },
+  "Common": {
+    "copyPrompt": "复制提示词",
+    "copied": "已复制！",
+    "toggleFavorite": "切换收藏",
+    "shareLabel": "分享",
+    "kakaoShare": "在 KakaoStory 分享",
+    "naverShare": "在 Naver 分享",
+    "twitterShare": "在 X (Twitter) 分享",
+    "facebookShare": "在 Facebook 分享",
+    "copyLink": "复制链接"
+  },
+  "Submit": {
+    "title": "提交提示词",
+    "subtitle": "分享您独特的提示词，成为 PromptGenie 的贡献者。",
+    "guidelinesTitle": "提交指南",
+    "purpose": "目标明确：",
+    "purposeDesc": "提示词解决的问题必须明确定义。",
+    "instructions": "指令具体：",
+    "instructionsDesc": "使用 AI 易于理解的结构和语言。",
+    "verified": "验证结果：",
+    "verifiedDesc": "仅提交您实际测试过并获得良好结果的提示词。",
+    "processTitle": "流程",
+    "step1Title": "提交",
+    "step1Desc": "通过 Google 表单提交您的提示词。",
+    "step2Title": "审核",
+    "step2Desc": "我们的团队会审核并测试内容。（1-2 天）",
+    "step3Title": "发布",
+    "step3Desc": "添加到词库并署名为贡献者。",
+    "readyText": "准备好了吗？点击下方按钮填写表单。",
+    "submitBtn": "通过 Google 表单提交",
+    "note": "* 提交的提示词将在审核后添加到词库中，您将被列为贡献者。"
+  },
+  "Contributors": {
+    "title": "名人堂",
+    "subtitle": "认识那些让 PromptGenie 社区熠熠生辉的优秀贡献者。",
+    "ctaTitle": "您也可以成为贡献者",
+    "ctaDesc": "分享您独特的提示词，与社区共同成长。",
+    "ctaBtn": "提交提示词"
+  },
+  "SearchModal": {
+    "placeholder": "搜索提示词、博客文章...",
+    "trending": "热门搜索",
+    "noResults": "未找到关于 \"{query}\" 的结果。",
+    "prompts": "提示词",
+    "blog": "博客",
+    "navMove": "导航",
+    "navSelect": "选择",
+    "navClose": "关闭",
+    "trendingKeywords": ["ChatGPT", "Claude", "SEO", "编程", "营销", "邮件", "博客", "提示词编写"]
+  },
+  "BlogDetail": {
+    "backLink": "← 返回博客",
+    "ctaTitle": "获取更多 AI 见解",
+    "ctaDesc": "在 PromptGenie 词库中探索 90+ 个经过验证的提示词。",
+    "ctaLibrary": "探索词库",
+    "ctaGuide": "查看指南",
+    "relatedPrompts": "🎯 相关提示词",
+    "relatedPosts": "📚 更多文章",
+    "notFound": "未找到文章 | PromptGenie",
+    "ogSiteName": "PromptGenie 博客"
+  },
+  "PromptDetail": {
+    "notFound": "未找到提示词 | PromptGenie",
+    "siteName": "PromptGenie",
+    "fullPrompt": "📋 提示词全文",
+    "inputExample": "💬 输入示例",
+    "outputExample": "✨ 输出示例",
+    "tags": "🏷️ 标签",
+    "usageTips": "💡 使用技巧",
+    "relatedPrompts": "🔗 相关提示词",
+    "relatedBlog": "📚 相关博客文章",
+    "home": "首页",
+    "library": "提示词库",
+    "backToLibrary": "← 返回提示词库"
+  },
+  "Profile": {
+    "defaultName": "用户",
+    "savedCount": "{count} 个已收藏提示词 • 0 个贡献",
+    "tabs": {
+      "favorites": "收藏",
+      "contributions": "我的贡献",
+      "collections": "合集"
+    },
+    "empty": {
+      "noFavorites": "尚未收藏任何提示词。",
+      "browseLibrary": "浏览提示词库",
+      "noContributions": "尚未提交任何贡献。",
+      "sharePrompt": "创建并分享您自己的精彩提示词！",
+      "createPrompt": "创建提示词",
+      "noCollections": "尚未创建任何合集。",
+      "gatherCollections": "收集提示词以创建您自己的合集。"
+    }
+  },
+  "BlogWriter": {
+    "title": "AI 博客撰稿人",
+    "subtitle": "只需输入主题。AI 将为您完成一篇极具吸引力的博客文章。",
+    "selectModel": "选择 AI 模型",
+    "apiKey": "API 密钥",
+    "getKey": "获取密钥 →",
+    "enterKey": "输入 {provider} 密钥",
+    "hide": "隐藏",
+    "show": "显示",
+    "keyStoreNote": "* 您输入的密钥不会存储在服务器上，仅加密存储在您的浏览器中。",
+    "topicLabel": "博客主题",
+    "topicPlaceholder": "例如：2024 夏季假期推荐、如何提高远程工作效率",
+    "audienceLabel": "目标受众（可选）",
+    "audiencePlaceholder": "例如：20 多岁的大学生、职场妈妈、露营初学者",
+    "keywordsLabel": "关键关键词（用逗号分隔）",
+    "keywordsPlaceholder": "例如：治愈、性价比、情调住宿",
+    "toneLabel": "语气",
+    "tones": {
+      "professional": "专业",
+      "friendly": "友好",
+      "witty": "风趣",
+      "emotional": "感性"
+    },
+    "writing": "正在撰写文章...",
+    "generateBtn": "生成博客文章",
+    "resultTitle": "生成结果",
+    "resultPlaceholder": "AI 撰写的文本将出现在这里。您可以根据需要直接编辑内容。",
+    "copyBtn": "复制",
+    "errorNoKey": "请输入 API 密钥。",
+    "errorNoTopic": "请输入博客主题。",
+    "successCopy": "已复制到剪贴板！",
+    "errorGen": "发生错误：{error}"
+  },
+  "Guide": {
+    "title": "提示词工程指南",
+    "subtitle": "学习有效的沟通技巧，100% 释放 AI 性能。",
+    "labels": {
+      "example": "示例",
+      "proTip": "进阶建议：",
+      "badExample": "反面示例",
+      "goodExample": "正面示例",
+      "solution": "解决方案"
+    },
+    "intro": {
+      "title": "什么是提示词工程？",
+      "content": "提示词工程是设计和优化输入（提示词）的艺术，旨在从 ChatGPT、Claude 和 Gemini 等 AI 模型中获得最佳结果。除了提问之外，它还涉及让 AI 准确理解上下文，并以所需的格式和语气做出回答。"
+    },
+    "basic": {
+      "title": "核心 4 要素（框架）",
+      "subtitle": "当包含这四个要素时，好的提示词最为强大。",
+      "role": {
+        "title": "角色分配",
+        "desc": "为 AI 分配一个特定的专家身份。",
+        "example": "“你是一位拥有 10 年经验的高级营销专家。”"
+      },
+      "context": {
+        "title": "提供上下文",
+        "desc": "提供背景知识并描述具体情况。",
+        "example": "“我正在为一家小型企业策划社交媒体广告活动。”"
+      },
+      "task": {
+        "title": "任务明确",
+        "desc": "对要执行的工作给出具体指示。",
+        "example": "“为 Instagram 撰写 3 条广告文案。”"
+      },
+      "style": {
+        "title": "输出风格/限制",
+        "desc": "指定语气、长度和格式。",
+        "example": "“语气友好，每条 100 字以内，采用表格格式。”"
+      }
+    },
+    "advanced": {
+      "title": "进阶技巧",
+      "fewShot": {
+        "title": "Few-Shot Prompting（少样本提示词）",
+        "desc": "提供一些所需输出的示例以提高质量。",
+        "example": "输入：苹果 -> 输出：红色，输入：香蕉 -> 输出：黄色，输入：葡萄 -> 输出：？"
+      },
+      "cot": {
+        "title": "Chain of Thought（思维链，CoT）",
+        "desc": "指示 AI “一步步思考”以解决复杂的逻辑问题。",
+        "example": "“循序渐进地思考以解决这个问题，并解释你的过程。”"
+      }
+    },
+    "closing": "立即查看词库中经过验证的提示词，开始练习吧！",
+    "viewLibrary": "前往词库",
+    "rules": {
+      "title": "3 条金科玉律",
+      "rule1": {
+        "name": "角色分配",
+        "desc": "为 AI 分配一个特定的专家身份。"
+      },
+      "rule2": {
+        "name": "限制条件",
+        "desc": "明确告知 AI 哪些事不能做。"
+      },
+      "rule3": {
+        "name": "少样本学习",
+        "desc": "提供预期的输入/输出对示例。"
+      }
+    },
+    "techniques": {
+      "title": "5 种核心提示词技巧"
+    },
+    "comparison": {
+      "title": "对比：好案例 vs 坏案例"
+    },
+    "models": {
+      "title": "AI 模型对比"
+    },
+    "modelsItems": [
+      {
+        "name": "ChatGPT (OpenAI)",
+        "icon": "🤖",
+        "desc": "强大的推理能力和通用知识。在思维链（CoT）方面表现出色。"
+      },
+      {
+        "name": "Claude (Anthropic)",
+        "icon": "🎨",
+        "desc": "自然的编程和创意写作。极高的安全标准。"
+      },
+      {
+        "name": "Gemini (Google)",
+        "icon": "🌐",
+        "desc": "与 Google 服务深度整合。多模态专家。"
+      }
+    ],
+    "techniquesItems": {
+      "zeroShot": {
+        "title": "Zero-Shot Prompting",
+        "desc": "在没有示例的情况下，通过直接指示获得结果的最基础技巧。",
+        "example": "分析以下句子的情感：'今天天气真好'",
+        "note": "适用于简单分类、总结和翻译等明确任务。"
+      },
+      "fewShot": {
+        "title": "Few-Shot Prompting",
+        "desc": "通过提供 2-5 个输入/输出示例，训练 AI 掌握所需模式的技巧。",
+        "example": "正面：天气好 → 😊，负面：下雨 → 😢，分析：我今天心情不好 → ？",
+        "note": "当需要特定格式、逻辑或风格的结果时非常有效。"
+      },
+      "cot": {
+        "title": "Chain of Thought (CoT)",
+        "desc": "指示 AI “一步步思考”以经历推理过程的技巧。",
+        "example": "循序渐进地解决这个问题。解释每一步的逻辑依据。",
+        "note": "在数学题、逻辑推理和代码调试等复杂分析中大幅提升准确性。"
+      },
+      "rolePlaying": {
+        "title": "Role Playing（角色扮演）",
+        "desc": "为 AI 分配特定专家、角色或视角的技巧。",
+        "example": "你是一位拥有 10 年经验的 UX 设计负责人。请批判性地审查这个应用程序的引导流程。",
+        "note": "适用于专业建议、多方面分析、面试练习等。"
+      },
+      "structuredOutput": {
+        "title": "Structured Output（结构化输出）",
+        "desc": "通过指定 JSON、表格或 Markdown 等格式获取结构化结果的技巧。",
+        "example": "按照以下 JSON 格式输出分析结果：{\"sentiment\": string, \"score\": number}",
+        "note": "在需要自动化处理（如数据处理管道或 API 响应生成）时必不可少。"
+      }
+    },
+    "comparisonItems": [
+      {
+        "bad": "写一个关于猫的短篇故事。",
+        "badAnalysis": "太模糊。AI 无法得知语气、长度或情节的上下文。",
+        "good": "扮演一名专业的创意作家。写一个约 300 字的关于一只猫的幽默短篇故事，这只猫实际上是一个特工。重点描写在下雨小巷里的紧张会面。",
+        "goodAnalysis": "包含了明确的人设、具体的限制条件和清晰的情节背景。"
+      }
+    ],
+    "categoryTips": {
+      "title": "按类别划分的技巧"
+    },
+    "categoryTipsItems": {
+      "writing": {
+        "title": "✍️ 写作",
+        "desc": "分配明确的角色，并指定所需的语气、长度和目标受众。"
+      },
+      "coding": {
+        "title": "💻 编程",
+        "desc": "指定编程语言、框架版本、技术栈以及所需的输出格式（例如：带注释的代码块）。"
+      },
+      "business": {
+        "title": "📊 商业",
+        "desc": "描述具体情况和目的，例如撰写邮件或总结报告。"
+      },
+      "learning": {
+        "title": "🎓 学习",
+        "desc": "为 AI 分配导师角色，并要求符合您水平的解释。"
+      },
+      "ideas": {
+        "title": "💡 创意",
+        "desc": "在头脑风暴期间设置“自由思考”或“批判性审查”等模式。"
+      },
+      "design": {
+        "title": "🎨 设计/策划",
+        "desc": "提供目标用户、服务特征和设计指南等细节。"
+      }
+    },
+    "mistakes": {
+      "title": "常见错误"
+    },
+    "mistakesItems": [
+      {
+        "title": "指令太模糊",
+        "desc": "避免使用像“写一篇好文章”这样不具体的提示词。",
+        "solution": "指定主题、长度、语气、目标受众和输出格式。"
+      },
+      {
+        "title": "缺乏上下文",
+        "desc": "不要让 AI 在没有任何背景知识的情况下做出回答。",
+        "solution": "提供充足的相关背景信息和限制条件。"
+      }
+    ],
+    "glossary": {
+      "title": "词汇表"
+    },
+    "glossaryItems": [
+      {
+        "term": "LLM",
+        "desc": "大语言模型。经过海量数据训练的 AI 语言模型。"
+      },
+      {
+        "term": "幻觉（Hallucination）",
+        "desc": "AI 编造信息或以自信的口吻说出错误答案的现象。"
+      },
+      {
+        "term": "上下文窗口",
+        "desc": "AI 一次能记住并处理的信息量。"
+      }
+    ],
+    "cta": {
+      "title": "现在就开始在实践中使用吧",
+      "desc": "在 PromptGenie 词库中探索 90+ 个经过验证的提示词，并创建属于您自己的自定义提示词。",
+      "library": "探索词库",
+      "generator": "提示词生成器"
+    }
+  }
+}

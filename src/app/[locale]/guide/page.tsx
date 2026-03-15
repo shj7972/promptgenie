@@ -94,11 +94,11 @@ export default async function GuidePage({ params }: PageProps) {
                                 </div>
                                 <p className={styles.techniqueDesc}>{item.desc}</p>
                                 <div className={styles.techniqueExample}>
-                                    <div className={styles.exampleLabel}>{locale === 'en' ? 'Example' : '예시'}</div>
+                                    <div className={styles.exampleLabel}>{t('labels.example')}</div>
                                     <code>{item.example}</code>
                                 </div>
                                 <p className={styles.techniqueNote}>
-                                    <strong>{locale === 'en' ? 'Pro Tip:' : '적합한 경우:'}</strong> {item.note}
+                                    <strong>{t('labels.proTip')}</strong> {item.note}
                                 </p>
                             </div>
                         ))}
@@ -113,12 +113,12 @@ export default async function GuidePage({ params }: PageProps) {
                     {t.raw('comparisonItems').map((item: any, idx: number) => (
                         <div key={idx} className={styles.comparisonGrid}>
                             <div className={styles.comparisonCard}>
-                                <div className={styles.badLabel}>{locale === 'en' ? 'Bad Example' : '나쁜 예시'}</div>
+                                <div className={styles.badLabel}>{t('labels.badExample')}</div>
                                 <div className={styles.promptText}>{item.bad}</div>
                                 <p className={styles.analysis}>{item.badAnalysis}</p>
                             </div>
                             <div className={styles.comparisonCard}>
-                                <div className={styles.goodLabel}>{locale === 'en' ? 'Good Example' : '좋은 예시'}</div>
+                                <div className={styles.goodLabel}>{t('labels.goodExample')}</div>
                                 <div className={styles.promptText}>{item.good}</div>
                                 <p className={styles.analysis}>{item.goodAnalysis}</p>
                             </div>
@@ -173,7 +173,7 @@ export default async function GuidePage({ params }: PageProps) {
                                 </div>
                                 <p className={styles.mistakeDesc}>{item.desc}</p>
                                 <div className={styles.solutionBox}>
-                                    <strong>{locale === 'en' ? 'Solution' : '해결책'}:</strong> {item.solution}
+                                    <strong>{t('labels.solution')}:</strong> {item.solution}
                                 </div>
                             </div>
                         ))}

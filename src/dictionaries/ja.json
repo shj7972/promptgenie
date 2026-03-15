@@ -1,0 +1,534 @@
+{
+  "Metadata": {
+    "title": "PromptGenie | ChatGPT, Claude, GeminiのためのAIプロンプト集＆ジェネレーター",
+    "description": "ChatGPT, Claude, Gemini向けに検証済みの90以上のAIプロンプトを無料で探索し、カスタムプロンプトを生成。プロンプトエンジニアリングガイドと実際の活用事例を一つの場所に。",
+    "keywords": "プロンプト,プロンプトエンジニアリング,ChatGPTプロンプト,Claudeプロンプト,Geminiプロンプト,AIプロンプト,プロンプト集,プロンプトジェネレーター,AI活用,PromptGenie",
+    "siteName": "PromptGenie"
+  },
+  "Navbar": {
+    "library": "ライブラリ",
+    "generator": "プロンプト生成",
+    "blogWriter": "ブログライター",
+    "guide": "ガイド",
+    "blog": "ブログ",
+    "myPrompts": "マイプロンプト",
+    "start": "はじめる",
+    "search": "検索"
+  },
+  "Home": {
+    "badge": "次世代プロンプトエンジニアリング",
+    "title": "AIとの対話術を\nマスターする",
+    "subtitle": "ChatGPT, Claude, Gemini向けの高性能プロンプトを探索し、生成。プロンプトエンジニアのエリートコミュニティに参加しましょう。",
+    "exploreLibrary": "ライブラリを探索",
+    "createPrompt": "カスタムプロンプト生成",
+    "features": {
+      "title": "あなたの可能性を解き放つ",
+      "library": {
+        "title": "厳選されたライブラリ",
+        "desc": "主要なすべてのAIモデルで実証された最高レベルのプロンプト。"
+      },
+      "wizard": {
+        "title": "プロンプトウィザード",
+        "desc": "ステップバイステップのガイドで、複雑で構造化されたプロンプトを簡単に作成。"
+      },
+      "learning": {
+        "title": "ラーニングハブ",
+        "desc": "ガイドを通じてプロンプトエンジニアリングの基本原則をマスター。"
+      }
+    },
+    "popular": {
+      "title": "人気のプロンプト Top 6",
+      "subtitle": "多くのユーザーに愛され、検証されたプロンプト",
+      "viewAll": "ライブラリ全体を見る →"
+    },
+    "latestBlog": {
+      "title": "最新ブログ",
+      "subtitle": "プロンプトエンジニアリングのヒントとAI活用ガイド",
+      "viewMore": "詳しく読む →"
+    },
+    "seo": {
+      "title": "プロンプトエンジニアリングガイド",
+      "article1": {
+        "header": "💡 プロンプトの力",
+        "content": "現代のAIテクノロジーの核心であるLLM（大規模言語モデル）と対話するための最も強力なツールは「プロンプト」です。プロンプトは単なる質問を超えて、AIの思考プロセスを導き、創造性を刺激し、最適な結果を導き出す羅針盤の役割を果たします。適切に設計されたプロンプトは、数百行のコードに代わったり、複雑なビジネスプロセスをわずか数秒で解決する強力な効率性を提供したりします。"
+      },
+      "article2": {
+        "header": "🚀 AI時代の必須スキル",
+        "content": "ChatGPT, Claude, Geminiのような高性能AIモデルが進化するにつれ、単にツールを使うだけでなく、どのように「問いかけ」「指示する」かが核心的な競争力となっています。プロンプトエンジニアリングの本質は、文脈を明確に設定し、特定のペルソナを割り当て、出力形式の制約を精緻に処理することにあります。"
+      },
+      "article3": {
+        "header": "✨ PromptGenieと共に成長する",
+        "content": "PromptGenieは、世界中のエリートプロンプトエンジニアによって検証された高品質なプロンプトライブラリを提供します。ビジネス分析、クリエイティブライティング、専門的なコーディングなど、さまざまなカテゴリで最適化されたプロンプトを探索してください。私たちのライブラリは、AIの可能性を100%活用するための最強のパートナーとなるでしょう。"
+      }
+    }
+  },
+  "Blog": {
+    "metadata": {
+      "title": "AIプロンプトブログ - プロンプトエンジニアリングのヒントとAI活用",
+      "description": "プロンプトエンジニアリングの洞察、AI活用ガイド、ChatGPT・Claude・Geminiの比較、AI時代に役立つ実践的なヒント。",
+      "ogTitle": "AIプロンプトブログ | PromptGenie",
+      "ogDescription": "プロンプトエンジニアリングとAI活用のための専門的なヒントとガイド。"
+    },
+    "hero": {
+      "titleAccent": "AIプロンプト",
+      "titleRemaining": "ブログ",
+      "subtitle": "基本テクニックから実際の応用事例まで、AI時代をリードするための洞察を共有します。"
+    },
+    "card": {
+      "readSuffix": "分で読める",
+      "readMore": "続きを読む"
+    }
+  },
+  "Library": {
+    "filterToggleOpen": "フィルターとカテゴリ",
+    "filterToggleClose": "フィルターを閉じる",
+    "resetFilters": "フィルターをリセット",
+    "byRole": "🎯 役割別",
+    "category": "カテゴリ",
+    "aiModel": "AIモデル",
+    "difficulty": "難易度",
+    "searchPlaceholder": "プロンプトを検索 (例: 'コーディング', 'マーケティング', 'SEO')...",
+    "promptCount": "{count} 個のプロンプト",
+    "sortPopular": "人気順",
+    "sortName": "名前順",
+    "sortNewest": "最新順",
+    "noResults": "条件に一致するプロンプトが見つかりませんでした。",
+    "resetFiltersBtn": "フィルターをリセット",
+    "all": "すべて",
+    "audiences": {
+      "all": "すべて",
+      "marketer": "マーケター",
+      "developer": "開発者",
+      "student": "学生",
+      "planner": "プランナー",
+      "creator": "クリエイター",
+      "worker": "会社員"
+    }
+  },
+  "LibraryMeta": {
+    "title": "AIプロンプトライブラリ - ChatGPT, Claude, Geminiプロンプト集",
+    "description": "カテゴリ別に整理された90以上の検証済みAIプロンプトを無料で探索。ライティング、コーディング、ビジネス、学習など。ChatGPT, Claude, Geminiに最適化されています。",
+    "ogTitle": "AIプロンプトライブラリ | PromptGenie",
+    "ogDescription": "カテゴリ別に整理された90以上の検証済みAIプロンプトを無料で探索。"
+  },
+  "Generator": {
+    "stepOf": "ステップ {current} / {total}",
+    "suggestionTitle": "推奨される回答:",
+    "back": "戻る",
+    "next": "次へ",
+    "generate": "プロンプトを生成",
+    "resultTitle": "生成されたプロンプト",
+    "saveChanges": "変更を保存",
+    "editPrompt": "プロンプトを編集",
+    "saveFile": "ファイルとして保存 (.txt)",
+    "restart": "最初からやり直す",
+    "copyClipboard": "クリップボードにコピー",
+    "copied": "コピーしました！",
+    "steps": [
+      {
+        "question": "AIの主な役割は何ですか？",
+        "placeholder": "例: シニアソフトウェアエンジニア、クリエイティブライター、ビジネスコンサルタント",
+        "suggestions": ["シニアソフトウェアエンジニア", "マーケティング専門家", "プロのカウンセラー", "データアナリスト", "小説家", "ブログライター", "YouTubeクリエイター", "翻訳者"]
+      },
+      {
+        "question": "具体的にどのようなタスクを実行すべきですか？",
+        "placeholder": "例: コードレビュー、旅行ブログ記事の執筆、マーケティングプランの作成",
+        "suggestions": ["現在のプロジェクトのコードレビュー", "ブログ記事の執筆", "週報の要約", "ビジネス提案書の作成", "製品マニュアルの翻訳", "YouTubeスクリプトの作成", "英文メールの翻訳", "面接の質問生成"]
+      },
+      {
+        "question": "どのような詳細情報や文脈を含めるべきですか？",
+        "placeholder": "例: 特定の技術スタック、ターゲット層、技術的な制約",
+        "suggestions": ["初心者向けレベル", "技術的な制約を考慮", "ターゲット層：社会人", "主要データの要約を含む", "簡潔なリスト形式", "親切で共感的なトーン", "SEO最適化キーワードを含む", "Markdown形式で出力"]
+      },
+      {
+        "question": "どのようなトーンやスタイルを希望しますか？",
+        "placeholder": "例: 専門的、ユーモラス、簡潔、学術的",
+        "suggestions": ["専門的で信頼できる", "ユーモラスで親しみやすい", "学術的で客観的", "明確で簡潔", "説得力のある", "情緒的で温かい", "論理的で分析的", "機知に富んだ比喩を使用"]
+      }
+    ],
+    "promptTemplate": "役割: {role}\nタスク: {task}\n\n詳細と文脈:\n{context}\n\n出力スタイル:\n回答は {style} なトーンでお願いします。高い品質と正確さを維持してください。",
+    "rolePlaceholder": "[役割]",
+    "taskPlaceholder": "[タスク]",
+    "contextPlaceholder": "[詳細と文脈]",
+    "stylePlaceholder": "[スタイル]"
+  },
+  "GeneratorMeta": {
+    "title": "カスタムAIプロンプトジェネレーター - 4ステップでプロンプト作成",
+    "description": "役割、タスク、文脈、スタイルをステップバイステップで入力し、最適化されたAIプロンプトを自動生成。ChatGPT, Claude, Geminiに対応。",
+    "ogTitle": "カスタムAIプロンプトジェネレーター | PromptGenie",
+    "ogDescription": "4ステップのカスタムAIプロンプトジェネレーター。役割、タスク、文脈、スタイルを入力して即座にプロンプトを生成。"
+  },
+  "Footer": {
+    "description": "厳選されたプロンプトと強力な生成ツールで、AIの可能性を最大限に引き出します。",
+    "platform": "プラットフォーム",
+    "library": "ライブラリ",
+    "generator": "ジェネレーター",
+    "guide": "ガイド",
+    "community": "コミュニティ",
+    "explore": "探索",
+    "trending": "トレンドプロンプト",
+    "contributors": "寄稿者",
+    "legal": "法的情報",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約"
+  },
+  "FAQ": {
+    "title": "よくある質問",
+    "items": [
+      {
+        "question": "PromptGenieとは何ですか？",
+        "answer": "PromptGenieは、ChatGPT, Claude, GeminiなどのAIモデルから最高のパフォーマンスを引き出すためのプロンプトエンジニアリングプラットフォームです。検証済みのプロンプトライブラリと、独自のプロンプトを作成・最適化するためのツールを提供しています。"
+      },
+      {
+        "question": "なぜプロンプトエンジニアリングが重要なのですか？",
+        "answer": "同じAIモデルを使用していても、回答の質はプロンプトの質に完全に依存します。プロンプトエンジニアリングを通じて、AIのハルシネーション（もっともらしい嘘）を減らし、意図に沿ったより正確で創造的な結果を得ることができます。"
+      },
+      {
+        "question": "このサービスは無料ですか？",
+        "answer": "はい、PromptGenieの基本的なプロンプトライブラリの閲覧と生成機能は現在無料で提供されています。私たちは、誰もが簡単にAIテクノロジーを活用できることを目指しています。将来的に高度な分析機能を備えたプレミアムプランが導入される可能性があります。"
+      },
+      {
+        "question": "自分のプロンプトを共有することはできますか？",
+        "answer": "もちろんです！PromptGenieはコミュニティ主導の成長を重視しています。「寄稿者」ページから独自のプロンプトを共有し、他のユーザーからのフィードバックを通じてさらに洗練させることができます。"
+      }
+    ]
+  },
+  "Newsletter": {
+    "title": "新しいAIプロンプトを毎週受け取る",
+    "description": "最新のプロンプトエンジニアリングのヒント、実践的なプロンプト、AI業界の洞察を毎週あなたのメールボックスにお届けします。",
+    "placeholder": "メールアドレスを入力",
+    "ariaLabel": "ニュースレターのメールアドレス",
+    "subscribe": "購読する",
+    "successMsg": "購読完了しました！役立つプロンプトを毎週お届けします。",
+    "errorMsg": "有効なメールアドレスを入力してください。",
+    "privacy": "スパムはありません。いつでも購読解除可能です。"
+  },
+  "Common": {
+    "copyPrompt": "プロンプトをコピー",
+    "copied": "コピーしました！",
+    "toggleFavorite": "お気に入り切り替え",
+    "shareLabel": "共有",
+    "kakaoShare": "KakaoStoryで共有",
+    "naverShare": "Naverで共有",
+    "twitterShare": "X (Twitter)で共有",
+    "facebookShare": "Facebookで共有",
+    "copyLink": "リンクをコピー"
+  },
+  "Submit": {
+    "title": "プロンプトを投稿する",
+    "subtitle": "独自のプロンプトを共有して、PromptGenieの寄稿者になりましょう。",
+    "guidelinesTitle": "投稿ガイドライン",
+    "purpose": "明確な目的:",
+    "purposeDesc": "プロンプトが解決する問題が明確に定義されている必要があります。",
+    "instructions": "具体的な指示:",
+    "instructionsDesc": "AIが理解しやすい構造と言語を使用してください。",
+    "verified": "検証済みの結果:",
+    "verifiedDesc": "実際にテストして良い結果が得られたプロンプトのみを投稿してください。",
+    "processTitle": "プロセス",
+    "step1Title": "投稿",
+    "step1Desc": "Googleフォームからプロンプトを投稿します。",
+    "step2Title": "審査",
+    "step2Desc": "運営チームが内容を確認し、テストを行います。(1〜2日)",
+    "step3Title": "公開",
+    "step3Desc": "ライブラリに追加され、寄稿者としてクレジットされます。",
+    "readyText": "準備はいいですか？下のボタンをクリックしてフォームに入力してください。",
+    "submitBtn": "Googleフォームから投稿",
+    "note": "* 投稿されたプロンプトは審査後にライブラリに追加され、寄稿者として名前が掲載されます。"
+  },
+  "Contributors": {
+    "title": "殿堂入り",
+    "subtitle": "PromptGenieコミュニティを輝かせてくれた素晴らしい寄稿者たちを紹介します。",
+    "ctaTitle": "あなたも寄稿者になれます",
+    "ctaDesc": "独自のプロンプトを共有して、コミュニティと共に成長しましょう。",
+    "ctaBtn": "プロンプトを投稿する"
+  },
+  "SearchModal": {
+    "placeholder": "プロンプト、ブログ記事を検索...",
+    "trending": "急上昇",
+    "noResults": "\"{query}\" に一致する結果は見つかりませんでした。",
+    "prompts": "プロンプト",
+    "blog": "ブログ",
+    "navMove": "移動",
+    "navSelect": "選択",
+    "navClose": "閉じる",
+    "trendingKeywords": ["ChatGPT", "Claude", "SEO", "コーディング", "マーケティング", "メール", "ブログ", "プロンプト作成"]
+  },
+  "BlogDetail": {
+    "backLink": "← ブログに戻る",
+    "ctaTitle": "さらなるAIの洞察を得る",
+    "ctaDesc": "PromptGenieライブラリで90以上の検証済みプロンプトを探索しましょう。",
+    "ctaLibrary": "ライブラリを探索",
+    "ctaGuide": "ガイドを見る",
+    "relatedPrompts": "🎯 関連プロンプト",
+    "relatedPosts": "📚 その他の記事",
+    "notFound": "記事が見つかりません | PromptGenie",
+    "ogSiteName": "PromptGenie ブログ"
+  },
+  "PromptDetail": {
+    "notFound": "プロンプトが見つかりません | PromptGenie",
+    "siteName": "PromptGenie",
+    "fullPrompt": "📋 プロンプト全文",
+    "inputExample": "💬 入力例",
+    "outputExample": "✨ 出力例",
+    "tags": "🏷️ タグ",
+    "usageTips": "💡 使用のヒント",
+    "relatedPrompts": "🔗 関連プロンプト",
+    "relatedBlog": "📚 関連ブログ記事",
+    "home": "ホーム",
+    "library": "ライブラリ",
+    "backToLibrary": "← ライブラリに戻る"
+  },
+  "Profile": {
+    "defaultName": "名無しのユーザー",
+    "savedCount": "{count} 個の保存済みプロンプト • 0 件の寄稿",
+    "tabs": {
+      "favorites": "お気に入り",
+      "contributions": "マイ寄稿",
+      "collections": "コレクション"
+    },
+    "empty": {
+      "noFavorites": "保存されたプロンプトがまだありません。",
+      "browseLibrary": "ライブラリを見る",
+      "noContributions": "寄稿がまだありません。",
+      "sharePrompt": "あなただけの素晴らしいプロンプトを作成して共有しましょう！",
+      "createPrompt": "プロンプトを作成",
+      "noCollections": "コレクションがまだ作成されていません。",
+      "gatherCollections": "プロンプトを集めて自分だけのコレクションを作りましょう。"
+    }
+  },
+  "BlogWriter": {
+    "title": "AIブログライター",
+    "subtitle": "トピックを入力するだけ。AIが魅力的なブログ記事を完成させます。",
+    "selectModel": "AIモデルを選択",
+    "apiKey": "APIキー",
+    "getKey": "キーを取得 →",
+    "enterKey": "{provider} のキーを入力",
+    "hide": "隠す",
+    "show": "表示",
+    "keyStoreNote": "* 入力されたキーはサーバーには保存されず、ブラウザ内に暗号化されて保存されます。",
+    "topicLabel": "ブログのトピック",
+    "topicPlaceholder": "例: 2024年の夏休みのすすめ、リモートワークの生産性を高める方法",
+    "audienceLabel": "ターゲット層 (任意)",
+    "audiencePlaceholder": "例: 20代の大学生、働くお母さん、キャンプ初心者",
+    "keywordsLabel": "主要キーワード (カンマ区切り)",
+    "keywordsPlaceholder": "例: 癒やし、コスパ、情緒的な宿",
+    "toneLabel": "トーン",
+    "tones": {
+      "professional": "専門的",
+      "friendly": "親しみやすい",
+      "witty": "機知に富んだ",
+      "emotional": "情緒的"
+    },
+    "writing": "記事を執筆中...",
+    "generateBtn": "ブログ記事を生成",
+    "resultTitle": "生成結果",
+    "resultPlaceholder": "AIが執筆したテキストがここに表示されます。必要に応じて直接編集可能です。",
+    "copyBtn": "コピー",
+    "errorNoKey": "APIキーを入力してください。",
+    "errorNoTopic": "ブログのトピックを入力してください。",
+    "successCopy": "クリップボードにコピーしました！",
+    "errorGen": "エラーが発生しました: {error}"
+  },
+  "Guide": {
+    "title": "プロンプトエンジニアリングガイド",
+    "subtitle": "AIの性能を100%引き出すための効果的な対話テクニックを学びましょう。",
+    "labels": {
+      "example": "例",
+      "proTip": "おすすめの使用例:",
+      "badExample": "悪い例",
+      "goodExample": "良い例",
+      "solution": "解決策"
+    },
+    "intro": {
+      "title": "プロンプトエンジニアリングとは？",
+      "content": "プロンプトエンジニアリングとは、ChatGPT, Claude, GeminiなどのAIモデルから最高の結果を得るために、入力（プロンプト）を設計・最適化する技術です。単に質問するだけでなく、AIに文脈を正確に理解させ、希望する形式やトーンで回答させるための工夫を指します。"
+    },
+    "basic": {
+      "title": "主要4要素 (フレームワーク)",
+      "subtitle": "優れたプロンプトは、これら4つの要素が含まれているときに最も強力になります。",
+      "role": {
+        "title": "役割の割り当て (Role)",
+        "desc": "AIに特定の専門家としてのアイデンティティを与えます。",
+        "example": "「あなたは10年の経験を持つシニアマーケターです。」"
+      },
+      "context": {
+        "title": "文脈の提供 (Context)",
+        "desc": "背景知識を提供し、具体的な状況を説明します。",
+        "example": "「小規模ビジネス向けのSNS広告キャンペーンを計画しています。」"
+      },
+      "task": {
+        "title": "明確なタスク (Task)",
+        "desc": "実行すべき作業について具体的な指示を出します。",
+        "example": "「Instagram用の広告コピーを3つ作成してください。」"
+      },
+      "style": {
+        "title": "出力スタイル/制約 (Style)",
+        "desc": "トーン、長さ、形式を指定します。",
+        "example": "「親しみやすいトーンで、それぞれ100文字以内で、表形式で書いてください。」"
+      }
+    },
+    "advanced": {
+      "title": "高度なテクニック",
+      "fewShot": {
+        "title": "Few-Shot Prompting",
+        "desc": "希望する出力の例をいくつか提示して、品質を向上させます。",
+        "example": "入力: りんご -> 出力: 赤、入力: バナナ -> 出力: 黄色、入力: ぶどう -> 出力: ?"
+      },
+      "cot": {
+        "title": "Chain of Thought (CoT)",
+        "desc": "複雑な論理問題を解決するために、AIに「ステップバイステップで考える」よう指示します。",
+        "example": "「この問題を段階的に考えて解決し、そのプロセスを説明してください。」"
+      }
+    },
+    "closing": "ライブラリで検証済みのプロンプトをチェックして、今すぐ練習を始めましょう！",
+    "viewLibrary": "ライブラリへ",
+    "rules": {
+      "title": "3つの黄金律",
+      "rule1": {
+        "name": "役割の割り当て",
+        "desc": "AIに特定の専門家としてのアイデンティティを与えます。"
+      },
+      "rule2": {
+        "name": "制約条件",
+        "desc": "やってはいけないことを明確にします。"
+      },
+      "rule3": {
+        "name": "Few-Shot学習",
+        "desc": "期待される入力と出力のペアの例を提示します。"
+      }
+    },
+    "techniques": {
+      "title": "5つの主要プロンプトテクニック"
+    },
+    "comparison": {
+      "title": "比較：良い例と悪い例"
+    },
+    "models": {
+      "title": "AIモデルの比較"
+    },
+    "modelsItems": [
+      {
+        "name": "ChatGPT (OpenAI)",
+        "icon": "🤖",
+        "desc": "強力な推論能力と一般的な知識。CoTに優れています。"
+      },
+      {
+        "name": "Claude (Anthropic)",
+        "icon": "🎨",
+        "desc": "自然なコーディングとクリエイティブライティング。高い安全基準。"
+      },
+      {
+        "name": "Gemini (Google)",
+        "icon": "🌐",
+        "desc": "Googleサービスとの深い統合。マルチモーダルエンジンの専門家。"
+      }
+    ],
+    "techniquesItems": {
+      "zeroShot": {
+        "title": "Zero-Shot Prompting",
+        "desc": "例を提示せず、直接的な指示のみで結果を得る最も基本的なテクニック。",
+        "example": "次の文章の感情を分析してください：『今日はとてもいい天気だ』",
+        "note": "単純な分類、要約、翻訳などの明確なタスクに効果的です。"
+      },
+      "fewShot": {
+        "title": "Few-Shot Prompting",
+        "desc": "2〜5個の入出力例を提示することで、AIに希望するパターンを学習させるテクニック。",
+        "example": "ポジティブ: いい天気 → 😊、ネガティブ: 雨が降っている → 😢、分析: 今日は気分が悪い → ?",
+        "note": "特定の形式、論理、またはスタイルが必要な場合に非常に効果的です。"
+      },
+      "cot": {
+        "title": "Chain of Thought (CoT)",
+        "desc": "AIに『ステップバイステップで考える』よう指示し、推論プロセスを経るようにするテクニック。",
+        "example": "この問題を段階的に解いてください。各ステップの論理的な根拠を説明してください。",
+        "note": "数学の問題、論理的推論、コードのデバッグなど、複雑な分析において精度を大幅に向上させます。"
+      },
+      "rolePlaying": {
+        "title": "Role Playing (ロールプレイング)",
+        "desc": "AIに特定の専門家、キャラクター、または視点としての役割を割り当てるテクニック。",
+        "example": "あなたは10年の経験を持つUXデザインリードです。このアプリのオンボーディングフローを批判的にレビューしてください。",
+        "note": "専門的なアドバイス、多面的な分析、面接の練習などに適用可能です。"
+      },
+      "structuredOutput": {
+        "title": "Structured Output (構造化出力)",
+        "desc": "JSON、テーブル、Markdownなどの形式を指定して、構造化された結果を得るテクニック。",
+        "example": "分析結果を次のJSON形式で出力してください：{\"sentiment\": string, \"score\": number}",
+        "note": "データ処理パイプラインやAPIレスポンス生成など、自動処理が必要な場合に不可欠です。"
+      }
+    },
+    "comparisonItems": [
+      {
+        "bad": "猫についての短い話を書いてください。",
+        "badAnalysis": "曖昧すぎます。AIはトーン、長さ、プロットなどの文脈を知ることができません。",
+        "good": "プロのクリエイティブライターとして振る舞ってください。実は秘密工作員である猫についての、機知に富んだ300文字程度の短編小説を書いてください。雨の路地裏での緊迫した会議に焦点を当ててください。",
+        "goodAnalysis": "明確なペルソナ、具体的な制約、そして明確なストーリーの文脈が含まれています。"
+      }
+    ],
+    "categoryTips": {
+      "title": "カテゴリ別ヒント"
+    },
+    "categoryTipsItems": {
+      "writing": {
+        "title": "✍️ ライティング",
+        "desc": "正確な役割を割り当て、希望するトーン、長さ、ターゲット層を指定してください。"
+      },
+      "coding": {
+        "title": "💻 コーディング",
+        "desc": "プログラミング言語、フレームワークのバージョン、技術スタック、および希望する出力形式（例：コメント付きのコードブロック）を指定してください。"
+      },
+      "business": {
+        "title": "📊 ビジネス",
+        "desc": "メール作成やレポートの要約など、具体的な状況と目的を説明してください。"
+      },
+      "learning": {
+        "title": "🎓 学習",
+        "desc": "AIにチューターの役割を割り当て、自分のレベルに合わせた説明を求めてください。"
+      },
+      "ideas": {
+        "title": "💡 アイデア",
+        "desc": "ブレーンストーミング中に「自由な発想」や「批判的なレビュー」などのモードを設定してください。"
+      },
+      "design": {
+        "title": "🎨 デザイン/企画",
+        "desc": "ターゲットユーザー、サービスの特徴、デザインガイドラインなどの詳細を提供してください。"
+      }
+    },
+    "mistakes": {
+      "title": "よくある間違い"
+    },
+    "mistakesItems": [
+      {
+        "title": "指示が曖昧すぎる",
+        "desc": "「良い記事を書いて」といった具体性のないプロンプトは避けてください。",
+        "solution": "トピック、長さ、トーン、ターゲット層、出力形式を指定しましょう。"
+      },
+      {
+        "title": "文脈の不足",
+        "desc": "背景知識なしにAIに回答させないでください。",
+        "solution": "十分な関連背景情報と制約条件を提供しましょう。"
+      }
+    ],
+    "glossary": {
+      "title": "用語集"
+    },
+    "glossaryItems": [
+      {
+        "term": "LLM",
+        "desc": "大規模言語モデル。大量のデータで訓練されたAI言語モデル。"
+      },
+      {
+        "term": "ハルシネーション",
+        "desc": "AIが情報を捏造したり、誤った答えを自信満々に話したりする現象。"
+      },
+      {
+        "term": "コンテキストウィンドウ",
+        "desc": "AIが一度に記憶し、処理できる情報の量。"
+      }
+    ],
+    "cta": {
+      "title": "今すぐ実践で活用しましょう",
+      "desc": "PromptGenieライブラリで90以上の検証済みプロンプトを探索し、自分だけのカスタムプロンプトを作成してください。",
+      "library": "ライブラリを探索",
+      "generator": "プロンプト生成"
+    }
+  }
+}

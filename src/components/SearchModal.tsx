@@ -36,12 +36,12 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                 } catch (err) {}
             }
             try {
-                if (locale === 'en') {
-                    const promptData = await import('@/data/prompts-en');
-                    setPrompts(promptData.PROMPTS_EN);
-                } else {
+                if (locale === 'ko') {
                     const promptData = await import('@/data/prompts');
                     setPrompts(promptData.PROMPTS);
+                } else {
+                    const promptData = await import('@/data/prompts-en');
+                    setPrompts(promptData.PROMPTS_EN);
                 }
             } catch (e) {
                 console.error('Failed to load localized prompts for search', e);

@@ -1,0 +1,534 @@
+{
+  "Metadata": {
+    "title": "PromptGenie | Colección y Generador de Prompts de IA para ChatGPT, Claude, Gemini",
+    "description": "Explora gratis más de 90 prompts de IA verificados para ChatGPT, Claude y Gemini, y genera prompts personalizados. Guías de ingeniería de prompts y uso real, todo en un solo lugar.",
+    "keywords": "prompt,ingeniería de prompts,prompt de ChatGPT,prompt de Claude,prompt de Gemini,prompt de IA,colección de prompts,generador de prompts,uso de IA,PromptGenie",
+    "siteName": "PromptGenie"
+  },
+  "Navbar": {
+    "library": "Biblioteca",
+    "generator": "Generador de Prompts",
+    "blogWriter": "Escritor de Blogs",
+    "guide": "Guía",
+    "blog": "Blog",
+    "myPrompts": "Mis Prompts",
+    "start": "Empezar",
+    "search": "Buscar"
+  },
+  "Home": {
+    "badge": "Ingeniería de Prompts de Próxima Generación",
+    "title": "Domina el Arte de la\nConversación con IA",
+    "subtitle": "Descubre y genera prompts de alto rendimiento para ChatGPT, Claude y Gemini. Únete a una comunidad de élite de ingenieros de prompts.",
+    "exploreLibrary": "Explorar Biblioteca",
+    "createPrompt": "Generación de Prompts Personalizados",
+    "features": {
+      "title": "Libera tu Potencial",
+      "library": {
+        "title": "Biblioteca Curada",
+        "desc": "Conoce los prompts de más alto nivel probados en los principales modelos de IA."
+      },
+      "wizard": {
+        "title": "Asistente de Prompts",
+        "desc": "Crea fácilmente prompts complejos y estructurados mediante guías paso a paso."
+      },
+      "learning": {
+        "title": "Centro de Aprendizaje",
+        "desc": "Domina los principios básicos de la ingeniería de prompts a través de nuestras guías."
+      }
+    },
+    "popular": {
+      "title": "Los 6 Prompts Más Populares",
+      "subtitle": "Descubre los prompts más queridos y verificados",
+      "viewAll": "Ver Biblioteca Completa →"
+    },
+    "latestBlog": {
+      "title": "Último Blog",
+      "subtitle": "Consejos de ingeniería de prompts y guías de uso de IA",
+      "viewMore": "Leer Más →"
+    },
+    "seo": {
+      "title": "Guía de Ingeniería de Prompts",
+      "article1": {
+        "header": "💡 El Poder de los Prompts",
+        "content": "La herramienta más poderosa para comunicarse con los LLM (Modelos de Lenguaje Grande), el núcleo de la tecnología de IA moderna, es el 'prompt'. Más allá de simples preguntas, los prompts sirven como una brújula que guía el proceso de pensamiento de la IA, estimula la creatividad y conduce a resultados óptimos. Un prompt bien diseñado puede reemplazar cientos de líneas de código o proporcionar una poderosa eficiencia que resuelve procesos comerciales complejos en solo segundos."
+      },
+      "article2": {
+        "header": "🚀 Habilidad Esencial en la Era de la IA",
+        "content": "A medida que evolucionan los modelos de IA de alto rendimiento como ChatGPT, Claude y Gemini, la forma en que 'preguntas' e 'instruyes' se ha convertido en una ventaja competitiva fundamental, más allá de simplemente usar herramientas. La esencia de la ingeniería de prompts radica en establecer claramente el contexto, asignar roles específicos y manejar elaboradamente las restricciones en los formatos de salida."
+      },
+      "article3": {
+        "header": "✨ Crece con PromptGenie",
+        "content": "PromptGenie proporciona una biblioteca de prompts de alta calidad verificada por ingenieros de prompts de élite de todo el mundo. Explora prompts optimizados en varias categorías, como análisis de negocios, escritura creativa y codificación profesional. Nuestra biblioteca será tu aliado más fuerte para ayudarte a utilizar el potencial de la IA al 100%."
+      }
+    }
+  },
+  "Blog": {
+    "metadata": {
+      "title": "Blog de Prompts de IA - Consejos de Ingeniería de Prompts y Uso de IA",
+      "description": "Información sobre ingeniería de prompts, guías de uso de IA, comparaciones entre ChatGPT, Claude y Gemini, y consejos prácticos para la era de la IA.",
+      "ogTitle": "Blog de Prompts de IA | PromptGenie",
+      "ogDescription": "Consejos y guías de expertos sobre ingeniería de prompts y utilización de IA."
+    },
+    "hero": {
+      "titleAccent": "Blog de",
+      "titleRemaining": "Prompts de IA",
+      "subtitle": "Desde técnicas básicas hasta aplicaciones del mundo real, compartiendo conocimientos para liderar la era de la IA."
+    },
+    "card": {
+      "readSuffix": "min de lectura",
+      "readMore": "Leer más"
+    }
+  },
+  "Library": {
+    "filterToggleOpen": "Filtros y Categorías",
+    "filterToggleClose": "Cerrar Filtros",
+    "resetFilters": "Restablecer Filtros",
+    "byRole": "🎯 Por Rol",
+    "category": "Categoría",
+    "aiModel": "Modelo de IA",
+    "difficulty": "Dificultad",
+    "searchPlaceholder": "Buscar prompts (ej. 'codificación', 'marketing', 'SEO')...",
+    "promptCount": "{count} prompts",
+    "sortPopular": "Popular",
+    "sortName": "A-Z",
+    "sortNewest": "Más reciente",
+    "noResults": "No se encontraron prompts que coincidan con tus criterios.",
+    "resetFiltersBtn": "Restablecer Filtros",
+    "all": "Todos",
+    "audiences": {
+      "all": "Todos",
+      "marketer": "Estratega de Marketing",
+      "developer": "Desarrollador",
+      "student": "Estudiante",
+      "planner": "Planificador",
+      "creator": "Creador",
+      "worker": "Oficinista"
+    }
+  },
+  "LibraryMeta": {
+    "title": "Biblioteca de Prompts de IA - Colección para ChatGPT, Claude, Gemini",
+    "description": "Explora gratis más de 90 prompts de IA verificados organizados por categoría. Escritura, codificación, negocios, aprendizaje y más. Optimizado para ChatGPT, Claude y Gemini.",
+    "ogTitle": "Biblioteca de Prompts de IA | PromptGenie",
+    "ogDescription": "Explora gratis más de 90 prompts de IA verificados organizados por categoría."
+  },
+  "Generator": {
+    "stepOf": "Paso {current} de {total}",
+    "suggestionTitle": "Respuestas sugeridas:",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "generate": "Generar Prompt",
+    "resultTitle": "Tu Prompt Generado",
+    "saveChanges": "Guardar Cambios",
+    "editPrompt": "Editar Prompt",
+    "saveFile": "Guardar como Archivo (.txt)",
+    "restart": "Empezar de nuevo",
+    "copyClipboard": "Copiar al portapapeles",
+    "copied": "¡Copiado!",
+    "steps": [
+      {
+        "question": "¿Cuál es el rol principal de la IA?",
+        "placeholder": "ej. Ingeniero de Software Senior, Escritor Creativo, Consultor de Negocios",
+        "suggestions": ["Ingeniero de Software Senior", "Experto en Marketing", "Consejero Profesional", "Analista de Datos", "Novelista", "Escritor de Blogs", "Creador de YouTube", "Traductor"]
+      },
+      {
+        "question": "¿Qué tarea específica debe realizar?",
+        "placeholder": "ej. Revisión de código, Escribir un post de blog de viajes, Crear plan de marketing",
+        "suggestions": ["Revisión de código para el proyecto actual", "Escribir un post de blog", "Resumir informe de trabajo semanal", "Redactar una propuesta de negocios", "Traducir manual de producto", "Escribir un guion de YouTube", "Traducir correo electrónico en inglés", "Generar preguntas de entrevista"]
+      },
+      {
+        "question": "¿Qué detalles o contexto deben incluirse?",
+        "placeholder": "ej. Stack tecnológico específico, Público objetivo, Restricciones técnicas",
+        "suggestions": ["Nivel amigable para principiantes", "Considerar restricciones técnicas", "Público objetivo: profesionales", "Incluir resumen de datos clave", "Formato de lista concisa", "Tono amable y empático", "Incluir palabras clave optimizadas para SEO", "Salida en formato Markdown"]
+      },
+      {
+        "question": "¿Qué tono o estilo prefieres?",
+        "placeholder": "ej. Profesional, Humorístico, Conciso, Académico",
+        "suggestions": ["Profesional y confiable", "Humorístico y cercano", "Académico y objetivo", "Claro y conciso", "Persuasivo", "Emocional y cálido", "Lógico y analítico", "Usando analogías ingeniosas"]
+      }
+    ],
+    "promptTemplate": "Rol: {role}.\nTarea: {task}.\n\nDetalles y Contexto:\n{context}\n\nEstilo de Salida:\nTu respuesta debe tener un tono {style}. Por favor, mantén una alta calidad y precisión.",
+    "rolePlaceholder": "[rol]",
+    "taskPlaceholder": "[tarea]",
+    "contextPlaceholder": "[contexto]",
+    "stylePlaceholder": "[estilo]"
+  },
+  "GeneratorMeta": {
+    "title": "Generador de Prompts de IA Personalizados - Construye tu prompt en 4 pasos",
+    "description": "Ingresa rol, tarea, contexto y estilo paso a paso para generar automáticamente prompts de IA optimizados. Compatible con ChatGPT, Claude y Gemini.",
+    "ogTitle": "Generador de Prompts de IA Personalizados | PromptGenie",
+    "ogDescription": "Generador de prompts de IA personalizados en 4 pasos. Ingresa rol, tarea, contexto y estilo para generar prompts al instante."
+  },
+  "Footer": {
+    "description": "Maximiza el potencial de la IA con prompts curados y potentes herramientas de generación.",
+    "platform": "Plataforma",
+    "library": "Biblioteca",
+    "generator": "Generador",
+    "guide": "Guía",
+    "community": "Comunidad",
+    "explore": "Explorar",
+    "trending": "Prompts en Tendencia",
+    "contributors": "Colaboradores",
+    "legal": "Legal",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio"
+  },
+  "FAQ": {
+    "title": "Preguntas Frecuentes",
+    "items": [
+      {
+        "question": "¿Qué es PromptGenie?",
+        "answer": "PromptGenie es una plataforma de ingeniería de prompts que te ayuda a obtener el mejor rendimiento de los modelos de IA como ChatGPT, Claude y Gemini. Proporciona una biblioteca de prompts verificados y herramientas para crear y optimizar tus propios prompts."
+      },
+      {
+        "question": "¿Por qué es importante la ingeniería de prompts?",
+        "answer": "Incluso con el mismo modelo de IA, la calidad de la respuesta depende totalmente de la calidad del prompt. A través de la ingeniería de prompts, puedes reducir las alucinaciones de la IA y obtener resultados más precisos y creativos que coincidan mejor con tus intenciones."
+      },
+      {
+        "question": "¿Es este servicio gratuito?",
+        "answer": "Sí, las funciones básicas de búsqueda y generación de la biblioteca de prompts de PromptGenie son actualmente gratuitas. Nuestro objetivo es ayudar a todos a utilizar fácilmente la tecnología de IA. En el futuro podrían introducirse planes premium con análisis avanzados."
+      },
+      {
+        "question": "¿Puedo compartir mi propios prompts?",
+        "answer": "¡Absolutamente! PromptGenie está orientado hacia el crecimiento impulsado por la comunidad. Puedes compartir tus prompts únicos a través de la página de 'Colaboradores' y perfeccionarlos aún más mediante los comentarios de otros usuarios."
+      }
+    ]
+  },
+  "Newsletter": {
+    "title": "Recibe nuevos prompts de IA cada semana",
+    "description": "Enviamos los últimos consejos de ingeniería de prompts, prompts prácticos e información de la industria de la IA a tu bandeja de entrada cada semana.",
+    "placeholder": "Ingresa tu correo electrónico",
+    "ariaLabel": "Dirección de correo para el boletín",
+    "subscribe": "Suscribirse",
+    "successMsg": "¡Suscrito! Te enviaremos prompts útiles cada semana.",
+    "errorMsg": "Por favor, ingresa un correo electrónico válido.",
+    "privacy": "Sin spam. Cancela la suscripción en cualquier momento."
+  },
+  "Common": {
+    "copyPrompt": "Copiar Prompt",
+    "copied": "¡Copiado!",
+    "toggleFavorite": "Alternar Favorito",
+    "shareLabel": "Compartir",
+    "kakaoShare": "Compartir en KakaoStory",
+    "naverShare": "Compartir en Naver",
+    "twitterShare": "Compartir en X (Twitter)",
+    "facebookShare": "Compartir en Facebook",
+    "copyLink": "Copiar Enlace"
+  },
+  "Submit": {
+    "title": "Enviar un Prompt",
+    "subtitle": "Comparte tu prompt único y conviértete en colaborador de PromptGenie.",
+    "guidelinesTitle": "Pautas de Envío",
+    "purpose": "Propósito Claro:",
+    "purposeDesc": "El problema que resuelve el prompt debe estar claramente definido.",
+    "instructions": "Instrucciones Específicas:",
+    "instructionsDesc": "Usa estructuras y lenguaje que la IA pueda entender fácilmente.",
+    "verified": "Resultados Verificados:",
+    "verifiedDesc": "Solo envía prompts que hayas probado realmente y con los que hayas obtenido buenos resultados.",
+    "processTitle": "Proceso",
+    "step1Title": "Enviar",
+    "step1Desc": "Envía tu prompt a través del formulario de Google.",
+    "step2Title": "Revisar",
+    "step2Desc": "Nuestro equipo revisa y prueba el contenido. (1-2 días)",
+    "step3Title": "Publicar",
+    "step3Desc": "Se agrega a la biblioteca y se te reconoce como colaborador.",
+    "readyText": "¿Listo? Haz clic en el botón de abajo para completar el formulario.",
+    "submitBtn": "Enviar vía Formulario de Google",
+    "note": "* Los prompts enviados se agregarán a la biblioteca después de la revisión, y se te acreditará como colaborador."
+  },
+  "Contributors": {
+    "title": "Salón de la Fama",
+    "subtitle": "Conoce a los increíbles colaboradores que han hecho brillar a la comunidad de PromptGenie.",
+    "ctaTitle": "Tú también puedes ser colaborador",
+    "ctaDesc": "Comparte tus prompts únicos y creced juntos con la comunidad.",
+    "ctaBtn": "Enviar un Prompt"
+  },
+  "SearchModal": {
+    "placeholder": "Buscar prompts, blog posts...",
+    "trending": "Tendencias",
+    "noResults": "No se encontraron resultados para \"{query}\".",
+    "prompts": "Prompts",
+    "blog": "Blog",
+    "navMove": "navegar",
+    "navSelect": "seleccionar",
+    "navClose": "cerrar",
+    "trendingKeywords": ["ChatGPT", "Claude", "SEO", "codificación", "marketing", "correo electrónico", "blog", "escritura de prompts"]
+  },
+  "BlogDetail": {
+    "backLink": "← Volver al Blog",
+    "ctaTitle": "Obtén Más Información sobre IA",
+    "ctaDesc": "Explora más de 90 prompts verificados en la biblioteca de PromptGenie.",
+    "ctaLibrary": "Explorar Biblioteca",
+    "ctaGuide": "Ver Guía",
+    "relatedPrompts": "🎯 Prompts Relacionados",
+    "relatedPosts": "📚 Más Artículos",
+    "notFound": "Publicación no encontrada | PromptGenie",
+    "ogSiteName": "Blog de PromptGenie"
+  },
+  "PromptDetail": {
+    "notFound": "Prompt no encontrado | PromptGenie",
+    "siteName": "PromptGenie",
+    "fullPrompt": "📋 Prompt Completo",
+    "inputExample": "💬 Ejemplo de Entrada",
+    "outputExample": "✨ Ejemplo de Salida",
+    "tags": "🏷️ Etiquetas",
+    "usageTips": "💡 Consejos de Uso",
+    "relatedPrompts": "🔗 Prompts Relacionados",
+    "relatedBlog": "📚 Entradas de Blog Relacionadas",
+    "home": "Inicio",
+    "library": "Biblioteca",
+    "backToLibrary": "← Volver a la Biblioteca"
+  },
+  "Profile": {
+    "defaultName": "Usuario",
+    "savedCount": "{count} prompts guardados • 0 colaboraciones",
+    "tabs": {
+      "favorites": "Favoritos",
+      "contributions": "Mis Colaboraciones",
+      "collections": "Colecciones"
+    },
+    "empty": {
+      "noFavorites": "Aún no hay prompts guardados.",
+      "browseLibrary": "Explorar Biblioteca",
+      "noContributions": "Aún no hay colaboraciones.",
+      "sharePrompt": "¡Crea y comparte tus propios prompts increíbles!",
+      "createPrompt": "Crear Prompt",
+      "noCollections": "Aún no se han creado colecciones.",
+      "gatherCollections": "Reúne prompts para crear tus propias colecciones."
+    }
+  },
+  "BlogWriter": {
+    "title": "Escritor de Blog de IA",
+    "subtitle": "Solo ingresa el tema. La IA completará una entrada de blog atractiva para ti.",
+    "selectModel": "Seleccionar Modelo de IA",
+    "apiKey": "Clave API",
+    "getKey": "Obtener Clave →",
+    "enterKey": "Ingresa la clave de {provider}",
+    "hide": "Ocultar",
+    "show": "Mostrar",
+    "keyStoreNote": "* Tus claves ingresadas no se almacenan en el servidor y solo se guardan cifradas en tu navegador.",
+    "topicLabel": "Tema del Blog",
+    "topicPlaceholder": "ej. Recomendaciones para las vacaciones de verano 2024, Cómo aumentar la productividad en el trabajo remoto",
+    "audienceLabel": "Público Objetivo (Opcional)",
+    "audiencePlaceholder": "ej. Estudiantes universitarios de 20 años, madres trabajadoras, principiantes en camping",
+    "keywordsLabel": "Palabras Clave (Separadas por comas)",
+    "keywordsPlaceholder": "ej. Relax, Económico, Estancia con encanto",
+    "toneLabel": "Tono",
+    "tones": {
+      "professional": "Profesional",
+      "friendly": "Cercano",
+      "witty": "Ingenioso",
+      "emotional": "Emocional"
+    },
+    "writing": "Escribiendo la publicación...",
+    "generateBtn": "Generar Entrada de Blog",
+    "resultTitle": "Resultado Generado",
+    "resultPlaceholder": "El texto escrito por la IA aparecerá aquí. Puedes editar el contenido directamente según sea necesario.",
+    "copyBtn": "Copiar",
+    "errorNoKey": "Por favor, ingresa la Clave API.",
+    "errorNoTopic": "Por favor, ingresa el tema del blog.",
+    "successCopy": "¡Copiado al portapapeles!",
+    "errorGen": "Ocurrió un error: {error}"
+  },
+  "Guide": {
+    "title": "Guía de Ingeniería de Prompts",
+    "subtitle": "Aprenda técnicas de comunicación efectivas para desbloquear el 100% del rendimiento de la IA.",
+    "labels": {
+      "example": "Ejemplo",
+      "proTip": "Consejo profesional:",
+      "badExample": "Mal ejemplo",
+      "goodExample": "Buen ejemplo",
+      "solution": "Solución"
+    },
+    "intro": {
+      "title": "¿Qué es la Ingeniería de Prompts?",
+      "content": "La ingeniería de prompts es el arte de diseñar y optimizar entradas (prompts) para obtener los mejores resultados posibles de los modelos de IA como ChatGPT, Claude y Gemini. Más allá de simplemente hacer preguntas, se trata de hacer que la IA comprenda el contexto con precisión y responda en el formato y tono deseados."
+    },
+    "basic": {
+      "title": "4 Elementos Clave (Framework)",
+      "subtitle": "Los buenos prompts son más potentes cuando incluyen estos cuatro elementos.",
+      "role": {
+        "title": "Asignación de Rol",
+        "desc": "Asigna una identidad experta específica a la IA.",
+        "example": "\"Eres un mercadólogo senior con 10 años de experiencia.\""
+      },
+      "context": {
+        "title": "Provisión de Contexto",
+        "desc": "Proporciona conocimientos de fondo y describe situaciones específicas.",
+        "example": "\"Estoy planeando una campaña publicitaria en redes sociales para una pequeña empresa.\""
+      },
+      "task": {
+        "title": "Tarea Clara",
+        "desc": "Da instrucciones específicas para el trabajo a realizar.",
+        "example": "\"Escribe 3 textos publicitarios para Instagram.\""
+      },
+      "style": {
+        "title": "Estilo de Salida/Restricción",
+        "desc": "Especifica tono, longitud y formato.",
+        "example": "\"Escribe en un tono amigable, de menos de 100 caracteres cada uno, en formato de tabla.\""
+      }
+    },
+    "advanced": {
+      "title": "Técnicas Avanzadas",
+      "fewShot": {
+        "title": "Prompting de Pocos Pasos (Few-Shot)",
+        "desc": "Proporciona algunos ejemplos de la salida deseada para mejorar la calidad.",
+        "example": "Entrada: Manzana -> Salida: Roja, Entrada: Plátano -> Salida: Amarilla, Entrada: Uva -> Salida: ?"
+      },
+      "cot": {
+        "title": "Cadena de Pensamiento (CoT)",
+        "desc": "Indica a la IA que 'piense paso a paso' para resolver problemas de lógica complejos.",
+        "example": "\"Razona esto paso a paso para resolver el problema y explica tu proceso.\""
+      }
+    },
+    "closing": "¡Consulta los prompts verificados en la biblioteca y comienza a practicar ahora!",
+    "viewLibrary": "Ir a la Biblioteca",
+    "rules": {
+      "title": "3 Reglas de Oro",
+      "rule1": {
+        "name": "Asignación de Rol",
+        "desc": "Asigna una identidad experta específica a la IA."
+      },
+      "rule2": {
+        "name": "Restricciones",
+        "desc": "Sé claro sobre lo que NO se debe hacer."
+      },
+      "rule3": {
+        "name": "Aprendizaje con Pocos Ejemplos",
+        "desc": "Proporciona ejemplos de pares de entrada/salida esperados."
+      }
+    },
+    "techniques": {
+      "title": "5 Técnicas Clave de Prompting"
+    },
+    "comparison": {
+      "title": "Comparación: Ejemplos Buenos vs. Malos"
+    },
+    "models": {
+      "title": "Comparación de Modelos de IA"
+    },
+    "modelsItems": [
+      {
+        "name": "ChatGPT (OpenAI)",
+        "icon": "🤖",
+        "desc": "Fuerte razonamiento y conocimiento general. Excelente en CoT."
+      },
+      {
+        "name": "Claude (Anthropic)",
+        "icon": "🎨",
+        "desc": "Codificación natural y escritura creativa. Altos estándares de seguridad."
+      },
+      {
+        "name": "Gemini (Google)",
+        "icon": "🌐",
+        "desc": "Integración profunda con los servicios de Google. Experto multimodal."
+      }
+    ],
+    "techniquesItems": {
+      "zeroShot": {
+        "title": "Prompting de Cero Pasos (Zero-Shot)",
+        "desc": "La técnica más básica para obtener resultados mediante instrucción directa sin ejemplos.",
+        "example": "Analiza el sentimiento de la siguiente frase: 'El clima es muy agradable hoy'",
+        "note": "Efectivo para tareas claras como clasificación simple, resumen y traducción."
+      },
+      "fewShot": {
+        "title": "Prompting de Pocos Pasos (Few-Shot)",
+        "desc": "Una técnica para entrenar a la IA en los patrones deseados proporcionando de 2 a 5 ejemplos de entrada/salida.",
+        "example": "Positivo: Buen clima → 😊, Negativo: Lloviendo → 😢, Análisis: Me siento mal hoy → ?",
+        "note": "Muy efectivo cuando se requieren resultados con un formato, lógica o estilo específico."
+      },
+      "cot": {
+        "title": "Cadena de Pensamiento (CoT)",
+        "desc": "Una técnica que indica a la IA que 'piense paso a paso' para pasar por un proceso de razonamiento.",
+        "example": "Resuelve este problema paso a paso. Explica la base lógica de cada paso.",
+        "note": "Mejora enormemente la precisión en análisis complejos como problemas matemáticos, razonamiento lógico y depuración de código."
+      },
+      "rolePlaying": {
+        "title": "Juego de Roles (Role Playing)",
+        "desc": "Una técnica que asigna a la IA un rol como experto, personaje o perspectiva específica.",
+        "example": "Eres un líder de diseño UX con 10 años de experiencia. Por favor, revisa críticamente el flujo de incorporación de esta aplicación.",
+        "note": "Aplicable para asesoramiento profesional, análisis multifacético, práctica de entrevistas, etc."
+      },
+      "structuredOutput": {
+        "title": "Salida Estructurada",
+        "desc": "Una técnica para obtener resultados estructurados especificando formatos como JSON, tablas o Markdown.",
+        "example": "Genera los resultados del análisis en el siguiente formato JSON: {\"sentiment\": string, \"score\": number}",
+        "note": "Esencial cuando se requiere procesamiento automatizado, como pipelines de procesamiento de datos o generación de respuestas de API."
+      }
+    },
+    "comparisonItems": [
+      {
+        "bad": "Escribe una historia corta sobre un gato.",
+        "badAnalysis": "Demasiado vago. La IA no puede conocer el contexto del tono, la longitud o la trama.",
+        "good": "Actúa como un escritor creativo profesional. Escribe una historia corta e ingeniosa de unos 300 caracteres sobre un gato que en realidad es un agente secreto. Concéntrate en una reunión tensa en un callejón lluvioso.",
+        "goodAnalysis": "Incluye una personalidad clara, restricciones específicas y un contexto de trama claro."
+      }
+    ],
+    "categoryTips": {
+      "title": "Consejos por Categoría"
+    },
+    "categoryTipsItems": {
+      "writing": {
+        "title": "✍️ Escritura",
+        "desc": "Asigna un rol preciso y especifica el tono, la longitud y el público objetivo deseados."
+      },
+      "coding": {
+        "title": "💻 Codificación",
+        "desc": "Especifica lenguajes de programación, versiones de frameworks, stacks tecnológicos y formato de salida deseado (ej. bloques de código con comentarios)."
+      },
+      "business": {
+        "title": "📊 Negocios",
+        "desc": "Describe la situación y el propósito específicos, como la redacción de correos electrónicos o el resumen de informes."
+      },
+      "learning": {
+        "title": "🎓 Aprendizaje",
+        "desc": "Asigna un papel de tutor a la IA y solicita explicaciones que se adapten a tu nivel."
+      },
+      "ideas": {
+        "title": "💡 Ideas",
+        "desc": "Establece modos como 'pensamiento libre' o 'revisión crítica' durante la lluvia de ideas."
+      },
+      "design": {
+        "title": "🎨 Diseño/Planificación",
+        "desc": "Proporciona detalles como usuarios objetivo, características del servicio y pautas de diseño."
+      }
+    },
+    "mistakes": {
+      "title": "Errores Comunes"
+    },
+    "mistakesItems": [
+      {
+        "title": "Instrucciones demasiado vagas",
+        "desc": "Evita prompts poco específicos como 'escribe una buena publicación'.",
+        "solution": "Especifica el tema, la longitud, el tono, el público objetivo y el formato de salida."
+      },
+      {
+        "title": "Falta de Contexto",
+        "desc": "No dejes que la IA responda sin ningún conocimiento previo.",
+        "solution": "Proporciona suficiente información de trasfondo relevante y restricciones."
+      }
+    ],
+    "glossary": {
+      "title": "Glosario"
+    },
+    "glossaryItems": [
+      {
+        "term": "LLM",
+        "desc": "Modelo de Lenguaje Grande. Un modelo de lenguaje de IA entrenado con cantidades masivas de datos."
+      },
+      {
+        "term": "Alucinación",
+        "desc": "Un fenómeno en el que la IA manipula información o dice respuestas incorrectas con confianza."
+      },
+      {
+        "term": "Ventana de Contexto",
+        "desc": "La cantidad de información que la IA puede recordar y procesar a la vez."
+      }
+    ],
+    "cta": {
+      "title": "Empieza a usarlo en la práctica ahora",
+      "desc": "Explora más de 90 prompts verificados en la biblioteca de PromptGenie y crea tus propios prompts personalizados.",
+      "library": "Explorar Biblioteca",
+      "generator": "Generador de Prompts"
+    }
+  }
+}

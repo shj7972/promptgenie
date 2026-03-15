@@ -27,14 +27,14 @@ interface PageProps {
 export default async function LibraryPage({ params }: PageProps) {
     const { locale } = await params;
 
-    const isEn = locale === 'en';
+    const isKo = locale === 'ko';
 
-    const prompts = isEn ? PROMPTS_EN : PROMPTS;
-    const categories = isEn ? CATEGORIES_EN : CATEGORIES;
-    const models = isEn ? MODELS_EN : MODELS;
-    const difficulties = isEn ? DIFFICULTIES_EN : DIFFICULTIES;
-    const allValue = isEn ? 'All' : '전체';
-    const audienceKeywords = isEn ? EN_AUDIENCE_KEYWORDS : KO_AUDIENCE_KEYWORDS;
+    const prompts = isKo ? PROMPTS : PROMPTS_EN;
+    const categories = isKo ? CATEGORIES : CATEGORIES_EN;
+    const models = isKo ? MODELS : MODELS_EN;
+    const difficulties = isKo ? DIFFICULTIES : DIFFICULTIES_EN;
+    const allValue = isKo ? '전체' : 'All';
+    const audienceKeywords = isKo ? KO_AUDIENCE_KEYWORDS : EN_AUDIENCE_KEYWORDS;
 
     return (
         <LibraryClient
