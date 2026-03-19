@@ -5,6 +5,10 @@ import FAQ from '@/components/FAQ';
 import NewsletterForm from '@/components/NewsletterForm';
 import { PROMPTS } from '@/data/prompts';
 import { PROMPTS_EN } from '@/data/prompts-en';
+import { PROMPTS_JA } from '@/data/prompts-ja';
+import { PROMPTS_ES } from '@/data/prompts-es';
+import { PROMPTS_ZH } from '@/data/prompts-zh';
+import { PROMPTS_AR } from '@/data/prompts-ar';
 import styles from './page.module.css';
 
 export default async function Home({
@@ -26,6 +30,18 @@ export default async function Home({
   const latestPosts = [...blogPosts]
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3);
+
+  const baseEN = PROMPTS_EN.filter(p => parseInt(p.id) <= 90);
+  const allPrompts = (() => {
+    switch (locale) {
+      case 'ko': return PROMPTS;
+      case 'ja': return [...baseEN, ...PROMPTS_JA];
+      case 'es': return [...baseEN, ...PROMPTS_ES];
+      case 'zh': return [...baseEN, ...PROMPTS_ZH];
+      case 'ar': return [...baseEN, ...PROMPTS_AR];
+      default:   return PROMPTS_EN;
+    }
+  })();
 
   const websiteJsonLd = {
     '@context': 'https://schema.org',
@@ -133,7 +149,7 @@ export default async function Home({
           <h2 className={styles.sectionTitle}>{t('popular.title')}</h2>
           <p className={styles.sectionSubtitle}>{t('popular.subtitle')}</p>
           <div className={styles.popularGrid}>
-            {[...(locale === 'ko' ? PROMPTS : PROMPTS_EN)]
+            {[...allPrompts]
               .sort((a, b) => b.likes - a.likes)
               .slice(0, 6)
               .map(prompt => (

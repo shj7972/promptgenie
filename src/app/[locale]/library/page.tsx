@@ -1,5 +1,9 @@
 import { PROMPTS, CATEGORIES, MODELS, DIFFICULTIES } from '@/data/prompts';
 import { PROMPTS_EN, CATEGORIES_EN, MODELS_EN, DIFFICULTIES_EN } from '@/data/prompts-en';
+import { PROMPTS_JA } from '@/data/prompts-ja';
+import { PROMPTS_ES } from '@/data/prompts-es';
+import { PROMPTS_ZH } from '@/data/prompts-zh';
+import { PROMPTS_AR } from '@/data/prompts-ar';
 import LibraryClient from './LibraryClient';
 
 const KO_AUDIENCE_KEYWORDS: Record<string, string[]> = {
@@ -29,7 +33,19 @@ export default async function LibraryPage({ params }: PageProps) {
 
     const isKo = locale === 'ko';
 
-    const prompts = isKo ? PROMPTS : PROMPTS_EN;
+    const baseEN = PROMPTS_EN.filter(p => parseInt(p.id) <= 90);
+    const getLocalizedPrompts = () => {
+        switch (locale) {
+            case 'ko': return PROMPTS;
+            case 'ja': return [...baseEN, ...PROMPTS_JA];
+            case 'es': return [...baseEN, ...PROMPTS_ES];
+            case 'zh': return [...baseEN, ...PROMPTS_ZH];
+            case 'ar': return [...baseEN, ...PROMPTS_AR];
+            default:   return PROMPTS_EN;
+        }
+    };
+
+    const prompts = getLocalizedPrompts();
     const categories = isKo ? CATEGORIES : CATEGORIES_EN;
     const models = isKo ? MODELS : MODELS_EN;
     const difficulties = isKo ? DIFFICULTIES : DIFFICULTIES_EN;

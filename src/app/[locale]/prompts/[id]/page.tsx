@@ -4,7 +4,24 @@ import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import { PROMPTS } from '@/data/prompts';
 import { PROMPTS_EN } from '@/data/prompts-en';
+import { PROMPTS_JA } from '@/data/prompts-ja';
+import { PROMPTS_ES } from '@/data/prompts-es';
+import { PROMPTS_ZH } from '@/data/prompts-zh';
+import { PROMPTS_AR } from '@/data/prompts-ar';
 import { BLOG_POSTS as KO_BLOG_POSTS } from '@/data/blog-posts/ko';
+
+const BASE_EN = PROMPTS_EN.filter(p => parseInt(p.id) <= 90);
+
+function getLocalizedPrompts(locale: string) {
+    switch (locale) {
+        case 'ko': return PROMPTS;
+        case 'ja': return [...BASE_EN, ...PROMPTS_JA];
+        case 'es': return [...BASE_EN, ...PROMPTS_ES];
+        case 'zh': return [...BASE_EN, ...PROMPTS_ZH];
+        case 'ar': return [...BASE_EN, ...PROMPTS_AR];
+        default:   return PROMPTS_EN;
+    }
+}
 import { BLOG_POSTS as EN_BLOG_POSTS } from '@/data/blog-posts/en';
 import ShareButtons from '@/components/ShareButtons';
 import styles from './page.module.css';
@@ -14,11 +31,11 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-    const locales = ['ko', 'en'];
+    const locales = ['ko', 'en', 'ja', 'es', 'zh', 'ar'];
     const params = [];
-    
+
     for (const locale of locales) {
-        const prompts = locale === 'ko' ? PROMPTS : PROMPTS_EN;
+        const prompts = getLocalizedPrompts(locale);
         for (const prompt of prompts) {
             params.push({
                 locale,
@@ -26,13 +43,13 @@ export async function generateStaticParams() {
             });
         }
     }
-    
+
     return params;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { id, locale } = await params;
-    const prompts = locale === 'ko' ? PROMPTS : PROMPTS_EN;
+    const prompts = getLocalizedPrompts(locale);
     const prompt = prompts.find(p => p.id === id);
     const t = await getTranslations({ locale, namespace: 'PromptDetail' });
 
@@ -218,7 +235,7 @@ function getCategoryArticle(category: string, locale: string): { title: string; 
 
 export default async function PromptDetailPage({ params }: PageProps) {
     const { id, locale } = await params;
-    const prompts = locale === 'ko' ? PROMPTS : PROMPTS_EN;
+    const prompts = getLocalizedPrompts(locale);
     const prompt = prompts.find(p => p.id === id);
     const t = await getTranslations({ locale, namespace: 'PromptDetail' });
 
