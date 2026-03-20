@@ -1,4 +1,3 @@
-import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import FAQ from '@/components/FAQ';
@@ -9,6 +8,8 @@ import { PROMPTS_JA } from '@/data/prompts-ja';
 import { PROMPTS_ES } from '@/data/prompts-es';
 import { PROMPTS_ZH } from '@/data/prompts-zh';
 import { PROMPTS_AR } from '@/data/prompts-ar';
+import { MODELS_DATA } from '@/data/models';
+import { AI_NEWS } from '@/data/ai-news';
 import styles from './page.module.css';
 
 export default async function Home({
@@ -30,6 +31,18 @@ export default async function Home({
   const latestPosts = [...blogPosts]
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3);
+
+  // AI Model Hub data
+  const top3Models = [...MODELS_DATA]
+    .filter(m => m.benchmarks.ArenaELO)
+    .sort((a, b) => (b.benchmarks.ArenaELO ?? 0) - (a.benchmarks.ArenaELO ?? 0))
+    .slice(0, 3);
+
+  const latestAINews = [...AI_NEWS]
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3);
+
+  const isKo = locale === 'ko';
 
   const baseEN = PROMPTS_EN.filter(p => parseInt(p.id) <= 90);
   const allPrompts = (() => {
@@ -170,6 +183,76 @@ export default async function Home({
           <div className={styles.ctaCenter}>
             <Link href="/library" className={styles.primaryBtn}>
               {t('popular.viewAll')}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Model Hub Teaser */}
+      <section className={styles.modelsHubSection}>
+        <div className="section-container">
+          <div className={styles.modelsHubBadge}>{t('modelsHub.badge')}</div>
+          <h2 className={styles.sectionTitle}>{t('modelsHub.title')}</h2>
+          <p className={styles.sectionSubtitle}>{t('modelsHub.subtitle')}</p>
+
+          {/* Stats Row */}
+          <div className={styles.modelsHubStats}>
+            <div className={styles.modelsHubStat}>
+              <span className={styles.modelsHubStatNum}>24</span>
+              <span className={styles.modelsHubStatLabel}>{t('modelsHub.statModels')}</span>
+            </div>
+            <div className={styles.modelsHubStat}>
+              <span className={styles.modelsHubStatNum}>9</span>
+              <span className={styles.modelsHubStatLabel}>{t('modelsHub.statProviders')}</span>
+            </div>
+            <div className={styles.modelsHubStat}>
+              <span className={styles.modelsHubStatNum}>8</span>
+              <span className={styles.modelsHubStatLabel}>{t('modelsHub.statBenchmarks')}</span>
+            </div>
+          </div>
+
+          <div className={styles.modelsHubContent}>
+            {/* Top 3 Ranking */}
+            <div className={styles.modelsHubRanking}>
+              <h3 className={styles.modelsHubSubtitle}>{t('modelsHub.topRanking')} <small>{t('modelsHub.rankingBasis')}</small></h3>
+              <div className={styles.rankingList}>
+                {top3Models.map((model, idx) => (
+                  <Link key={model.id} href={`/models/${model.id}`} className={`${styles.rankingCard} glass`}>
+                    <span className={styles.rankingNum}>#{idx + 1}</span>
+                    <div className={styles.rankingInfo}>
+                      <span className={styles.rankingName}>{model.name}</span>
+                      <span className={styles.rankingProvider}>{model.provider}</span>
+                    </div>
+                    <div className={styles.rankingMeta}>
+                      <span className={styles.rankingElo}>{model.benchmarks.ArenaELO?.toLocaleString()}</span>
+                      {model.releaseDate >= '2026' && <span className={styles.rankingNew}>{t('modelsHub.newBadge')}</span>}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Latest AI News */}
+            <div className={styles.modelsHubNews}>
+              <h3 className={styles.modelsHubSubtitle}>{t('modelsHub.latestNews')}</h3>
+              <div className={styles.newsList}>
+                {latestAINews.map(news => (
+                  <div key={news.id} className={`${styles.newsItem} glass`}>
+                    <span className={styles.newsCategory}>{news.category}</span>
+                    <p className={styles.newsTitle}>{isKo ? news.titleKo : news.title}</p>
+                    <span className={styles.newsDate}>{news.date}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.ctaCenter}>
+            <Link href="/models" className={styles.primaryBtn}>
+              {t('modelsHub.viewAllModels')}
+            </Link>
+            <Link href="/news" className={styles.secondaryBtn}>
+              {t('modelsHub.viewAllNews')}
             </Link>
           </div>
         </div>

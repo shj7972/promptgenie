@@ -42,6 +42,21 @@
       "subtitle": "发现最受喜爱且经过验证的提示词",
       "viewAll": "查看完整词库 →"
     },
+    "modelsHub": {
+      "badge": "🆕 全新上线 — AI 模型中心",
+      "title": "哪款 AI 模型最适合你？",
+      "subtitle": "比较 Claude、GPT-4o、Gemini 等 24 款最新 AI 模型的性能、价格与基准测试。",
+      "topRanking": "🔥 实时能力排行榜 TOP 3",
+      "rankingBasis": "基于 Arena ELO",
+      "latestNews": "📰 最新 AI 资讯",
+      "viewAllModels": "探索全部 AI 模型 →",
+      "viewAllNews": "更多 AI 资讯 →",
+      "statModels": " 个模型",
+      "statProviders": " 家厂商",
+      "statBenchmarks": " 项基准",
+      "newBadge": "新",
+      "ossBadge": "开源"
+    },
     "latestBlog": {
       "title": "最新博客",
       "subtitle": "提示词工程技巧和 AI 使用指南",

@@ -42,6 +42,21 @@
       "subtitle": "가장 많은 사랑을 받은 검증된 프롬프트를 만나보세요",
       "viewAll": "전체 라이브러리 보기 →"
     },
+    "modelsHub": {
+      "badge": "🆕 NEW — AI 모델 허브 오픈",
+      "title": "어떤 AI 모델이 당신에게 맞을까요?",
+      "subtitle": "Claude, GPT-4o, Gemini 등 최신 24개 AI 모델을 성능·가격·벤치마크로 비교해보세요.",
+      "topRanking": "🔥 실시간 파워 랭킹 TOP 3",
+      "rankingBasis": "Arena ELO 기준",
+      "latestNews": "📰 최신 AI 소식",
+      "viewAllModels": "전체 AI 모델 비교 →",
+      "viewAllNews": "AI 뉴스 더 보기 →",
+      "statModels": "개 모델",
+      "statProviders": "개 기업",
+      "statBenchmarks": "개 벤치마크",
+      "newBadge": "NEW",
+      "ossBadge": "오픈소스"
+    },
     "latestBlog": {
       "title": "최신 블로그",
       "subtitle": "프롬프트 엔지니어링 팁과 AI 활용법",

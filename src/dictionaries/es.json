@@ -42,6 +42,21 @@
       "subtitle": "Descubre los prompts más queridos y verificados",
       "viewAll": "Ver Biblioteca Completa →"
     },
+    "modelsHub": {
+      "badge": "🆕 NUEVO — AI Model Hub en Vivo",
+      "title": "¿Qué modelo de IA es el adecuado para ti?",
+      "subtitle": "Compara 24 modelos de IA como Claude, GPT-4o y Gemini por rendimiento, precio y benchmarks.",
+      "topRanking": "🔥 Ranking de Poder en Vivo TOP 3",
+      "rankingBasis": "Basado en Arena ELO",
+      "latestNews": "📰 Últimas Noticias de IA",
+      "viewAllModels": "Explorar Todos los Modelos →",
+      "viewAllNews": "Más Noticias de IA →",
+      "statModels": " Modelos",
+      "statProviders": " Proveedores",
+      "statBenchmarks": " Benchmarks",
+      "newBadge": "NUEVO",
+      "ossBadge": "Código Abierto"
+    },
     "latestBlog": {
       "title": "Último Blog",
       "subtitle": "Consejos de ingeniería de prompts y guías de uso de IA",

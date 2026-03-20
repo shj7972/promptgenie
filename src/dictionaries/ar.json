@@ -42,6 +42,21 @@
       "subtitle": "اكتشف المطالبات الأكثر تفضيلاً وموثوقية",
       "viewAll": "عرض المكتبة كاملة ←"
     },
+    "modelsHub": {
+      "badge": "🆕 جديد — مركز نماذج AI الآن متاح",
+      "title": "أي نموذج AI مناسب لك؟",
+      "subtitle": "قارن 24 نموذج AI حديث بما فيها Claude وGPT-4o وGemini من حيث الأداء والسعر والمعايير.",
+      "topRanking": "🔥 ترتيب القوة المباشر TOP 3",
+      "rankingBasis": "بناءً على Arena ELO",
+      "latestNews": "📰 أحدث أخبار AI",
+      "viewAllModels": "استكشاف جميع نماذج AI ←",
+      "viewAllNews": "المزيد من أخبار AI ←",
+      "statModels": " نموذج",
+      "statProviders": " شركة",
+      "statBenchmarks": " معيار",
+      "newBadge": "جديد",
+      "ossBadge": "مفتوح المصدر"
+    },
     "latestBlog": {
       "title": "أحدث المدونات",
       "subtitle": "نصائح هندسة المطالبات وأدلة استخدام الذكاء الاصطناعي",

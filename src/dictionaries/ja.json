@@ -42,6 +42,21 @@
       "subtitle": "多くのユーザーに愛され、検証されたプロンプト",
       "viewAll": "ライブラリ全体を見る →"
     },
+    "modelsHub": {
+      "badge": "🆕 NEW — AI モデルハブ 公開",
+      "title": "あなたに合った AI モデルはどれ？",
+      "subtitle": "Claude、GPT-4o、Gemini など最新 24 の AI モデルを性能・価格・ベンチマークで比較。",
+      "topRanking": "🔥 リアルタイム パワーランキング TOP 3",
+      "rankingBasis": "Arena ELO 基準",
+      "latestNews": "📰 最新 AI ニュース",
+      "viewAllModels": "全 AI モデルを比較する →",
+      "viewAllNews": "AI ニュースをもっと見る →",
+      "statModels": " モデル",
+      "statProviders": " 企業",
+      "statBenchmarks": " ベンチマーク",
+      "newBadge": "NEW",
+      "ossBadge": "オープンソース"
+    },
     "latestBlog": {
       "title": "最新ブログ",
       "subtitle": "プロンプトエンジニアリングのヒントとAI活用ガイド",

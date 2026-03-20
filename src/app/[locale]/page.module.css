@@ -384,6 +384,194 @@
     }
 }
 
+/* AI Model Hub Teaser Section */
+.modelsHubSection {
+    padding: 6rem 0;
+    border-top: 1px solid var(--glass-border);
+    background: linear-gradient(180deg, rgba(99, 102, 241, 0.04) 0%, rgba(139, 92, 246, 0.06) 100%);
+}
+
+.modelsHubBadge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+    border: 1px solid rgba(99, 102, 241, 0.4);
+    border-radius: var(--radius-full);
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.modelsHubStats {
+    display: flex;
+    gap: 3rem;
+    margin: 2.5rem 0;
+    justify-content: center;
+}
+
+.modelsHubStat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.modelsHubStatNum {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+}
+
+.modelsHubStatLabel {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.modelsHubContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2.5rem 0;
+}
+
+.modelsHubSubtitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.modelsHubSubtitle small {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+}
+
+/* Ranking List */
+.rankingList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.rankingCard {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.rankingCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.2);
+}
+
+.rankingNum {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--primary);
+    min-width: 2rem;
+}
+
+.rankingInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.rankingName {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.rankingProvider {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.rankingMeta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+}
+
+.rankingElo {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.rankingNew {
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.1rem 0.4rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+}
+
+/* News List */
+.newsList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.newsItem {
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.newsCategory {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.newsTitle {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.4;
+    margin: 0;
+}
+
+.newsDate {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .modelsHubContent {
+        grid-template-columns: 1fr;
+    }
+    .modelsHubStats {
+        gap: 1.5rem;
+    }
+    .modelsHubStatNum {
+        font-size: 2rem;
+    }
+}
+
 .seoSection {
     padding: 6rem 0;
     border-top: 1px solid var(--glass-border);

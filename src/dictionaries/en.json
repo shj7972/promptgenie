@@ -42,6 +42,21 @@
       "subtitle": "Discover the most loved and verified prompts",
       "viewAll": "View Full Library →"
     },
+    "modelsHub": {
+      "badge": "🆕 NEW — AI Model Hub is Live",
+      "title": "Which AI Model is Right for You?",
+      "subtitle": "Compare 24 latest AI models including Claude, GPT-4o, and Gemini by performance, price, and benchmarks.",
+      "topRanking": "🔥 Live Power Ranking TOP 3",
+      "rankingBasis": "Based on Arena ELO",
+      "latestNews": "📰 Latest AI News",
+      "viewAllModels": "Explore All AI Models →",
+      "viewAllNews": "More AI News →",
+      "statModels": " Models",
+      "statProviders": " Providers",
+      "statBenchmarks": " Benchmarks",
+      "newBadge": "NEW",
+      "ossBadge": "Open Source"
+    },
     "latestBlog": {
       "title": "Latest Blog",
       "subtitle": "Prompt engineering tips and AI usage guides",
