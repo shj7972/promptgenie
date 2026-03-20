@@ -13,7 +13,8 @@
     "blog": "Blog",
     "myPrompts": "Mis Prompts",
     "start": "Empezar",
-    "search": "Buscar"
+    "search": "Buscar",
+    "models": "Modelos IA"
   },
   "Home": {
     "badge": "Ingeniería de Prompts de Próxima Generación",
@@ -128,22 +129,58 @@
       {
         "question": "¿Cuál es el rol principal de la IA?",
         "placeholder": "ej. Ingeniero de Software Senior, Escritor Creativo, Consultor de Negocios",
-        "suggestions": ["Ingeniero de Software Senior", "Experto en Marketing", "Consejero Profesional", "Analista de Datos", "Novelista", "Escritor de Blogs", "Creador de YouTube", "Traductor"]
+        "suggestions": [
+          "Ingeniero de Software Senior",
+          "Experto en Marketing",
+          "Consejero Profesional",
+          "Analista de Datos",
+          "Novelista",
+          "Escritor de Blogs",
+          "Creador de YouTube",
+          "Traductor"
+        ]
       },
       {
         "question": "¿Qué tarea específica debe realizar?",
         "placeholder": "ej. Revisión de código, Escribir un post de blog de viajes, Crear plan de marketing",
-        "suggestions": ["Revisión de código para el proyecto actual", "Escribir un post de blog", "Resumir informe de trabajo semanal", "Redactar una propuesta de negocios", "Traducir manual de producto", "Escribir un guion de YouTube", "Traducir correo electrónico en inglés", "Generar preguntas de entrevista"]
+        "suggestions": [
+          "Revisión de código para el proyecto actual",
+          "Escribir un post de blog",
+          "Resumir informe de trabajo semanal",
+          "Redactar una propuesta de negocios",
+          "Traducir manual de producto",
+          "Escribir un guion de YouTube",
+          "Traducir correo electrónico en inglés",
+          "Generar preguntas de entrevista"
+        ]
       },
       {
         "question": "¿Qué detalles o contexto deben incluirse?",
         "placeholder": "ej. Stack tecnológico específico, Público objetivo, Restricciones técnicas",
-        "suggestions": ["Nivel amigable para principiantes", "Considerar restricciones técnicas", "Público objetivo: profesionales", "Incluir resumen de datos clave", "Formato de lista concisa", "Tono amable y empático", "Incluir palabras clave optimizadas para SEO", "Salida en formato Markdown"]
+        "suggestions": [
+          "Nivel amigable para principiantes",
+          "Considerar restricciones técnicas",
+          "Público objetivo: profesionales",
+          "Incluir resumen de datos clave",
+          "Formato de lista concisa",
+          "Tono amable y empático",
+          "Incluir palabras clave optimizadas para SEO",
+          "Salida en formato Markdown"
+        ]
       },
       {
         "question": "¿Qué tono o estilo prefieres?",
         "placeholder": "ej. Profesional, Humorístico, Conciso, Académico",
-        "suggestions": ["Profesional y confiable", "Humorístico y cercano", "Académico y objetivo", "Claro y conciso", "Persuasivo", "Emocional y cálido", "Lógico y analítico", "Usando analogías ingeniosas"]
+        "suggestions": [
+          "Profesional y confiable",
+          "Humorístico y cercano",
+          "Académico y objetivo",
+          "Claro y conciso",
+          "Persuasivo",
+          "Emocional y cálido",
+          "Lógico y analítico",
+          "Usando analogías ingeniosas"
+        ]
       }
     ],
     "promptTemplate": "Rol: {role}.\nTarea: {task}.\n\nDetalles y Contexto:\n{context}\n\nEstilo de Salida:\nTu respuesta debe tener un tono {style}. Por favor, mantén una alta calidad y precisión.",
@@ -251,7 +288,16 @@
     "navMove": "navegar",
     "navSelect": "seleccionar",
     "navClose": "cerrar",
-    "trendingKeywords": ["ChatGPT", "Claude", "SEO", "codificación", "marketing", "correo electrónico", "blog", "escritura de prompts"]
+    "trendingKeywords": [
+      "ChatGPT",
+      "Claude",
+      "SEO",
+      "codificación",
+      "marketing",
+      "correo electrónico",
+      "blog",
+      "escritura de prompts"
+    ]
   },
   "BlogDetail": {
     "backLink": "← Volver al Blog",

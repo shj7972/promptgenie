@@ -1,0 +1,36 @@
+.page { min-height: 100vh; padding: 2rem 0 4rem; }
+.title { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.presets { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.presetLabel { font-size: 0.85rem; color: var(--muted); }
+.presetBtn { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 0.35rem 0.85rem; color: var(--muted); cursor: pointer; font-size: 0.85rem; transition: all 0.2s; }
+.presetBtn:hover { border-color: rgba(168,85,247,0.3); color: #a855f7; }
+.presetActive { background: rgba(168,85,247,0.15); border: 1px solid rgba(168,85,247,0.4); border-radius: 8px; padding: 0.35rem 0.85rem; color: #a855f7; cursor: pointer; font-size: 0.85rem; font-weight: 600; }
+.inputGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
+@media (max-width: 640px) { .inputGrid { grid-template-columns: 1fr; } }
+.inputGroup { display: flex; flex-direction: column; gap: 0.4rem; }
+.label { font-size: 0.8rem; color: var(--muted); }
+.input { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 0.5rem 0.75rem; color: inherit; font-size: 0.9rem; }
+.input:focus { outline: none; border-color: rgba(168,85,247,0.5); }
+.tableWrap { overflow-x: auto; margin-bottom: 3rem; }
+.table { width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 700px; }
+.table th { padding: 0.75rem 0.75rem; text-align: left; color: var(--muted); font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.08); white-space: nowrap; }
+.table td { padding: 0.65rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.table tr:hover td { background: rgba(255,255,255,0.02); }
+.cheapest td { background: rgba(34,197,94,0.04); }
+.modelCell { font-weight: 600; display: flex; align-items: center; gap: 0.4rem; min-width: 160px; }
+.cheapBadge { background: rgba(34,197,94,0.2); color: #22c55e; font-size: 0.65rem; padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: 700; white-space: nowrap; flex-shrink: 0; }
+.cost { font-weight: 600; font-family: monospace; color: #a855f7; }
+.detailLink { color: #6366f1; text-decoration: none; font-size: 0.8rem; white-space: nowrap; }
+.detailLink:hover { text-decoration: underline; }
+.subSection { }
+.subTitle { font-size: 1.3rem; font-weight: 700; margin-bottom: 1.25rem; }
+.subGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+.subCard { padding: 1.25rem; border-radius: 12px; display: flex; flex-direction: column; gap: 0.4rem; }
+.subProvider { font-size: 0.78rem; font-weight: 700; }
+.subName { font-size: 1rem; font-weight: 700; }
+.subModel { font-size: 0.78rem; color: var(--muted); }
+.subPrice { font-size: 1.6rem; font-weight: 800; background: linear-gradient(135deg,#a855f7,#6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.subPrice span { font-size: 0.85rem; }
+.subFeatures { display: flex; flex-direction: column; gap: 0.25rem; margin-top: 0.5rem; }
+.subFeature { font-size: 0.75rem; color: var(--muted); }

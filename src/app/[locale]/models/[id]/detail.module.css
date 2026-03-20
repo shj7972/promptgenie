@@ -1,0 +1,83 @@
+.page { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+
+.breadcrumb { display: flex; gap: 0.5rem; align-items: center; font-size: 0.85rem; color: var(--muted); margin-bottom: 2rem; }
+.breadcrumb a { color: #a855f7; text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+
+.header { display: grid; grid-template-columns: 1fr auto; gap: 2rem; margin-bottom: 2rem; }
+@media (max-width: 768px) { .header { grid-template-columns: 1fr; } }
+
+.providerBadge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 6px; font-size: 0.8rem; font-weight: 700; margin-bottom: 0.5rem; }
+.modelName { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; margin-bottom: 0.5rem; }
+.shortDesc { color: var(--muted); font-size: 1rem; margin-bottom: 1rem; }
+.headerMeta { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+.statusBadge, .categoryBadge, .releaseBadge { font-size: 0.75rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-weight: 600; background: rgba(255,255,255,0.08); }
+.headerTags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.tag { font-size: 0.75rem; color: #a855f7; }
+
+.headerStats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.statItem { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 0.75rem 1rem; text-align: center; }
+.statLabel { display: block; font-size: 0.7rem; color: var(--muted); margin-bottom: 0.25rem; }
+.statValue { display: block; font-size: 1.2rem; font-weight: 800; background: linear-gradient(135deg,#a855f7,#6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+.tabs { display: flex; gap: 0.25rem; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 2rem; flex-wrap: wrap; }
+.tabBtn { background: transparent; border: none; color: var(--muted); padding: 0.75rem 1rem; cursor: pointer; font-size: 0.9rem; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color 0.2s; }
+.tabBtn:hover { color: #a855f7; }
+.tabActive { background: transparent; border: none; color: #a855f7; padding: 0.75rem 1rem; cursor: pointer; font-size: 0.9rem; border-bottom: 2px solid #a855f7; margin-bottom: -1px; font-weight: 600; }
+
+.tabContent { min-height: 300px; }
+
+.overviewGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+@media (max-width: 768px) { .overviewGrid { grid-template-columns: 1fr; } }
+.descCard, .specsCard, .bestForCard, .weakCard { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.25rem; }
+.descCard { grid-column: 1 / -1; }
+.descCard h3, .specsCard h3, .bestForCard h3, .weakCard h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; color: #a855f7; }
+.descCard p { color: var(--muted); line-height: 1.7; }
+.specsTable { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.specsTable td { padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.specsTable td:first-child { color: var(--muted); width: 45%; }
+.specsTable td:last-child { font-weight: 500; }
+.bestForCard ul, .weakCard ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+.bestForCard li::before { content: '✅ '; }
+.weakCard li::before { content: '⚠️ '; }
+.bestForCard li, .weakCard li { font-size: 0.85rem; }
+
+.benchGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+@media (max-width: 768px) { .benchGrid { grid-template-columns: 1fr; } }
+.benchList { display: flex; flex-direction: column; gap: 1rem; }
+.benchItem { display: flex; align-items: center; gap: 1rem; }
+.benchName { min-width: 90px; font-size: 0.85rem; color: var(--muted); }
+.benchBar { flex: 1; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; }
+.benchFill { height: 100%; background: linear-gradient(90deg,#a855f7,#6366f1); border-radius: 4px; }
+.benchVal { min-width: 40px; text-align: right; font-size: 0.85rem; font-weight: 600; }
+
+.pricingGrid { display: flex; flex-direction: column; gap: 1.5rem; }
+.priceCard, .subCard { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.25rem; }
+.priceCard h3, .subCard h3 { font-size: 1rem; font-weight: 700; margin-bottom: 1rem; color: #a855f7; }
+.priceRow { display: flex; justify-content: space-between; padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; }
+.priceNote { margin-top: 0.75rem; font-size: 0.8rem; color: var(--muted); }
+.subName { font-size: 1.2rem; font-weight: 700; }
+.subPrice { font-size: 1rem; color: #a855f7; margin-top: 0.25rem; }
+.freeBadge { font-size: 0.9rem; }
+.calcLink a { color: #a855f7; text-decoration: none; }
+.calcLink a:hover { text-decoration: underline; }
+
+.featuresGrid h3 { font-size: 1rem; font-weight: 700; margin-bottom: 1rem; color: #a855f7; }
+.featureList { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.featureItem { padding: 0.5rem 0.75rem; background: rgba(168,85,247,0.06); border-left: 3px solid #a855f7; border-radius: 0 6px 6px 0; font-size: 0.9rem; }
+
+.promptsGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.promptCard { padding: 1rem; border-radius: 10px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 0.5rem; transition: transform 0.2s; }
+.promptCard:hover { transform: translateY(-2px); }
+.promptCat { font-size: 0.7rem; color: #a855f7; font-weight: 600; }
+.promptTitle { font-size: 0.95rem; font-weight: 700; }
+.promptDesc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+
+.relatedGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
+.relatedCard { padding: 1rem; border-radius: 10px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 0.4rem; transition: transform 0.2s; }
+.relatedCard:hover { transform: translateY(-2px); }
+.relatedProvider { font-size: 0.8rem; font-weight: 700; }
+.relatedName { font-size: 1rem; font-weight: 700; }
+.relatedDesc { font-size: 0.82rem; color: var(--muted); }
+
+.noData { color: var(--muted); font-size: 0.9rem; }

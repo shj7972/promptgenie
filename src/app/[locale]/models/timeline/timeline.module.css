@@ -1,0 +1,29 @@
+.page { min-height: 100vh; padding: 2rem 0 4rem; }
+.title { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.filters { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 2rem; }
+.filterGroup { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.filterBtn { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 0.3rem 0.75rem; color: var(--muted); cursor: pointer; font-size: 0.8rem; transition: all 0.2s; }
+.filterBtn:hover { border-color: rgba(168,85,247,0.3); color: #a855f7; }
+.filterActive { background: rgba(168,85,247,0.15); border: 1px solid rgba(168,85,247,0.4); border-radius: 8px; padding: 0.3rem 0.75rem; color: #a855f7; cursor: pointer; font-size: 0.8rem; font-weight: 600; }
+.select { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 0.4rem 0.75rem; color: inherit; font-size: 0.85rem; cursor: pointer; }
+
+.timeline { display: flex; flex-direction: column; }
+.monthGroup { display: grid; grid-template-columns: 140px 1fr; gap: 1.5rem; position: relative; }
+.monthGroup::before { content: ''; position: absolute; left: 139px; top: 0; bottom: 0; width: 2px; background: rgba(168,85,247,0.2); }
+@media (max-width: 640px) { .monthGroup { grid-template-columns: 1fr; } .monthGroup::before { display: none; } }
+.monthLabel { display: flex; align-items: flex-start; gap: 0.5rem; padding: 1.5rem 0; position: relative; justify-content: flex-end; }
+.monthDot { width: 12px; height: 12px; border-radius: 50%; background: #a855f7; border: 3px solid #0d0a1e; position: relative; z-index: 1; flex-shrink: 0; margin-top: 2px; box-shadow: 0 0 8px rgba(168,85,247,0.5); }
+.monthText { font-size: 0.85rem; font-weight: 700; color: var(--muted); white-space: nowrap; padding-right: 0.5rem; }
+.modelList { display: flex; flex-direction: column; gap: 0.75rem; padding: 1rem 0 1rem 1.5rem; }
+.modelCard { padding: 1rem 1.25rem; border-radius: 10px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 0.4rem; transition: all 0.2s; }
+.modelCard:hover { transform: translateX(4px); border-color: rgba(168,85,247,0.4) !important; }
+.cardTop { display: flex; justify-content: space-between; align-items: center; }
+.provider { font-size: 0.78rem; font-weight: 700; }
+.badges { display: flex; align-items: center; gap: 0.4rem; }
+.catBadge { font-size: 0.68rem; padding: 0.15rem 0.5rem; border-radius: 4px; font-weight: 600; }
+.statusDot { width: 8px; height: 8px; border-radius: 50%; }
+.modelName { font-weight: 700; font-size: 0.95rem; }
+.modelDesc { font-size: 0.8rem; color: var(--muted); line-height: 1.4; }
+.cardMeta { display: flex; gap: 0.75rem; font-size: 0.75rem; color: var(--muted); flex-wrap: wrap; }
+.ossBadge { background: rgba(34,197,94,0.15); color: #22c55e; padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: 700; font-size: 0.68rem; }

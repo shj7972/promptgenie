@@ -48,6 +48,7 @@ export default function Navbar() {
 
           <div className={`${styles.links} ${isMobileMenuOpen ? styles.mobileOpen : ''}`}>
             <Link href="/library" className={styles.link} onClick={() => setIsMobileMenuOpen(false)}>{t('library')}</Link>
+            <Link href="/models" className={`${styles.link} ${styles.modelsLink}`} onClick={() => setIsMobileMenuOpen(false)}>{t('models')}</Link>
             <Link href="/generator" className={styles.link} onClick={() => setIsMobileMenuOpen(false)}>{t('generator')}</Link>
             <Link href="/blog-writer" className={styles.link} onClick={() => setIsMobileMenuOpen(false)}>{t('blogWriter')}</Link>
             <Link href="/guide" className={styles.link} onClick={() => setIsMobileMenuOpen(false)}>{t('guide')}</Link>
