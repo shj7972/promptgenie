@@ -9,9 +9,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     const entries: MetadataRoute.Sitemap = []
 
+    // Map locale path codes to proper hreflang codes
+    const hreflangMap: Record<string, string> = {
+        ko: 'ko',
+        en: 'en',
+        ja: 'ja',
+        es: 'es',
+        zh: 'zh-Hans',
+        ar: 'ar',
+    }
+
     const buildAlternates = (path: string) => {
-        const languages: Record<string, string> = {}
-        locales.forEach(l => { languages[l] = `${baseUrl}/${l}${path}` })
+        const languages: Record<string, string> = {
+            'x-default': `${baseUrl}/en${path}`,
+        }
+        locales.forEach(l => { languages[hreflangMap[l]] = `${baseUrl}/${l}${path}` })
         return { languages }
     }
 
