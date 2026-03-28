@@ -79,6 +79,21 @@ export default async function Home({
     sameAs: [],
   };
 
+  const tFaq = await getTranslations({ locale, namespace: 'FAQ' });
+  const faqItems = tFaq.raw('items') as { question: string; answer: string }[];
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(item => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+
   return (
     <div className={styles.main}>
       {/* JSON-LD 구조화 데이터 */}
@@ -89,6 +104,10 @@ export default async function Home({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       
       {/* Hero Section */}

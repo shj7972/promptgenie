@@ -47,6 +47,41 @@ export async function generateStaticParams() {
     return params;
 }
 
+function buildPromptMetadata(prompt: { title: string; model: string; category: string; difficulty: string; description: string }, locale: string) {
+    switch (locale) {
+        case 'ko':
+            return {
+                title: `${prompt.title} | ${prompt.model} 프롬프트 - 바로 쓰는 실전 템플릿`,
+                description: `${prompt.description} ${prompt.model}에 최적화된 ${prompt.category} 프롬프트입니다. 복사해서 바로 사용하세요.`,
+            };
+        case 'ja':
+            return {
+                title: `${prompt.title} | ${prompt.model}プロンプト - すぐ使えるテンプレート`,
+                description: `${prompt.description} ${prompt.model}向けに最適化された${prompt.category}プロンプトです。コピーしてすぐに使えます。`,
+            };
+        case 'es':
+            return {
+                title: `${prompt.title} | Prompt de ${prompt.model} para ${prompt.category} - Copia y Usa`,
+                description: `${prompt.description} Prompt de ${prompt.category} optimizado para ${prompt.model}. Cópialo y úsalo de inmediato.`,
+            };
+        case 'zh':
+            return {
+                title: `${prompt.title} | ${prompt.model} ${prompt.category}提示词 - 即用模板`,
+                description: `${prompt.description} 专为${prompt.model}优化的${prompt.category}提示词，复制即可直接使用。`,
+            };
+        case 'ar':
+            return {
+                title: `${prompt.title} | قالب ${prompt.model} لـ${prompt.category} - انسخ واستخدم`,
+                description: `${prompt.description} قالب ${prompt.category} محسّن لـ${prompt.model}. انسخه واستخدمه فوراً.`,
+            };
+        default:
+            return {
+                title: `${prompt.title} | ${prompt.model} ${prompt.category} Prompt [Copy & Use]`,
+                description: `${prompt.description} Optimized for ${prompt.model}. Copy this ${prompt.difficulty} ${prompt.category} prompt and start using it immediately.`,
+            };
+    }
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { id, locale } = await params;
     const prompts = getLocalizedPrompts(locale);
@@ -57,12 +92,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         return { title: t('notFound') };
     }
 
+    const { title, description } = buildPromptMetadata(prompt, locale);
+
     return {
-        title: `${prompt.title} - ${prompt.model} ${prompt.category} Prompt`,
-        description: `${prompt.description} Optimized for ${prompt.model}. ${prompt.difficulty} level ${prompt.category} prompt.`,
+        title,
+        description,
         openGraph: {
             title: `${prompt.title} | ${t('siteName')}`,
-            description: `${prompt.description} ${prompt.model} ${prompt.category} prompt.`,
+            description,
             type: 'article',
         },
         alternates: {
