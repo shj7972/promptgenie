@@ -10,18 +10,18 @@ import LibraryClient from './LibraryClient';
 
 const KO_AUDIENCE_KEYWORDS: Record<string, string[]> = {
     'marketer': ['마케팅', 'SEO', '광고', '카피라이팅', '블로그', '커뮤니케이션', '이메일'],
-    'developer': ['개발', '코딩', '최적화', '디버깅', 'API', '코드', '프로그래밍'],
+    'developer': ['개발', '코딩', '최적화', '디버깅', 'API', '코드', '프로그래밍', '컨텍스트', '하네스', '평가', 'RAG'],
     'student': ['교육', '학습', '면접', '취업', '자기계발', '공부', '논문'],
-    'planner': ['기획', 'PM', '전략', '기획서', '스타트업', '일정관리', '회의'],
+    'planner': ['기획', 'PM', '전략', '기획서', '스타트업', '일정관리', '회의', '컨텍스트엔지니어링', '하네스', '테스트'],
     'creator': ['창작', '디자인', '영상', '콘텐츠', '스토리', '브랜딩', '소설'],
     'worker': ['비즈니스', '효율', '요약', '보고서', '발표', '이메일', '매너'],
 };
 
 const EN_AUDIENCE_KEYWORDS: Record<string, string[]> = {
     'marketer': ['marketing', 'SEO', 'advertising', 'copywriting', 'blog', 'communication', 'email'],
-    'developer': ['development', 'coding', 'optimization', 'debugging', 'API', 'code', 'programming'],
+    'developer': ['development', 'coding', 'optimization', 'debugging', 'API', 'code', 'programming', 'context', 'harness', 'evaluation', 'RAG'],
     'student': ['education', 'learning', 'interview', 'career', 'study', 'thesis', 'research'],
-    'planner': ['planning', 'PM', 'strategy', 'project', 'startup', 'scheduling', 'meeting'],
+    'planner': ['planning', 'PM', 'strategy', 'project', 'startup', 'scheduling', 'meeting', 'testing', 'QA', 'pipeline'],
     'creator': ['creative', 'design', 'video', 'content', 'story', 'branding', 'writing'],
     'worker': ['business', 'efficiency', 'summary', 'report', 'presentation', 'email', 'productivity'],
 };
@@ -58,7 +58,7 @@ export default async function LibraryPage({ params }: PageProps) {
 
     const isKo = locale === 'ko';
 
-    const baseEN = PROMPTS_EN.filter(p => parseInt(p.id) <= 90);
+    const baseEN = PROMPTS_EN.filter(p => parseInt(p.id) <= 120);
     const getLocalizedPrompts = () => {
         switch (locale) {
             case 'ko': return PROMPTS;
