@@ -57,7 +57,10 @@ export default function PrivacyPage() {
                 <section>
                     <h2 className="text-xl font-semibold mb-3 text-gray-900">5. Contact Us</h2>
                     <p>
-                        If you have any questions about this Privacy Policy, please contact us at: <span className="text-gray-500">(이메일 주소 준비 중)</span>
+                        If you have any questions about this Privacy Policy, please contact us at:{' '}
+                        <a href="mailto:seo.hyunjong@gmail.com" className="text-blue-600 hover:underline">
+                            seo.hyunjong@gmail.com
+                        </a>
                     </p>
                 </section>
             </div>
